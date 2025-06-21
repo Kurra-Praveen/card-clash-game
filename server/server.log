@@ -39,3 +39,772 @@
 {"level":"info","message":"Player joined room: Y62YRT, playerCount: 2","timestamp":"2025-06-21T14:17:47.921Z"}
 {"level":"info","message":"Socket nh16BOJlSScZxx53AAAB joined room Y62YRT","timestamp":"2025-06-21T14:17:47.932Z"}
 {"level":"info","message":"Player joined room: KZPSXH, playerCount: 2","timestamp":"2025-06-21T14:18:53.219Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T15:10:08.757Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T15:10:10.550Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T15:10:45.452Z"}
+{"level":"info","message":"Room created: EC2WQ4, maxPlayers: 4","timestamp":"2025-06-21T15:11:09.418Z"}
+{"level":"info","message":"Socket qnc66PUaWx-q463fAAAB joined room EC2WQ4","timestamp":"2025-06-21T15:11:09.553Z"}
+{"level":"info","message":"Player joined room: EC2WQ4, playerCount: 2","timestamp":"2025-06-21T15:14:14.676Z"}
+{"level":"info","message":"Player joined room: EC2WQ4, playerCount: 3","timestamp":"2025-06-21T15:14:25.641Z"}
+{"level":"info","message":"Player joined room: EC2WQ4, playerCount: 4","timestamp":"2025-06-21T15:14:28.867Z"}
+{"level":"info","message":"Countdown for EC2WQ4: 3","timestamp":"2025-06-21T15:14:29.878Z"}
+{"level":"info","message":"Countdown for EC2WQ4: 2","timestamp":"2025-06-21T15:14:30.876Z"}
+{"level":"info","message":"Countdown for EC2WQ4: 1","timestamp":"2025-06-21T15:14:31.887Z"}
+{"level":"info","message":"Game started for room: EC2WQ4","timestamp":"2025-06-21T15:14:31.888Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T15:16:34.382Z"}
+{"level":"info","message":"Player left room: EC2WQ4, playerCount: 3","timestamp":"2025-06-21T15:16:34.384Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T15:21:45.724Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T15:21:49.412Z"}
+{"level":"info","message":"Room created: FGV6EW, maxPlayers: 4","timestamp":"2025-06-21T15:23:35.098Z"}
+{"level":"info","message":"Player joined room: FGV6EW, playerCount: 2","timestamp":"2025-06-21T15:23:43.520Z"}
+{"level":"info","message":"Player joined room: FGV6EW, playerCount: 3","timestamp":"2025-06-21T15:23:44.966Z"}
+{"level":"info","message":"Player joined room: FGV6EW, playerCount: 4","timestamp":"2025-06-21T15:23:46.823Z"}
+{"level":"info","message":"Countdown for FGV6EW: 3","timestamp":"2025-06-21T15:23:47.829Z"}
+{"level":"info","message":"Countdown for FGV6EW: 2","timestamp":"2025-06-21T15:23:48.841Z"}
+{"level":"info","message":"Countdown for FGV6EW: 1","timestamp":"2025-06-21T15:23:49.846Z"}
+{"level":"info","message":"Game started for room: FGV6EW","timestamp":"2025-06-21T15:23:49.847Z"}
+{"level":"error","message":"Error starting game:","timestamp":"2025-06-21T15:24:03.945Z"}
+{"level":"error","message":"Error starting game:","timestamp":"2025-06-21T15:24:28.718Z"}
+{"level":"error","message":"Error starting game:","timestamp":"2025-06-21T15:25:06.890Z"}
+{"level":"error","message":"Error starting game:","timestamp":"2025-06-21T15:25:14.697Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T15:34:07.428Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T15:34:13.930Z"}
+{"level":"info","message":"Room created: 3J7OLB, maxPlayers: 4","timestamp":"2025-06-21T15:34:38.195Z"}
+{"level":"info","message":"Player joined room: 3J7OLB, playerCount: 2","timestamp":"2025-06-21T15:34:47.822Z"}
+{"level":"info","message":"Player joined room: 3J7OLB, playerCount: 3","timestamp":"2025-06-21T15:34:48.938Z"}
+{"level":"info","message":"Player joined room: 3J7OLB, playerCount: 4","timestamp":"2025-06-21T15:34:49.813Z"}
+{"level":"info","message":"Countdown for 3J7OLB: 3","timestamp":"2025-06-21T15:34:50.830Z"}
+{"level":"info","message":"Countdown for 3J7OLB: 2","timestamp":"2025-06-21T15:34:51.829Z"}
+{"level":"info","message":"Countdown for 3J7OLB: 1","timestamp":"2025-06-21T15:34:52.829Z"}
+{"level":"info","message":"Game started for room: 3J7OLB","timestamp":"2025-06-21T15:34:52.830Z"}
+{"level":"error","message":"Error starting game:","timestamp":"2025-06-21T15:34:55.949Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T15:36:53.687Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T15:36:59.926Z"}
+{"level":"error","message":"Start game failed: Room 3J7OLB not found","timestamp":"2025-06-21T15:37:15.393Z"}
+{"level":"info","message":"Room created: CX6XWV, maxPlayers: 2","timestamp":"2025-06-21T15:37:25.238Z"}
+{"level":"info","message":"Player joined room: CX6XWV, playerCount: 2","timestamp":"2025-06-21T15:37:34.868Z"}
+{"level":"info","message":"Countdown for CX6XWV: 3","timestamp":"2025-06-21T15:37:35.881Z"}
+{"level":"info","message":"Countdown for CX6XWV: 2","timestamp":"2025-06-21T15:37:36.885Z"}
+{"level":"info","message":"Countdown for CX6XWV: 1","timestamp":"2025-06-21T15:37:37.887Z"}
+{"level":"info","message":"Game started for room: CX6XWV","timestamp":"2025-06-21T15:37:37.888Z"}
+{"level":"error","message":"Start game failed: Room CX6XWV has 0 players, needs 2","timestamp":"2025-06-21T15:37:41.496Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T15:46:44.966Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T15:46:49.136Z"}
+{"level":"info","message":"Room created: IW409E, maxPlayers: 2","timestamp":"2025-06-21T15:46:56.893Z"}
+{"level":"info","message":"Player joined room: IW409E, playerCount: 2, sockets: 1","timestamp":"2025-06-21T15:47:09.036Z"}
+{"level":"info","message":"Countdown for IW409E: 3","timestamp":"2025-06-21T15:47:10.042Z"}
+{"level":"info","message":"Countdown for IW409E: 2","timestamp":"2025-06-21T15:47:11.056Z"}
+{"level":"info","message":"Countdown for IW409E: 1","timestamp":"2025-06-21T15:47:12.059Z"}
+{"level":"info","message":"Game started for room: IW409E","timestamp":"2025-06-21T15:47:12.060Z"}
+{"level":"info","message":"Starting game for room IW409E, sockets: 1, playerCount: 2","timestamp":"2025-06-21T15:47:15.402Z"}
+{"level":"info","message":"Game initialized for room: IW409E, players: 1","timestamp":"2025-06-21T15:47:16.020Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T16:21:26.350Z"}
+{"level":"info","message":"Room created: PYONPB, maxPlayers: 2","timestamp":"2025-06-21T16:21:49.254Z"}
+{"level":"error","message":"Join room failed: Room PY0NPB not found","timestamp":"2025-06-21T16:22:07.486Z"}
+{"level":"info","message":"Player joined room: PYONPB, playerCount: 2, sockets: 1","timestamp":"2025-06-21T16:22:16.619Z"}
+{"level":"info","message":"Socket 7vKrXRX4PmdfIAHTAAAB joined room PYONPB, sockets: 1","timestamp":"2025-06-21T16:22:16.655Z"}
+{"level":"info","message":"Countdown for PYONPB: 3","timestamp":"2025-06-21T16:22:17.627Z"}
+{"level":"info","message":"Countdown for PYONPB: 2","timestamp":"2025-06-21T16:22:18.627Z"}
+{"level":"info","message":"Countdown for PYONPB: 1","timestamp":"2025-06-21T16:22:19.641Z"}
+{"level":"info","message":"Game started for room: PYONPB","timestamp":"2025-06-21T16:22:19.642Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T16:22:54.692Z"}
+{"level":"info","message":"Player left room: PYONPB, playerCount: 1, sockets: 0","timestamp":"2025-06-21T16:22:54.693Z"}
+{"level":"info","message":"Player joined room: PYONPB, playerCount: 2, sockets: 1","timestamp":"2025-06-21T16:25:14.433Z"}
+{"level":"info","message":"Countdown for PYONPB: 3","timestamp":"2025-06-21T16:25:15.453Z"}
+{"level":"info","message":"Countdown for PYONPB: 2","timestamp":"2025-06-21T16:25:16.455Z"}
+{"level":"info","message":"Countdown for PYONPB: 1","timestamp":"2025-06-21T16:25:17.467Z"}
+{"level":"info","message":"Game started for room: PYONPB","timestamp":"2025-06-21T16:25:17.468Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T16:32:24.158Z"}
+{"level":"info","message":"Room created: 60RD8B, maxPlayers: 2","timestamp":"2025-06-21T16:32:51.251Z"}
+{"level":"error","message":"Join room failed: Room 6 not found","timestamp":"2025-06-21T16:33:04.094Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T16:33:06.101Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T16:33:07.614Z"}
+{"level":"info","message":"Player joined room: 60RD8B, playerCount: 2, sockets: 1","timestamp":"2025-06-21T16:33:21.111Z"}
+{"level":"info","message":"Socket 19gVBhSfcdWPjpETAAAF joined room 60RD8B, sockets: 1","timestamp":"2025-06-21T16:33:21.139Z"}
+{"level":"info","message":"Countdown for 60RD8B: 3","timestamp":"2025-06-21T16:33:22.118Z"}
+{"level":"info","message":"Countdown for 60RD8B: 2","timestamp":"2025-06-21T16:33:23.122Z"}
+{"level":"info","message":"Countdown for 60RD8B: 1","timestamp":"2025-06-21T16:33:24.131Z"}
+{"level":"info","message":"Game started for room: 60RD8B","timestamp":"2025-06-21T16:33:24.132Z"}
+{"level":"error","message":"Start game failed: Room  not found","timestamp":"2025-06-21T16:33:24.226Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T16:34:28.158Z"}
+{"level":"info","message":"Player left room: 60RD8B, playerCount: 1, sockets: 0","timestamp":"2025-06-21T16:34:28.160Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T16:34:36.438Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T16:35:11.116Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T16:43:18.079Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T16:43:19.249Z"}
+{"level":"info","message":"New socket connection: 6NM2tpOYIGl2eqn0AAAB","timestamp":"2025-06-21T16:43:44.202Z"}
+{"level":"info","message":"Room created: 29F0A0, maxPlayers: 2","timestamp":"2025-06-21T16:43:58.504Z"}
+{"level":"info","message":"Player joined room: 29F0A0, playerCount: 2, sockets: 2","timestamp":"2025-06-21T16:44:16.101Z"}
+{"level":"info","message":"Socket 6NM2tpOYIGl2eqn0AAAB joined room 29F0A0, sockets: 2","timestamp":"2025-06-21T16:44:16.140Z"}
+{"level":"info","message":"Countdown for 29F0A0: 3","timestamp":"2025-06-21T16:44:17.115Z"}
+{"level":"info","message":"Countdown for 29F0A0: 2","timestamp":"2025-06-21T16:44:18.130Z"}
+{"level":"info","message":"Countdown for 29F0A0: 1","timestamp":"2025-06-21T16:44:19.135Z"}
+{"level":"info","message":"Countdown for 29F0A0: 0","timestamp":"2025-06-21T16:44:20.140Z"}
+{"level":"info","message":"Game started for room: 29F0A0","timestamp":"2025-06-21T16:44:20.140Z"}
+{"level":"info","message":"Attempting to start game for room , rooms available: 29F0A0","timestamp":"2025-06-21T16:44:20.202Z"}
+{"level":"error","message":"Start game failed: Room  not found","timestamp":"2025-06-21T16:44:20.203Z"}
+{"level":"info","message":"New socket connection: -Bnjr_laoTzLo_ocAAAD","timestamp":"2025-06-21T16:45:18.908Z"}
+{"level":"info","message":"New socket connection: IRRT4CiG6y-6Fmj5AAAF","timestamp":"2025-06-21T16:45:36.724Z"}
+{"level":"info","message":"New socket connection: g9z-QGnUdRokq5WaAAAH","timestamp":"2025-06-21T16:48:29.773Z"}
+{"level":"info","message":"Room created: 735073, maxPlayers: 2","timestamp":"2025-06-21T16:48:59.378Z"}
+{"level":"info","message":"Socket g9z-QGnUdRokq5WaAAAH joined room 735073, sockets: 1","timestamp":"2025-06-21T16:48:59.608Z"}
+{"level":"info","message":"New socket connection: HlfY5Jrp9czEECymAAAJ","timestamp":"2025-06-21T16:49:09.474Z"}
+{"level":"info","message":"Player joined room: 735073, playerCount: 2, sockets: 2","timestamp":"2025-06-21T16:49:31.097Z"}
+{"level":"info","message":"Socket HlfY5Jrp9czEECymAAAJ joined room 735073, sockets: 2","timestamp":"2025-06-21T16:49:31.125Z"}
+{"level":"info","message":"Countdown for 735073: 3","timestamp":"2025-06-21T16:49:32.116Z"}
+{"level":"info","message":"Countdown for 735073: 2","timestamp":"2025-06-21T16:49:33.118Z"}
+{"level":"info","message":"Countdown for 735073: 1","timestamp":"2025-06-21T16:49:34.124Z"}
+{"level":"info","message":"Countdown for 735073: 0","timestamp":"2025-06-21T16:49:35.135Z"}
+{"level":"info","message":"Game started for room: 735073","timestamp":"2025-06-21T16:49:35.136Z"}
+{"level":"info","message":"Attempting to start game for room , rooms available: 29F0A0,735073","timestamp":"2025-06-21T16:49:35.266Z"}
+{"level":"error","message":"Start game failed: Room  not found","timestamp":"2025-06-21T16:49:35.267Z"}
+{"level":"info","message":"Attempting to start game for room , rooms available: 29F0A0,735073","timestamp":"2025-06-21T16:49:35.320Z"}
+{"level":"error","message":"Start game failed: Room  not found","timestamp":"2025-06-21T16:49:35.321Z"}
+{"level":"info","message":"New socket connection: sk9CWdtLUaRlN1hEAAAL","timestamp":"2025-06-21T16:57:51.449Z"}
+{"level":"info","message":"New socket connection: l_btIAvRQcmy31E-AAAN","timestamp":"2025-06-21T16:58:26.548Z"}
+{"level":"info","message":"Room created: B79855, maxPlayers: 2","timestamp":"2025-06-21T16:59:00.475Z"}
+{"level":"info","message":"Player joined room: B79855, playerCount: 2, sockets: 2","timestamp":"2025-06-21T16:59:12.679Z"}
+{"level":"info","message":"Socket l_btIAvRQcmy31E-AAAN joined room B79855, sockets: 2","timestamp":"2025-06-21T16:59:12.696Z"}
+{"level":"info","message":"Countdown for B79855: 3","timestamp":"2025-06-21T16:59:13.692Z"}
+{"level":"info","message":"Countdown for B79855: 2","timestamp":"2025-06-21T16:59:14.699Z"}
+{"level":"info","message":"Countdown for B79855: 1","timestamp":"2025-06-21T16:59:15.712Z"}
+{"level":"info","message":"Countdown for B79855: 0","timestamp":"2025-06-21T16:59:16.722Z"}
+{"level":"info","message":"Game started for room: B79855","timestamp":"2025-06-21T16:59:16.723Z"}
+{"level":"info","message":"Attempting to start game for room , rooms available: 29F0A0,735073,B79855","timestamp":"2025-06-21T16:59:16.862Z"}
+{"level":"error","message":"Start game failed: Room  not found","timestamp":"2025-06-21T16:59:16.863Z"}
+{"level":"info","message":"New socket connection: CDRwkuU7NDLsuOiBAAAP","timestamp":"2025-06-21T17:06:13.463Z"}
+{"level":"info","message":"Room created: 45C799, maxPlayers: 2","timestamp":"2025-06-21T17:06:21.884Z"}
+{"level":"info","message":"Player joined room: 45C799, playerCount: 2, sockets: 2","timestamp":"2025-06-21T17:06:36.129Z"}
+{"level":"info","message":"Socket CDRwkuU7NDLsuOiBAAAP joined room 45C799, sockets: 2","timestamp":"2025-06-21T17:06:36.160Z"}
+{"level":"info","message":"Countdown for 45C799: 3","timestamp":"2025-06-21T17:06:37.154Z"}
+{"level":"info","message":"Countdown for 45C799: 2","timestamp":"2025-06-21T17:06:38.155Z"}
+{"level":"info","message":"Countdown for 45C799: 1","timestamp":"2025-06-21T17:06:39.154Z"}
+{"level":"info","message":"Countdown for 45C799: 0","timestamp":"2025-06-21T17:06:40.164Z"}
+{"level":"info","message":"Game started for room: 45C799","timestamp":"2025-06-21T17:06:40.164Z"}
+{"level":"info","message":"New socket connection: WzfXp17LyVv_OPzyAAAR","timestamp":"2025-06-21T17:14:15.499Z"}
+{"level":"info","message":"Room created: EAF132, maxPlayers: 2","timestamp":"2025-06-21T17:14:28.266Z"}
+{"level":"info","message":"Player joined room: EAF132, playerCount: 2, sockets: 2","timestamp":"2025-06-21T17:14:41.006Z"}
+{"level":"info","message":"Socket WzfXp17LyVv_OPzyAAAR joined room EAF132, sockets: 2","timestamp":"2025-06-21T17:14:41.020Z"}
+{"level":"info","message":"Countdown for EAF132: 3","timestamp":"2025-06-21T17:14:42.018Z"}
+{"level":"info","message":"Countdown for EAF132: 2","timestamp":"2025-06-21T17:14:43.028Z"}
+{"level":"info","message":"Countdown for EAF132: 1","timestamp":"2025-06-21T17:14:44.031Z"}
+{"level":"info","message":"Countdown for EAF132: 0","timestamp":"2025-06-21T17:14:45.037Z"}
+{"level":"info","message":"Game started for room: EAF132","timestamp":"2025-06-21T17:14:45.038Z"}
+{"level":"info","message":"New socket connection: uVaHBCJDp08tG5WEAAAT","timestamp":"2025-06-21T17:17:34.932Z"}
+{"level":"info","message":"New socket connection: zYgxPxYdhgSctIxUAAAV","timestamp":"2025-06-21T17:18:23.835Z"}
+{"level":"info","message":"New socket connection: mVsgVztKlc6JVYLWAAAX","timestamp":"2025-06-21T17:28:50.011Z"}
+{"level":"info","message":"Room created: F49DEE, maxPlayers: 2","timestamp":"2025-06-21T17:29:01.628Z"}
+{"level":"info","message":"Player joined room: F49DEE, playerCount: 2, sockets: 2","timestamp":"2025-06-21T17:29:15.564Z"}
+{"level":"info","message":"Socket mVsgVztKlc6JVYLWAAAX joined room F49DEE, sockets: 2","timestamp":"2025-06-21T17:29:15.596Z"}
+{"level":"info","message":"Countdown for F49DEE: 3","timestamp":"2025-06-21T17:29:16.576Z"}
+{"level":"info","message":"Countdown for F49DEE: 2","timestamp":"2025-06-21T17:29:17.579Z"}
+{"level":"info","message":"Countdown for F49DEE: 1","timestamp":"2025-06-21T17:29:18.590Z"}
+{"level":"info","message":"Countdown for F49DEE: 0","timestamp":"2025-06-21T17:29:19.592Z"}
+{"level":"info","message":"Game started for room: F49DEE","timestamp":"2025-06-21T17:29:19.593Z"}
+{"level":"info","message":"New socket connection: 2cTSNoUA80ubktVYAAAZ","timestamp":"2025-06-21T17:35:52.436Z"}
+{"level":"info","message":"Room created: EEEA03, maxPlayers: 2","timestamp":"2025-06-21T17:35:57.945Z"}
+{"level":"info","message":"Player joined room: EEEA03, playerCount: 2, sockets: 2","timestamp":"2025-06-21T17:36:06.526Z"}
+{"level":"info","message":"Socket 2cTSNoUA80ubktVYAAAZ joined room EEEA03, sockets: 2","timestamp":"2025-06-21T17:36:06.549Z"}
+{"level":"info","message":"Countdown for EEEA03: 3","timestamp":"2025-06-21T17:36:07.541Z"}
+{"level":"info","message":"Countdown for EEEA03: 2","timestamp":"2025-06-21T17:36:08.551Z"}
+{"level":"info","message":"Countdown for EEEA03: 1","timestamp":"2025-06-21T17:36:09.563Z"}
+{"level":"info","message":"Countdown for EEEA03: 0","timestamp":"2025-06-21T17:36:10.563Z"}
+{"level":"info","message":"Game started for room: EEEA03","timestamp":"2025-06-21T17:36:10.564Z"}
+{"level":"info","message":"Attempting to start game for room EEEA03, rooms available: 29F0A0,735073,B79855,45C799,EAF132,F49DEE,EEEA03","timestamp":"2025-06-21T17:36:10.728Z"}
+{"level":"error","message":"Insufficient cards for room EEEA03","timestamp":"2025-06-21T17:36:11.132Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T17:43:31.390Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T17:43:32.588Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T17:48:11.589Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T17:48:15.890Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T17:50:53.822Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T17:50:57.134Z"}
+{"level":"info","message":"Initial card count: 0","timestamp":"2025-06-21T17:50:57.200Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T17:53:54.880Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T17:53:56.021Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T17:53:56.097Z"}
+{"level":"info","message":"Retrieved 50 cards from database","timestamp":"2025-06-21T17:54:38.268Z"}
+{"level":"info","message":"Sample card: {\"_id\":\"6856bfa01205149f4735cae8\",\"playerName\":\"Virat Kohli\",\"runs\":7409,\"wickets\":155,\"battingAverage\":26.309128923211645,\"strikeRate\":54.76010536819511,\"matchesPlayed\":171,\"centuries\":30,\"fiveWicketHauls\":0,\"__v\":0}","timestamp":"2025-06-21T17:54:38.271Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T18:16:20.600Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T18:16:24.709Z"}
+{"level":"info","message":"Initial card count: 0","timestamp":"2025-06-21T18:16:24.783Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T18:16:36.421Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T18:16:37.300Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T18:16:37.399Z"}
+{"level":"info","message":"New socket connection: 88oSV4iLx4BC5tFhAAAB","timestamp":"2025-06-21T18:19:38.295Z"}
+{"level":"info","message":"Retrieved 50 cards from database","timestamp":"2025-06-21T18:19:46.256Z"}
+{"level":"info","message":"Sample card: {\"_id\":\"6856bfa01205149f4735cae8\",\"playerName\":\"Virat Kohli\",\"runs\":7409,\"wickets\":155,\"battingAverage\":26.309128923211645,\"strikeRate\":54.76010536819511,\"matchesPlayed\":171,\"centuries\":30,\"fiveWicketHauls\":0,\"__v\":0}","timestamp":"2025-06-21T18:19:46.261Z"}
+{"level":"info","message":"Room created: E97342, maxPlayers: 2","timestamp":"2025-06-21T18:19:52.416Z"}
+{"level":"info","message":"Player joined room: E97342, playerCount: 2, sockets: 2","timestamp":"2025-06-21T18:20:02.331Z"}
+{"level":"info","message":"Socket 88oSV4iLx4BC5tFhAAAB joined room E97342, sockets: 2","timestamp":"2025-06-21T18:20:02.360Z"}
+{"level":"info","message":"Countdown for E97342: 3","timestamp":"2025-06-21T18:20:03.346Z"}
+{"level":"info","message":"Countdown for E97342: 2","timestamp":"2025-06-21T18:20:04.348Z"}
+{"level":"info","message":"Countdown for E97342: 1","timestamp":"2025-06-21T18:20:05.354Z"}
+{"level":"info","message":"Countdown for E97342: 0","timestamp":"2025-06-21T18:20:06.360Z"}
+{"level":"info","message":"Game started for room: E97342","timestamp":"2025-06-21T18:20:06.361Z"}
+{"level":"info","message":"Attempting to start game for room E97342, rooms available: E97342","timestamp":"2025-06-21T18:20:06.475Z"}
+{"level":"info","message":"Total cards in database: 50","timestamp":"2025-06-21T18:20:06.564Z"}
+{"level":"info","message":"Fetched 10 cards for room E97342","timestamp":"2025-06-21T18:20:06.627Z"}
+{"level":"info","message":"Game initialized for room: E97342, players: 2","timestamp":"2025-06-21T18:20:06.629Z"}
+{"level":"info","message":"Sent gameData to socket 88oSV4iLx4BC5tFhAAAB in room E97342","timestamp":"2025-06-21T18:20:06.631Z"}
+{"level":"info","message":"New socket connection: utLRoPbVvYgkrV8nAAAD","timestamp":"2025-06-21T18:32:17.806Z"}
+{"level":"info","message":"Room created: 59A9E0, maxPlayers: 2","timestamp":"2025-06-21T18:32:25.575Z"}
+{"level":"info","message":"Player joined room: 59A9E0, playerCount: 2, sockets: 2","timestamp":"2025-06-21T18:32:37.259Z"}
+{"level":"info","message":"Socket utLRoPbVvYgkrV8nAAAD joined room 59A9E0, sockets: 2","timestamp":"2025-06-21T18:32:37.301Z"}
+{"level":"info","message":"Countdown for 59A9E0: 3","timestamp":"2025-06-21T18:32:38.263Z"}
+{"level":"info","message":"Countdown for 59A9E0: 2","timestamp":"2025-06-21T18:32:39.265Z"}
+{"level":"info","message":"Countdown for 59A9E0: 1","timestamp":"2025-06-21T18:32:40.273Z"}
+{"level":"info","message":"Countdown for 59A9E0: 0","timestamp":"2025-06-21T18:32:41.283Z"}
+{"level":"info","message":"Game started for room: 59A9E0","timestamp":"2025-06-21T18:32:41.284Z"}
+{"level":"info","message":"Attempting to start game for room 59A9E0, rooms available: E97342,59A9E0","timestamp":"2025-06-21T18:32:41.391Z"}
+{"level":"info","message":"Total cards in database: 50","timestamp":"2025-06-21T18:32:41.489Z"}
+{"level":"info","message":"Fetched 10 cards for room 59A9E0","timestamp":"2025-06-21T18:32:41.560Z"}
+{"level":"info","message":"Game initialized for room: 59A9E0, players: 2","timestamp":"2025-06-21T18:32:41.562Z"}
+{"level":"info","message":"Sent gameData to socket utLRoPbVvYgkrV8nAAAD in room 59A9E0","timestamp":"2025-06-21T18:32:41.566Z"}
+{"level":"info","message":"New socket connection: LesTHchOmkU9YI9gAAAF","timestamp":"2025-06-21T18:32:58.616Z"}
+{"level":"info","message":"Room created: E2F800, maxPlayers: 2","timestamp":"2025-06-21T18:33:04.107Z"}
+{"level":"info","message":"Player joined room: E2F800, playerCount: 2, sockets: 2","timestamp":"2025-06-21T18:33:11.938Z"}
+{"level":"info","message":"Socket LesTHchOmkU9YI9gAAAF joined room E2F800, sockets: 2","timestamp":"2025-06-21T18:33:11.953Z"}
+{"level":"info","message":"Countdown for E2F800: 3","timestamp":"2025-06-21T18:33:12.952Z"}
+{"level":"info","message":"Countdown for E2F800: 2","timestamp":"2025-06-21T18:33:13.962Z"}
+{"level":"info","message":"Countdown for E2F800: 1","timestamp":"2025-06-21T18:33:14.969Z"}
+{"level":"info","message":"Countdown for E2F800: 0","timestamp":"2025-06-21T18:33:15.973Z"}
+{"level":"info","message":"Game started for room: E2F800","timestamp":"2025-06-21T18:33:15.974Z"}
+{"level":"info","message":"Attempting to start game for room E2F800, rooms available: E97342,59A9E0,E2F800","timestamp":"2025-06-21T18:33:16.148Z"}
+{"level":"info","message":"Total cards in database: 50","timestamp":"2025-06-21T18:33:16.225Z"}
+{"level":"info","message":"Fetched 10 cards for room E2F800","timestamp":"2025-06-21T18:33:16.307Z"}
+{"level":"info","message":"Game initialized for room: E2F800, players: 2","timestamp":"2025-06-21T18:33:16.308Z"}
+{"level":"info","message":"Sent gameData to socket LesTHchOmkU9YI9gAAAF in room E2F800","timestamp":"2025-06-21T18:33:16.309Z"}
+{"level":"info","message":"New socket connection: IB3L_kyrshRZX_RbAAAH","timestamp":"2025-06-21T18:38:33.332Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T18:46:00.338Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T18:46:03.148Z"}
+{"level":"info","message":"Initial card count: 0","timestamp":"2025-06-21T18:46:03.254Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T18:46:16.688Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T18:46:17.616Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T18:46:17.712Z"}
+{"level":"info","message":"New socket connection: 2ySYOMBJS3zIiaV2AAAB","timestamp":"2025-06-21T18:46:42.519Z"}
+{"level":"info","message":"Room created: 1B425D, maxPlayers: 2","timestamp":"2025-06-21T18:46:53.465Z"}
+{"level":"info","message":"Player joined room: 1B425D, playerCount: 2, sockets: 2","timestamp":"2025-06-21T18:47:06.231Z"}
+{"level":"info","message":"Socket 2ySYOMBJS3zIiaV2AAAB joined room 1B425D, sockets: 2","timestamp":"2025-06-21T18:47:06.242Z"}
+{"level":"info","message":"Countdown for 1B425D: 3","timestamp":"2025-06-21T18:47:07.246Z"}
+{"level":"info","message":"Countdown for 1B425D: 2","timestamp":"2025-06-21T18:47:08.246Z"}
+{"level":"info","message":"Countdown for 1B425D: 1","timestamp":"2025-06-21T18:47:09.252Z"}
+{"level":"info","message":"Countdown for 1B425D: 0","timestamp":"2025-06-21T18:47:10.262Z"}
+{"level":"info","message":"Game started for room: 1B425D","timestamp":"2025-06-21T18:47:10.263Z"}
+{"level":"info","message":"Game initialized for room: 1B425D, players: 2","timestamp":"2025-06-21T18:47:10.825Z"}
+{"level":"info","message":"Sent gameData to socket 2ySYOMBJS3zIiaV2AAAB in room 1B425D","timestamp":"2025-06-21T18:47:10.930Z"}
+{"level":"info","message":"Stat submitted by 2ySYOMBJS3zIiaV2AAAB in room 1B425D: cardIndex=0, wickets=308","timestamp":"2025-06-21T18:47:34.910Z"}
+{"level":"info","message":"New socket connection: 6iDnIX_0fIXj18H4AAAD","timestamp":"2025-06-21T18:58:32.838Z"}
+{"level":"error","message":"Socket 6iDnIX_0fIXj18H4AAAD failed to join room E97342: Room not found","timestamp":"2025-06-21T18:58:32.842Z"}
+{"level":"info","message":"New socket connection: -p_APvFqtest61klAAAF","timestamp":"2025-06-21T19:00:08.951Z"}
+{"level":"info","message":"Socket -p_APvFqtest61klAAAF joined room 1B425D, sockets: 2","timestamp":"2025-06-21T19:00:08.955Z"}
+{"level":"info","message":"New socket connection: WS9VP-2fDtfNQbk6AAAH","timestamp":"2025-06-21T19:01:06.859Z"}
+{"level":"info","message":"Room created: 7C87AF, maxPlayers: 2","timestamp":"2025-06-21T19:01:14.236Z"}
+{"level":"info","message":"Socket WS9VP-2fDtfNQbk6AAAH joined room 7C87AF, sockets: 1","timestamp":"2025-06-21T19:01:14.249Z"}
+{"level":"info","message":"New socket connection: uIZVPBvLXqyIvNSsAAAJ","timestamp":"2025-06-21T19:01:54.425Z"}
+{"level":"info","message":"Socket uIZVPBvLXqyIvNSsAAAJ joined room 7C87AF, sockets: 2","timestamp":"2025-06-21T19:01:54.429Z"}
+{"level":"info","message":"New socket connection: 4sxm0G9uIJY4RO7gAAAL","timestamp":"2025-06-21T19:03:20.783Z"}
+{"level":"info","message":"New socket connection: Cx5lWdjtxI_i1PFVAAAN","timestamp":"2025-06-21T19:03:53.432Z"}
+{"level":"info","message":"Room created: 3BEFBA, maxPlayers: 2","timestamp":"2025-06-21T19:04:26.382Z"}
+{"level":"info","message":"Player joined room: 3BEFBA, playerCount: 2, sockets: 2","timestamp":"2025-06-21T19:04:34.976Z"}
+{"level":"info","message":"Socket Cx5lWdjtxI_i1PFVAAAN joined room 3BEFBA, sockets: 2","timestamp":"2025-06-21T19:04:34.987Z"}
+{"level":"info","message":"Countdown for 3BEFBA: 3","timestamp":"2025-06-21T19:04:35.997Z"}
+{"level":"info","message":"Countdown for 3BEFBA: 2","timestamp":"2025-06-21T19:04:36.988Z"}
+{"level":"info","message":"Countdown for 3BEFBA: 1","timestamp":"2025-06-21T19:04:37.989Z"}
+{"level":"info","message":"Countdown for 3BEFBA: 0","timestamp":"2025-06-21T19:04:39.002Z"}
+{"level":"info","message":"Game started for room: 3BEFBA","timestamp":"2025-06-21T19:04:39.002Z"}
+{"level":"info","message":"Game initialized for room: 3BEFBA, players: 2","timestamp":"2025-06-21T19:04:39.371Z"}
+{"level":"info","message":"Sent gameData to socket Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA","timestamp":"2025-06-21T19:04:39.376Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:45.463Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:47.286Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:48.052Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:48.273Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:48.474Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:48.690Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:50.104Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:50.338Z"}
+{"level":"info","message":"Stat submitted by Cx5lWdjtxI_i1PFVAAAN in room 3BEFBA: cardIndex=0, runs=9125","timestamp":"2025-06-21T19:04:50.554Z"}
+{"level":"info","message":"New socket connection: VSfvMuOQ3RmDo78CAAAP","timestamp":"2025-06-21T19:07:33.651Z"}
+{"level":"info","message":"New socket connection: 57Cvxit70mwSy-R4AAAR","timestamp":"2025-06-21T19:31:37.397Z"}
+{"level":"info","message":"Socket 57Cvxit70mwSy-R4AAAR joined room 7C87AF, sockets: 3","timestamp":"2025-06-21T19:31:37.458Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T19:34:54.165Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T19:34:55.421Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T19:34:55.499Z"}
+{"level":"info","message":"New socket connection: chPtpxPdNowPP9zIAAAB","timestamp":"2025-06-21T19:35:42.739Z"}
+{"level":"info","message":"Room created: A2BF87, maxPlayers: 2","timestamp":"2025-06-21T19:35:53.433Z"}
+{"level":"info","message":"Socket chPtpxPdNowPP9zIAAAB joined room A2BF87, sockets: 1","timestamp":"2025-06-21T19:35:53.474Z"}
+{"level":"info","message":"New socket connection: 5tYOVM-DrBKbIJ5KAAAD","timestamp":"2025-06-21T19:36:07.478Z"}
+{"level":"info","message":"Player joined room: A2BF87, playerCount: 2, sockets: 2","timestamp":"2025-06-21T19:36:23.802Z"}
+{"level":"info","message":"Socket 5tYOVM-DrBKbIJ5KAAAD joined room A2BF87, sockets: 2","timestamp":"2025-06-21T19:36:23.820Z"}
+{"level":"info","message":"Countdown for A2BF87: 3","timestamp":"2025-06-21T19:36:24.819Z"}
+{"level":"info","message":"Countdown for A2BF87: 2","timestamp":"2025-06-21T19:36:25.825Z"}
+{"level":"info","message":"Countdown for A2BF87: 1","timestamp":"2025-06-21T19:36:26.829Z"}
+{"level":"info","message":"Countdown for A2BF87: 0","timestamp":"2025-06-21T19:36:27.838Z"}
+{"level":"info","message":"Game started for room: A2BF87","timestamp":"2025-06-21T19:36:27.839Z"}
+{"level":"info","message":"Game initialized for room: A2BF87, players: 2","timestamp":"2025-06-21T19:36:28.195Z"}
+{"level":"info","message":"Sent gameData to socket chPtpxPdNowPP9zIAAAB in room A2BF87","timestamp":"2025-06-21T19:36:28.205Z"}
+{"level":"info","message":"Sent gameData to socket 5tYOVM-DrBKbIJ5KAAAD in room A2BF87","timestamp":"2025-06-21T19:36:28.206Z"}
+{"level":"info","message":"Game initialized for room: A2BF87, players: 2","timestamp":"2025-06-21T19:37:03.495Z"}
+{"level":"info","message":"Sent gameData to socket chPtpxPdNowPP9zIAAAB in room A2BF87","timestamp":"2025-06-21T19:37:03.503Z"}
+{"level":"info","message":"Sent gameData to socket 5tYOVM-DrBKbIJ5KAAAD in room A2BF87","timestamp":"2025-06-21T19:37:03.504Z"}
+{"level":"info","message":"Room created: 6DC01B, maxPlayers: 2","timestamp":"2025-06-21T19:37:24.571Z"}
+{"level":"info","message":"Socket 5tYOVM-DrBKbIJ5KAAAD joined room 6DC01B, sockets: 1","timestamp":"2025-06-21T19:37:24.581Z"}
+{"level":"info","message":"Player joined room: 6DC01B, playerCount: 2, sockets: 2","timestamp":"2025-06-21T19:37:42.793Z"}
+{"level":"info","message":"Socket chPtpxPdNowPP9zIAAAB joined room 6DC01B, sockets: 2","timestamp":"2025-06-21T19:37:42.807Z"}
+{"level":"info","message":"Countdown for 6DC01B: 3","timestamp":"2025-06-21T19:37:43.799Z"}
+{"level":"info","message":"Countdown for 6DC01B: 2","timestamp":"2025-06-21T19:37:44.803Z"}
+{"level":"info","message":"Countdown for 6DC01B: 1","timestamp":"2025-06-21T19:37:45.803Z"}
+{"level":"info","message":"Countdown for 6DC01B: 0","timestamp":"2025-06-21T19:37:46.817Z"}
+{"level":"info","message":"Game started for room: 6DC01B","timestamp":"2025-06-21T19:37:46.818Z"}
+{"level":"info","message":"Game initialized for room: 6DC01B, players: 2","timestamp":"2025-06-21T19:37:49.204Z"}
+{"level":"info","message":"Sent gameData to socket 5tYOVM-DrBKbIJ5KAAAD in room 6DC01B","timestamp":"2025-06-21T19:37:49.206Z"}
+{"level":"info","message":"Sent gameData to socket chPtpxPdNowPP9zIAAAB in room 6DC01B","timestamp":"2025-06-21T19:37:49.207Z"}
+{"level":"info","message":"Game initialized for room: 6DC01B, players: 2","timestamp":"2025-06-21T19:37:52.918Z"}
+{"level":"info","message":"Sent gameData to socket 5tYOVM-DrBKbIJ5KAAAD in room 6DC01B","timestamp":"2025-06-21T19:37:52.919Z"}
+{"level":"info","message":"Sent gameData to socket chPtpxPdNowPP9zIAAAB in room 6DC01B","timestamp":"2025-06-21T19:37:52.920Z"}
+{"level":"info","message":"Stat submitted by 5tYOVM-DrBKbIJ5KAAAD in room 6DC01B: cardIndex=0, runs=6262","timestamp":"2025-06-21T19:38:05.296Z"}
+{"level":"info","message":"New socket connection: gm9fJyDewek-Xt8_AAAF","timestamp":"2025-06-21T19:39:13.602Z"}
+{"level":"info","message":"Room created: 41E402, maxPlayers: 2","timestamp":"2025-06-21T19:39:18.937Z"}
+{"level":"info","message":"Socket gm9fJyDewek-Xt8_AAAF joined room 41E402, sockets: 1","timestamp":"2025-06-21T19:39:18.955Z"}
+{"level":"info","message":"New socket connection: coTCVi3LZ9z_JAXEAAAH","timestamp":"2025-06-21T19:39:19.131Z"}
+{"level":"info","message":"Player joined room: 41E402, playerCount: 2, sockets: 2","timestamp":"2025-06-21T19:39:33.161Z"}
+{"level":"info","message":"Socket coTCVi3LZ9z_JAXEAAAH joined room 41E402, sockets: 2","timestamp":"2025-06-21T19:39:33.189Z"}
+{"level":"info","message":"Countdown for 41E402: 3","timestamp":"2025-06-21T19:39:34.170Z"}
+{"level":"info","message":"Countdown for 41E402: 2","timestamp":"2025-06-21T19:39:35.178Z"}
+{"level":"info","message":"Countdown for 41E402: 1","timestamp":"2025-06-21T19:39:36.190Z"}
+{"level":"info","message":"Countdown for 41E402: 0","timestamp":"2025-06-21T19:39:37.205Z"}
+{"level":"info","message":"Game started for room: 41E402","timestamp":"2025-06-21T19:39:37.206Z"}
+{"level":"info","message":"Game initialized for room: 41E402, players: 2","timestamp":"2025-06-21T19:39:37.530Z"}
+{"level":"info","message":"Sent gameData to socket gm9fJyDewek-Xt8_AAAF in room 41E402","timestamp":"2025-06-21T19:39:37.532Z"}
+{"level":"info","message":"Sent gameData to socket coTCVi3LZ9z_JAXEAAAH in room 41E402","timestamp":"2025-06-21T19:39:37.533Z"}
+{"level":"info","message":"Game initialized for room: 41E402, players: 2","timestamp":"2025-06-21T19:39:37.633Z"}
+{"level":"info","message":"Sent gameData to socket gm9fJyDewek-Xt8_AAAF in room 41E402","timestamp":"2025-06-21T19:39:37.635Z"}
+{"level":"info","message":"Sent gameData to socket coTCVi3LZ9z_JAXEAAAH in room 41E402","timestamp":"2025-06-21T19:39:37.636Z"}
+{"level":"info","message":"Stat submitted by gm9fJyDewek-Xt8_AAAF in room 41E402: cardIndex=0, runs=1561","timestamp":"2025-06-21T19:39:50.605Z"}
+{"level":"info","message":"New socket connection: zbIqIr-PYHkhhRswAAAJ","timestamp":"2025-06-21T19:45:49.221Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T21:40:05.718Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T21:40:11.874Z"}
+{"level":"info","message":"Initial card count: 0","timestamp":"2025-06-21T21:40:11.957Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T21:40:31.203Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T21:40:32.403Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T21:40:32.501Z"}
+{"level":"info","message":"New socket connection: b7D4YDz1ZmVVUJzpAAAB","timestamp":"2025-06-21T21:40:48.013Z"}
+{"level":"info","message":"Room created: 11517A, maxPlayers: 2","timestamp":"2025-06-21T21:41:36.602Z"}
+{"level":"info","message":"Socket b7D4YDz1ZmVVUJzpAAAB joined room 11517A, sockets: 1","timestamp":"2025-06-21T21:41:37.770Z"}
+{"level":"info","message":"New socket connection: zjgUhrBjFB1B6GJ-AAAD","timestamp":"2025-06-21T21:41:41.232Z"}
+{"level":"info","message":"Player joined room: 11517A, playerCount: 2, sockets: 2","timestamp":"2025-06-21T21:41:51.675Z"}
+{"level":"info","message":"Socket zjgUhrBjFB1B6GJ-AAAD joined room 11517A, sockets: 2","timestamp":"2025-06-21T21:41:51.866Z"}
+{"level":"info","message":"Countdown for 11517A: 3","timestamp":"2025-06-21T21:41:52.680Z"}
+{"level":"info","message":"Countdown for 11517A: 2","timestamp":"2025-06-21T21:41:53.687Z"}
+{"level":"info","message":"Countdown for 11517A: 1","timestamp":"2025-06-21T21:41:54.694Z"}
+{"level":"info","message":"Countdown for 11517A: 0","timestamp":"2025-06-21T21:41:55.694Z"}
+{"level":"info","message":"Game started for room: 11517A","timestamp":"2025-06-21T21:41:55.695Z"}
+{"level":"info","message":"Game initialized for room: 11517A, players: 2","timestamp":"2025-06-21T21:41:59.312Z"}
+{"level":"info","message":"Sent gameData to socket b7D4YDz1ZmVVUJzpAAAB in room 11517A","timestamp":"2025-06-21T21:41:59.317Z"}
+{"level":"info","message":"Sent gameData to socket zjgUhrBjFB1B6GJ-AAAD in room 11517A","timestamp":"2025-06-21T21:41:59.318Z"}
+{"level":"info","message":"Stat quoted by b7D4YDz1ZmVVUJzpAAAB in room 11517A: cardIndex=0, runs=4755","timestamp":"2025-06-21T21:42:27.746Z"}
+{"level":"info","message":"Challenge timer for 11517A: 14s","timestamp":"2025-06-21T21:42:28.752Z"}
+{"level":"info","message":"Challenge timer for 11517A: 13s","timestamp":"2025-06-21T21:42:29.752Z"}
+{"level":"info","message":"Challenge timer for 11517A: 12s","timestamp":"2025-06-21T21:42:30.767Z"}
+{"level":"info","message":"Challenge timer for 11517A: 11s","timestamp":"2025-06-21T21:42:31.767Z"}
+{"level":"info","message":"Challenge timer for 11517A: 10s","timestamp":"2025-06-21T21:42:32.767Z"}
+{"level":"info","message":"Challenge timer for 11517A: 9s","timestamp":"2025-06-21T21:42:33.783Z"}
+{"level":"info","message":"Challenge timer for 11517A: 8s","timestamp":"2025-06-21T21:42:34.783Z"}
+{"level":"info","message":"Challenge timer for 11517A: 7s","timestamp":"2025-06-21T21:42:35.783Z"}
+{"level":"info","message":"Challenge timer for 11517A: 6s","timestamp":"2025-06-21T21:42:36.804Z"}
+{"level":"info","message":"Challenge timer for 11517A: 5s","timestamp":"2025-06-21T21:42:37.807Z"}
+{"level":"info","message":"Challenge timer for 11517A: 4s","timestamp":"2025-06-21T21:42:38.807Z"}
+{"level":"info","message":"Challenge timer for 11517A: 3s","timestamp":"2025-06-21T21:42:39.823Z"}
+{"level":"info","message":"Challenge timer for 11517A: 2s","timestamp":"2025-06-21T21:42:40.824Z"}
+{"level":"info","message":"Challenge timer for 11517A: 1s","timestamp":"2025-06-21T21:42:41.840Z"}
+{"level":"info","message":"Challenge timer for 11517A: 0s","timestamp":"2025-06-21T21:42:42.855Z"}
+{"level":"info","message":"Auto-GaveUp for zjgUhrBjFB1B6GJ-AAAD in room 11517A due to timeout","timestamp":"2025-06-21T21:42:43.856Z"}
+{"level":"info","message":"Sent roundResult to socket b7D4YDz1ZmVVUJzpAAAB in room 11517A","timestamp":"2025-06-21T21:42:43.858Z"}
+{"level":"info","message":"Sent roundResult to socket zjgUhrBjFB1B6GJ-AAAD in room 11517A","timestamp":"2025-06-21T21:42:43.858Z"}
+{"level":"info","message":"New socket connection: 55wsIOxs0lpNgolyAAAF","timestamp":"2025-06-21T21:42:53.657Z"}
+{"level":"info","message":"New socket connection: Cn8t_Y3cms_hZVkmAAAH","timestamp":"2025-06-21T21:44:38.359Z"}
+{"level":"info","message":"New socket connection: GaLvA2qV7xqx9KfdAAAJ","timestamp":"2025-06-21T21:45:38.532Z"}
+{"level":"info","message":"New socket connection: -q0t7qzlhGX60j1EAAAL","timestamp":"2025-06-21T21:45:41.961Z"}
+{"level":"info","message":"Room created: 4DE3C9, maxPlayers: 2","timestamp":"2025-06-21T21:45:50.487Z"}
+{"level":"info","message":"Socket GaLvA2qV7xqx9KfdAAAJ joined room 4DE3C9, sockets: 1","timestamp":"2025-06-21T21:45:50.509Z"}
+{"level":"info","message":"Player joined room: 4DE3C9, playerCount: 2, sockets: 2","timestamp":"2025-06-21T21:46:02.050Z"}
+{"level":"info","message":"Socket -q0t7qzlhGX60j1EAAAL joined room 4DE3C9, sockets: 2","timestamp":"2025-06-21T21:46:02.074Z"}
+{"level":"info","message":"Countdown for 4DE3C9: 3","timestamp":"2025-06-21T21:46:03.063Z"}
+{"level":"info","message":"Countdown for 4DE3C9: 2","timestamp":"2025-06-21T21:46:04.074Z"}
+{"level":"info","message":"Countdown for 4DE3C9: 1","timestamp":"2025-06-21T21:46:05.076Z"}
+{"level":"info","message":"Countdown for 4DE3C9: 0","timestamp":"2025-06-21T21:46:06.077Z"}
+{"level":"info","message":"Game started for room: 4DE3C9","timestamp":"2025-06-21T21:46:06.077Z"}
+{"level":"info","message":"Game initialized for room: 4DE3C9, players: 2","timestamp":"2025-06-21T21:46:06.410Z"}
+{"level":"info","message":"Sent gameData to socket GaLvA2qV7xqx9KfdAAAJ in room 4DE3C9","timestamp":"2025-06-21T21:46:06.416Z"}
+{"level":"info","message":"Sent gameData to socket -q0t7qzlhGX60j1EAAAL in room 4DE3C9","timestamp":"2025-06-21T21:46:06.417Z"}
+{"level":"info","message":"Game initialized for room: 4DE3C9, players: 2","timestamp":"2025-06-21T21:46:07.142Z"}
+{"level":"info","message":"Sent gameData to socket GaLvA2qV7xqx9KfdAAAJ in room 4DE3C9","timestamp":"2025-06-21T21:46:07.143Z"}
+{"level":"info","message":"Sent gameData to socket -q0t7qzlhGX60j1EAAAL in room 4DE3C9","timestamp":"2025-06-21T21:46:07.144Z"}
+{"level":"info","message":"Room created: 47CF42, maxPlayers: 2","timestamp":"2025-06-21T21:47:18.776Z"}
+{"level":"info","message":"Socket GaLvA2qV7xqx9KfdAAAJ joined room 47CF42, sockets: 1","timestamp":"2025-06-21T21:47:18.817Z"}
+{"level":"info","message":"Player joined room: 47CF42, playerCount: 2, sockets: 2","timestamp":"2025-06-21T21:47:28.780Z"}
+{"level":"info","message":"Socket -q0t7qzlhGX60j1EAAAL joined room 47CF42, sockets: 2","timestamp":"2025-06-21T21:47:28.800Z"}
+{"level":"info","message":"Countdown for 47CF42: 3","timestamp":"2025-06-21T21:47:29.784Z"}
+{"level":"info","message":"Countdown for 47CF42: 2","timestamp":"2025-06-21T21:47:30.800Z"}
+{"level":"info","message":"Countdown for 47CF42: 1","timestamp":"2025-06-21T21:47:31.801Z"}
+{"level":"info","message":"Countdown for 47CF42: 0","timestamp":"2025-06-21T21:47:32.801Z"}
+{"level":"info","message":"Game started for room: 47CF42","timestamp":"2025-06-21T21:47:32.802Z"}
+{"level":"info","message":"Game initialized for room: 47CF42, players: 2","timestamp":"2025-06-21T21:47:33.136Z"}
+{"level":"info","message":"Sent gameData to socket GaLvA2qV7xqx9KfdAAAJ in room 47CF42","timestamp":"2025-06-21T21:47:33.137Z"}
+{"level":"info","message":"Sent gameData to socket -q0t7qzlhGX60j1EAAAL in room 47CF42","timestamp":"2025-06-21T21:47:33.137Z"}
+{"level":"info","message":"Game initialized for room: 47CF42, players: 2","timestamp":"2025-06-21T21:47:33.171Z"}
+{"level":"info","message":"Sent gameData to socket GaLvA2qV7xqx9KfdAAAJ in room 47CF42","timestamp":"2025-06-21T21:47:33.172Z"}
+{"level":"info","message":"Sent gameData to socket -q0t7qzlhGX60j1EAAAL in room 47CF42","timestamp":"2025-06-21T21:47:33.173Z"}
+{"level":"info","message":"Stat quoted by GaLvA2qV7xqx9KfdAAAJ in room 47CF42: cardIndex=0, wickets=290","timestamp":"2025-06-21T21:47:40.843Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 14s","timestamp":"2025-06-21T21:47:41.848Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 13s","timestamp":"2025-06-21T21:47:42.847Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 12s","timestamp":"2025-06-21T21:47:43.847Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 11s","timestamp":"2025-06-21T21:47:44.861Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 10s","timestamp":"2025-06-21T21:47:45.864Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 9s","timestamp":"2025-06-21T21:47:46.878Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 8s","timestamp":"2025-06-21T21:47:47.879Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 7s","timestamp":"2025-06-21T21:47:48.879Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 6s","timestamp":"2025-06-21T21:47:49.879Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 5s","timestamp":"2025-06-21T21:47:50.893Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 4s","timestamp":"2025-06-21T21:47:51.894Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 3s","timestamp":"2025-06-21T21:47:52.895Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 2s","timestamp":"2025-06-21T21:47:53.910Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 1s","timestamp":"2025-06-21T21:47:54.911Z"}
+{"level":"info","message":"Challenge timer for 47CF42: 0s","timestamp":"2025-06-21T21:47:55.913Z"}
+{"level":"info","message":"Auto-GaveUp for -q0t7qzlhGX60j1EAAAL in room 47CF42 due to timeout","timestamp":"2025-06-21T21:47:56.925Z"}
+{"level":"info","message":"Sent roundResult to socket GaLvA2qV7xqx9KfdAAAJ in room 47CF42","timestamp":"2025-06-21T21:47:56.927Z"}
+{"level":"info","message":"Sent roundResult to socket -q0t7qzlhGX60j1EAAAL in room 47CF42","timestamp":"2025-06-21T21:47:56.928Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T21:56:57.136Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T21:56:59.899Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T21:56:59.965Z"}
+{"level":"info","message":"New socket connection: _SsMPj05exFo7nCRAAAB","timestamp":"2025-06-21T21:57:47.852Z"}
+{"level":"info","message":"New socket connection: Ph92HqYTuW2dEsNOAAAD","timestamp":"2025-06-21T21:57:50.168Z"}
+{"level":"info","message":"Room created: B63D51, maxPlayers: 2","timestamp":"2025-06-21T21:58:12.115Z"}
+{"level":"info","message":"Socket _SsMPj05exFo7nCRAAAB joined room B63D51, sockets: 1","timestamp":"2025-06-21T21:58:12.142Z"}
+{"level":"info","message":"Player joined room: B63D51, playerCount: 2, sockets: 2","timestamp":"2025-06-21T21:58:24.443Z"}
+{"level":"info","message":"Socket Ph92HqYTuW2dEsNOAAAD joined room B63D51, sockets: 2","timestamp":"2025-06-21T21:58:24.456Z"}
+{"level":"info","message":"Countdown for B63D51: 3","timestamp":"2025-06-21T21:58:25.460Z"}
+{"level":"info","message":"Countdown for B63D51: 2","timestamp":"2025-06-21T21:58:26.470Z"}
+{"level":"info","message":"Countdown for B63D51: 1","timestamp":"2025-06-21T21:58:27.480Z"}
+{"level":"info","message":"Countdown for B63D51: 0","timestamp":"2025-06-21T21:58:28.485Z"}
+{"level":"info","message":"Game started for room: B63D51","timestamp":"2025-06-21T21:58:28.486Z"}
+{"level":"info","message":"Game initialized for room: B63D51, players: 2","timestamp":"2025-06-21T21:58:29.238Z"}
+{"level":"info","message":"Sent gameData to socket _SsMPj05exFo7nCRAAAB in room B63D51","timestamp":"2025-06-21T21:58:29.241Z"}
+{"level":"info","message":"Sent gameData to socket Ph92HqYTuW2dEsNOAAAD in room B63D51","timestamp":"2025-06-21T21:58:29.242Z"}
+{"level":"info","message":"Game initialized for room: B63D51, players: 2","timestamp":"2025-06-21T21:58:30.239Z"}
+{"level":"info","message":"Sent gameData to socket _SsMPj05exFo7nCRAAAB in room B63D51","timestamp":"2025-06-21T21:58:30.240Z"}
+{"level":"info","message":"Sent gameData to socket Ph92HqYTuW2dEsNOAAAD in room B63D51","timestamp":"2025-06-21T21:58:30.241Z"}
+{"level":"info","message":"Stat quoted by _SsMPj05exFo7nCRAAAB in room B63D51: cardIndex=0, runs=7409","timestamp":"2025-06-21T21:58:36.039Z"}
+{"level":"info","message":"Challenge timer for B63D51: 14s","timestamp":"2025-06-21T21:58:37.045Z"}
+{"level":"info","message":"Challenge timer for B63D51: 13s","timestamp":"2025-06-21T21:58:38.056Z"}
+{"level":"info","message":"Challenge timer for B63D51: 12s","timestamp":"2025-06-21T21:58:39.070Z"}
+{"level":"info","message":"Challenge timer for B63D51: 11s","timestamp":"2025-06-21T21:58:40.081Z"}
+{"level":"info","message":"Challenge timer for B63D51: 10s","timestamp":"2025-06-21T21:58:41.088Z"}
+{"level":"info","message":"Challenge timer for B63D51: 9s","timestamp":"2025-06-21T21:58:42.103Z"}
+{"level":"info","message":"Challenge timer for B63D51: 8s","timestamp":"2025-06-21T21:58:43.110Z"}
+{"level":"info","message":"Challenge timer for B63D51: 7s","timestamp":"2025-06-21T21:58:44.110Z"}
+{"level":"info","message":"Challenge timer for B63D51: 6s","timestamp":"2025-06-21T21:58:45.124Z"}
+{"level":"info","message":"Challenge timer for B63D51: 5s","timestamp":"2025-06-21T21:58:46.137Z"}
+{"level":"info","message":"Challenge timer for B63D51: 4s","timestamp":"2025-06-21T21:58:47.149Z"}
+{"level":"info","message":"Challenge timer for B63D51: 3s","timestamp":"2025-06-21T21:58:48.152Z"}
+{"level":"info","message":"Challenge timer for B63D51: 2s","timestamp":"2025-06-21T21:58:49.164Z"}
+{"level":"info","message":"Challenge timer for B63D51: 1s","timestamp":"2025-06-21T21:58:50.178Z"}
+{"level":"info","message":"Challenge timer for B63D51: 0s","timestamp":"2025-06-21T21:58:51.190Z"}
+{"level":"info","message":"Auto-GaveUp for Ph92HqYTuW2dEsNOAAAD in room B63D51 due to timeout","timestamp":"2025-06-21T21:58:52.190Z"}
+{"level":"info","message":"Sent roundResult to socket _SsMPj05exFo7nCRAAAB in room B63D51","timestamp":"2025-06-21T21:58:52.194Z"}
+{"level":"info","message":"Sent roundResult to socket Ph92HqYTuW2dEsNOAAAD in room B63D51","timestamp":"2025-06-21T21:58:52.195Z"}
+{"level":"info","message":"New socket connection: 7UNooeiUyzPEwphLAAAF","timestamp":"2025-06-21T22:00:55.337Z"}
+{"level":"info","message":"New socket connection: -5P1tFo3JHG9Itx1AAAH","timestamp":"2025-06-21T22:03:06.456Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T22:06:40.419Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T22:06:42.343Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T22:06:42.445Z"}
+{"level":"info","message":"New socket connection: Bc4AWvGoKcaIlF5gAAAB","timestamp":"2025-06-21T22:07:02.180Z"}
+{"level":"info","message":"New socket connection: BM99PGmdd8UotJvjAAAD","timestamp":"2025-06-21T22:07:03.703Z"}
+{"level":"info","message":"Room created: 311AEC, maxPlayers: 2","timestamp":"2025-06-21T22:07:08.689Z"}
+{"level":"info","message":"Socket Bc4AWvGoKcaIlF5gAAAB joined room 311AEC, sockets: 1","timestamp":"2025-06-21T22:07:08.707Z"}
+{"level":"info","message":"Player joined room: 311AEC, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:07:20.394Z"}
+{"level":"info","message":"Socket BM99PGmdd8UotJvjAAAD joined room 311AEC, sockets: 2","timestamp":"2025-06-21T22:07:20.486Z"}
+{"level":"info","message":"Countdown for 311AEC: 3","timestamp":"2025-06-21T22:07:21.405Z"}
+{"level":"info","message":"Countdown for 311AEC: 2","timestamp":"2025-06-21T22:07:22.416Z"}
+{"level":"info","message":"Countdown for 311AEC: 1","timestamp":"2025-06-21T22:07:23.424Z"}
+{"level":"info","message":"Countdown for 311AEC: 0","timestamp":"2025-06-21T22:07:24.436Z"}
+{"level":"info","message":"Game started for room: 311AEC","timestamp":"2025-06-21T22:07:24.437Z"}
+{"level":"info","message":"Game initialized for room: 311AEC, players: 2","timestamp":"2025-06-21T22:07:24.731Z"}
+{"level":"info","message":"Sent gameData to socket Bc4AWvGoKcaIlF5gAAAB in room 311AEC","timestamp":"2025-06-21T22:07:24.735Z"}
+{"level":"info","message":"Sent gameData to socket BM99PGmdd8UotJvjAAAD in room 311AEC","timestamp":"2025-06-21T22:07:24.736Z"}
+{"level":"info","message":"Game initialized for room: 311AEC, players: 2","timestamp":"2025-06-21T22:07:24.941Z"}
+{"level":"info","message":"Sent gameData to socket Bc4AWvGoKcaIlF5gAAAB in room 311AEC","timestamp":"2025-06-21T22:07:24.942Z"}
+{"level":"info","message":"Sent gameData to socket BM99PGmdd8UotJvjAAAD in room 311AEC","timestamp":"2025-06-21T22:07:24.943Z"}
+{"level":"info","message":"Stat quoted by Bc4AWvGoKcaIlF5gAAAB in room 311AEC: cardIndex=0, runs=7495","timestamp":"2025-06-21T22:07:30.747Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 14s","timestamp":"2025-06-21T22:07:31.755Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 13s","timestamp":"2025-06-21T22:07:32.768Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 12s","timestamp":"2025-06-21T22:07:33.780Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 11s","timestamp":"2025-06-21T22:07:34.793Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 10s","timestamp":"2025-06-21T22:07:35.809Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 9s","timestamp":"2025-06-21T22:07:36.820Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 8s","timestamp":"2025-06-21T22:07:37.821Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 7s","timestamp":"2025-06-21T22:07:38.830Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 6s","timestamp":"2025-06-21T22:07:39.838Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 5s","timestamp":"2025-06-21T22:07:40.845Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 4s","timestamp":"2025-06-21T22:07:41.859Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 3s","timestamp":"2025-06-21T22:07:42.869Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 2s","timestamp":"2025-06-21T22:07:43.876Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 1s","timestamp":"2025-06-21T22:07:44.888Z"}
+{"level":"info","message":"Challenge timer for 311AEC: 0s","timestamp":"2025-06-21T22:07:45.897Z"}
+{"level":"info","message":"Auto-GaveUp for BM99PGmdd8UotJvjAAAD in room 311AEC due to timeout","timestamp":"2025-06-21T22:07:46.904Z"}
+{"level":"info","message":"Sent roundResult to socket Bc4AWvGoKcaIlF5gAAAB in room 311AEC","timestamp":"2025-06-21T22:07:46.907Z"}
+{"level":"info","message":"Sent roundResult to socket BM99PGmdd8UotJvjAAAD in room 311AEC","timestamp":"2025-06-21T22:07:46.907Z"}
+{"level":"info","message":"New socket connection: jOlMv4BiIbb1TVVRAAAF","timestamp":"2025-06-21T22:12:35.028Z"}
+{"level":"info","message":"New socket connection: Fgvo7YDSPJEbx5cdAAAH","timestamp":"2025-06-21T22:12:36.460Z"}
+{"level":"info","message":"Room created: B4A3A7, maxPlayers: 2","timestamp":"2025-06-21T22:12:40.222Z"}
+{"level":"info","message":"Socket Fgvo7YDSPJEbx5cdAAAH joined room B4A3A7, sockets: 1","timestamp":"2025-06-21T22:12:40.251Z"}
+{"level":"info","message":"Player joined room: B4A3A7, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:12:57.025Z"}
+{"level":"info","message":"Socket jOlMv4BiIbb1TVVRAAAF joined room B4A3A7, sockets: 2","timestamp":"2025-06-21T22:12:57.050Z"}
+{"level":"info","message":"Countdown for B4A3A7: 3","timestamp":"2025-06-21T22:12:58.032Z"}
+{"level":"info","message":"Countdown for B4A3A7: 2","timestamp":"2025-06-21T22:12:59.040Z"}
+{"level":"info","message":"Countdown for B4A3A7: 1","timestamp":"2025-06-21T22:13:00.050Z"}
+{"level":"info","message":"Countdown for B4A3A7: 0","timestamp":"2025-06-21T22:13:01.063Z"}
+{"level":"info","message":"Game started for room: B4A3A7","timestamp":"2025-06-21T22:13:01.064Z"}
+{"level":"info","message":"Game initialized for room: B4A3A7, players: 2","timestamp":"2025-06-21T22:13:01.328Z"}
+{"level":"info","message":"Sent gameData to socket Fgvo7YDSPJEbx5cdAAAH in room B4A3A7","timestamp":"2025-06-21T22:13:01.332Z"}
+{"level":"info","message":"Sent gameData to socket jOlMv4BiIbb1TVVRAAAF in room B4A3A7","timestamp":"2025-06-21T22:13:01.333Z"}
+{"level":"info","message":"Game initialized for room: B4A3A7, players: 2","timestamp":"2025-06-21T22:13:05.082Z"}
+{"level":"info","message":"Sent gameData to socket Fgvo7YDSPJEbx5cdAAAH in room B4A3A7","timestamp":"2025-06-21T22:13:05.091Z"}
+{"level":"info","message":"Sent gameData to socket jOlMv4BiIbb1TVVRAAAF in room B4A3A7","timestamp":"2025-06-21T22:13:05.092Z"}
+{"level":"info","message":"Stat quoted by Fgvo7YDSPJEbx5cdAAAH in room B4A3A7: cardIndex=0, runs=6262","timestamp":"2025-06-21T22:13:10.965Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 14s","timestamp":"2025-06-21T22:13:11.972Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 13s","timestamp":"2025-06-21T22:13:12.983Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 12s","timestamp":"2025-06-21T22:13:13.994Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 11s","timestamp":"2025-06-21T22:13:15.008Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 10s","timestamp":"2025-06-21T22:13:16.017Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 9s","timestamp":"2025-06-21T22:13:17.027Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 8s","timestamp":"2025-06-21T22:13:18.034Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 7s","timestamp":"2025-06-21T22:13:19.044Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 6s","timestamp":"2025-06-21T22:13:20.053Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 5s","timestamp":"2025-06-21T22:13:21.063Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 4s","timestamp":"2025-06-21T22:13:22.072Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 3s","timestamp":"2025-06-21T22:13:23.080Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 2s","timestamp":"2025-06-21T22:13:24.092Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 1s","timestamp":"2025-06-21T22:13:25.099Z"}
+{"level":"info","message":"Challenge timer for B4A3A7: 0s","timestamp":"2025-06-21T22:13:26.104Z"}
+{"level":"info","message":"Auto-GaveUp for jOlMv4BiIbb1TVVRAAAF in room B4A3A7 due to timeout","timestamp":"2025-06-21T22:13:27.114Z"}
+{"level":"info","message":"Sent roundResult to socket Fgvo7YDSPJEbx5cdAAAH in room B4A3A7","timestamp":"2025-06-21T22:13:27.115Z"}
+{"level":"info","message":"Sent roundResult to socket jOlMv4BiIbb1TVVRAAAF in room B4A3A7","timestamp":"2025-06-21T22:13:27.116Z"}
+{"level":"info","message":"New socket connection: TReOvt9CNyumv1k-AAAJ","timestamp":"2025-06-21T22:13:34.835Z"}
+{"level":"info","message":"New socket connection: nQLDNUUWI_uIT5a-AAAL","timestamp":"2025-06-21T22:14:02.882Z"}
+{"level":"info","message":"New socket connection: esQXQdkc2a46sqOjAAAN","timestamp":"2025-06-21T22:14:35.165Z"}
+{"level":"info","message":"New socket connection: jybArQWuNUDxdhLOAAAP","timestamp":"2025-06-21T22:14:46.392Z"}
+{"level":"info","message":"Room created: 6A5EF6, maxPlayers: 2","timestamp":"2025-06-21T22:14:47.555Z"}
+{"level":"info","message":"Socket esQXQdkc2a46sqOjAAAN joined room 6A5EF6, sockets: 1","timestamp":"2025-06-21T22:14:47.578Z"}
+{"level":"info","message":"Player joined room: 6A5EF6, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:14:57.451Z"}
+{"level":"info","message":"Socket jybArQWuNUDxdhLOAAAP joined room 6A5EF6, sockets: 2","timestamp":"2025-06-21T22:14:57.484Z"}
+{"level":"info","message":"Countdown for 6A5EF6: 3","timestamp":"2025-06-21T22:14:58.458Z"}
+{"level":"info","message":"Countdown for 6A5EF6: 2","timestamp":"2025-06-21T22:14:59.466Z"}
+{"level":"info","message":"Countdown for 6A5EF6: 1","timestamp":"2025-06-21T22:15:00.476Z"}
+{"level":"info","message":"Countdown for 6A5EF6: 0","timestamp":"2025-06-21T22:15:01.485Z"}
+{"level":"info","message":"Game started for room: 6A5EF6","timestamp":"2025-06-21T22:15:01.485Z"}
+{"level":"info","message":"Game initialized for room: 6A5EF6, players: 2","timestamp":"2025-06-21T22:15:02.330Z"}
+{"level":"info","message":"Sent gameData to socket esQXQdkc2a46sqOjAAAN in room 6A5EF6","timestamp":"2025-06-21T22:15:02.334Z"}
+{"level":"info","message":"Sent gameData to socket jybArQWuNUDxdhLOAAAP in room 6A5EF6","timestamp":"2025-06-21T22:15:02.334Z"}
+{"level":"info","message":"Game initialized for room: 6A5EF6, players: 2","timestamp":"2025-06-21T22:15:02.547Z"}
+{"level":"info","message":"Sent gameData to socket esQXQdkc2a46sqOjAAAN in room 6A5EF6","timestamp":"2025-06-21T22:15:02.548Z"}
+{"level":"info","message":"Sent gameData to socket jybArQWuNUDxdhLOAAAP in room 6A5EF6","timestamp":"2025-06-21T22:15:02.548Z"}
+{"level":"info","message":"Stat quoted by esQXQdkc2a46sqOjAAAN in room 6A5EF6: cardIndex=0, runs=6943","timestamp":"2025-06-21T22:15:08.516Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 14s","timestamp":"2025-06-21T22:15:09.520Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 13s","timestamp":"2025-06-21T22:15:10.532Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 12s","timestamp":"2025-06-21T22:15:11.547Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 11s","timestamp":"2025-06-21T22:15:12.554Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 10s","timestamp":"2025-06-21T22:15:13.564Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 9s","timestamp":"2025-06-21T22:15:14.574Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 8s","timestamp":"2025-06-21T22:15:15.588Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 7s","timestamp":"2025-06-21T22:15:16.598Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 6s","timestamp":"2025-06-21T22:15:17.603Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 5s","timestamp":"2025-06-21T22:15:18.611Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 4s","timestamp":"2025-06-21T22:15:19.618Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 3s","timestamp":"2025-06-21T22:15:20.625Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 2s","timestamp":"2025-06-21T22:15:21.635Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 1s","timestamp":"2025-06-21T22:15:22.641Z"}
+{"level":"info","message":"Challenge timer for 6A5EF6: 0s","timestamp":"2025-06-21T22:15:23.651Z"}
+{"level":"info","message":"Auto-GaveUp for jybArQWuNUDxdhLOAAAP in room 6A5EF6 due to timeout","timestamp":"2025-06-21T22:15:24.657Z"}
+{"level":"info","message":"Sent roundResult to socket esQXQdkc2a46sqOjAAAN in room 6A5EF6","timestamp":"2025-06-21T22:15:24.659Z"}
+{"level":"info","message":"Sent roundResult to socket jybArQWuNUDxdhLOAAAP in room 6A5EF6","timestamp":"2025-06-21T22:15:24.659Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T22:25:43.798Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T22:25:44.943Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T22:25:45.025Z"}
+{"level":"info","message":"New socket connection: fK2YFnTWT5-QzVw2AAAB","timestamp":"2025-06-21T22:25:47.537Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T22:26:10.249Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T22:26:11.159Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T22:26:11.226Z"}
+{"level":"info","message":"New socket connection: Y5btEF1ptD7fBQQcAAAB","timestamp":"2025-06-21T22:26:34.336Z"}
+{"level":"info","message":"New socket connection: TNxtf0kjEibp_EH6AAAD","timestamp":"2025-06-21T22:26:36.061Z"}
+{"level":"info","message":"Room created: 6C38CF, maxPlayers: 2","timestamp":"2025-06-21T22:26:43.099Z"}
+{"level":"info","message":"Socket Y5btEF1ptD7fBQQcAAAB joined room 6C38CF, sockets: 1","timestamp":"2025-06-21T22:26:43.128Z"}
+{"level":"info","message":"Player joined room: 6C38CF, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:26:57.807Z"}
+{"level":"info","message":"Socket TNxtf0kjEibp_EH6AAAD joined room 6C38CF, sockets: 2","timestamp":"2025-06-21T22:26:57.822Z"}
+{"level":"info","message":"Countdown for 6C38CF: 3","timestamp":"2025-06-21T22:26:58.823Z"}
+{"level":"info","message":"Countdown for 6C38CF: 2","timestamp":"2025-06-21T22:26:59.823Z"}
+{"level":"info","message":"Countdown for 6C38CF: 1","timestamp":"2025-06-21T22:27:00.835Z"}
+{"level":"info","message":"Countdown for 6C38CF: 0","timestamp":"2025-06-21T22:27:01.850Z"}
+{"level":"info","message":"Game started for room: 6C38CF","timestamp":"2025-06-21T22:27:01.851Z"}
+{"level":"info","message":"Game initialized for room: 6C38CF, players: 2","timestamp":"2025-06-21T22:27:02.110Z"}
+{"level":"info","message":"Sent gameData to socket Y5btEF1ptD7fBQQcAAAB in room 6C38CF","timestamp":"2025-06-21T22:27:02.114Z"}
+{"level":"info","message":"Sent gameData to socket TNxtf0kjEibp_EH6AAAD in room 6C38CF","timestamp":"2025-06-21T22:27:02.115Z"}
+{"level":"info","message":"Game initialized for room: 6C38CF, players: 2","timestamp":"2025-06-21T22:27:02.268Z"}
+{"level":"info","message":"Sent gameData to socket Y5btEF1ptD7fBQQcAAAB in room 6C38CF","timestamp":"2025-06-21T22:27:02.269Z"}
+{"level":"info","message":"Sent gameData to socket TNxtf0kjEibp_EH6AAAD in room 6C38CF","timestamp":"2025-06-21T22:27:02.270Z"}
+{"level":"info","message":"Stat quoted by Y5btEF1ptD7fBQQcAAAB in room 6C38CF: cardIndex=0, runs=7248","timestamp":"2025-06-21T22:27:05.136Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 14s","timestamp":"2025-06-21T22:27:06.149Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 13s","timestamp":"2025-06-21T22:27:07.150Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 12s","timestamp":"2025-06-21T22:27:08.165Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 11s","timestamp":"2025-06-21T22:27:09.165Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 10s","timestamp":"2025-06-21T22:27:10.181Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 9s","timestamp":"2025-06-21T22:27:11.182Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 8s","timestamp":"2025-06-21T22:27:12.183Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 7s","timestamp":"2025-06-21T22:27:13.187Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 6s","timestamp":"2025-06-21T22:27:14.197Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 5s","timestamp":"2025-06-21T22:27:15.198Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 4s","timestamp":"2025-06-21T22:27:16.199Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 3s","timestamp":"2025-06-21T22:27:17.200Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 2s","timestamp":"2025-06-21T22:27:18.203Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 1s","timestamp":"2025-06-21T22:27:19.212Z"}
+{"level":"info","message":"Challenge timer for 6C38CF: 0s","timestamp":"2025-06-21T22:27:20.212Z"}
+{"level":"info","message":"Auto-GaveUp for TNxtf0kjEibp_EH6AAAD in room 6C38CF due to timeout","timestamp":"2025-06-21T22:27:21.213Z"}
+{"level":"info","message":"Sent roundResult to socket Y5btEF1ptD7fBQQcAAAB in room 6C38CF","timestamp":"2025-06-21T22:27:21.215Z"}
+{"level":"info","message":"Sent roundResult to socket TNxtf0kjEibp_EH6AAAD in room 6C38CF","timestamp":"2025-06-21T22:27:21.216Z"}
+{"level":"info","message":"New socket connection: _3m3USWfLlk7nJs0AAAF","timestamp":"2025-06-21T22:29:05.959Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T22:35:10.901Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T22:35:14.097Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T22:35:14.179Z"}
+{"level":"info","message":"New socket connection: 9DOmaSQyMA30JXpJAAAB","timestamp":"2025-06-21T22:35:51.521Z"}
+{"level":"info","message":"New socket connection: PpPBf2QThgoo_2hMAAAD","timestamp":"2025-06-21T22:35:59.129Z"}
+{"level":"info","message":"Room created: 8281C4, maxPlayers: 2","timestamp":"2025-06-21T22:36:08.746Z"}
+{"level":"info","message":"Socket 9DOmaSQyMA30JXpJAAAB joined room 8281C4, sockets: 1","timestamp":"2025-06-21T22:36:08.771Z"}
+{"level":"info","message":"Player joined room: 8281C4, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:36:20.158Z"}
+{"level":"info","message":"Socket PpPBf2QThgoo_2hMAAAD joined room 8281C4, sockets: 2","timestamp":"2025-06-21T22:36:20.176Z"}
+{"level":"info","message":"Countdown for 8281C4: 3","timestamp":"2025-06-21T22:36:21.170Z"}
+{"level":"info","message":"Countdown for 8281C4: 2","timestamp":"2025-06-21T22:36:22.177Z"}
+{"level":"info","message":"Countdown for 8281C4: 1","timestamp":"2025-06-21T22:36:23.188Z"}
+{"level":"info","message":"Countdown for 8281C4: 0","timestamp":"2025-06-21T22:36:24.199Z"}
+{"level":"info","message":"Game started for room: 8281C4","timestamp":"2025-06-21T22:36:24.200Z"}
+{"level":"info","message":"Game initialized for room: 8281C4, players: 2","timestamp":"2025-06-21T22:36:27.066Z"}
+{"level":"info","message":"Sent gameData to socket 9DOmaSQyMA30JXpJAAAB in room 8281C4","timestamp":"2025-06-21T22:36:27.069Z"}
+{"level":"info","message":"Sent gameData to socket PpPBf2QThgoo_2hMAAAD in room 8281C4","timestamp":"2025-06-21T22:36:27.070Z"}
+{"level":"info","message":"Game initialized for room: 8281C4, players: 2","timestamp":"2025-06-21T22:36:43.097Z"}
+{"level":"info","message":"Sent gameData to socket 9DOmaSQyMA30JXpJAAAB in room 8281C4","timestamp":"2025-06-21T22:36:43.098Z"}
+{"level":"info","message":"Sent gameData to socket PpPBf2QThgoo_2hMAAAD in room 8281C4","timestamp":"2025-06-21T22:36:43.099Z"}
+{"level":"info","message":"New socket connection: cqHxCNd-nILDMZ_OAAAF","timestamp":"2025-06-21T22:37:08.883Z"}
+{"level":"info","message":"New socket connection: SYMR3m6oeOcZXgzYAAAH","timestamp":"2025-06-21T22:37:13.852Z"}
+{"level":"info","message":"Room created: AE247F, maxPlayers: 2","timestamp":"2025-06-21T22:37:22.366Z"}
+{"level":"info","message":"Socket cqHxCNd-nILDMZ_OAAAF joined room AE247F, sockets: 1","timestamp":"2025-06-21T22:37:22.385Z"}
+{"level":"info","message":"Player joined room: AE247F, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:37:33.366Z"}
+{"level":"info","message":"Socket SYMR3m6oeOcZXgzYAAAH joined room AE247F, sockets: 2","timestamp":"2025-06-21T22:37:33.382Z"}
+{"level":"info","message":"Countdown for AE247F: 3","timestamp":"2025-06-21T22:37:34.371Z"}
+{"level":"info","message":"Countdown for AE247F: 2","timestamp":"2025-06-21T22:37:35.384Z"}
+{"level":"info","message":"Countdown for AE247F: 1","timestamp":"2025-06-21T22:37:36.392Z"}
+{"level":"info","message":"Countdown for AE247F: 0","timestamp":"2025-06-21T22:37:37.406Z"}
+{"level":"info","message":"Game started for room: AE247F","timestamp":"2025-06-21T22:37:37.406Z"}
+{"level":"info","message":"Game initialized for room: AE247F, players: 2","timestamp":"2025-06-21T22:37:37.663Z"}
+{"level":"info","message":"Sent gameData to socket cqHxCNd-nILDMZ_OAAAF in room AE247F","timestamp":"2025-06-21T22:37:37.664Z"}
+{"level":"info","message":"Sent gameData to socket SYMR3m6oeOcZXgzYAAAH in room AE247F","timestamp":"2025-06-21T22:37:37.665Z"}
+{"level":"info","message":"Game initialized for room: AE247F, players: 2","timestamp":"2025-06-21T22:37:37.762Z"}
+{"level":"info","message":"Sent gameData to socket cqHxCNd-nILDMZ_OAAAF in room AE247F","timestamp":"2025-06-21T22:37:37.764Z"}
+{"level":"info","message":"Sent gameData to socket SYMR3m6oeOcZXgzYAAAH in room AE247F","timestamp":"2025-06-21T22:37:37.765Z"}
+{"level":"info","message":"Stat quoted by cqHxCNd-nILDMZ_OAAAF in room AE247F: cardIndex=0, runs=7248","timestamp":"2025-06-21T22:37:41.259Z"}
+{"level":"info","message":"Emitted challengeInitiated/statQuoted to socket cqHxCNd-nILDMZ_OAAAF in room AE247F","timestamp":"2025-06-21T22:37:41.260Z"}
+{"level":"info","message":"Emitted challengeInitiated/statQuoted to socket SYMR3m6oeOcZXgzYAAAH in room AE247F","timestamp":"2025-06-21T22:37:41.261Z"}
+{"level":"info","message":"Challenge timer for AE247F: 14s","timestamp":"2025-06-21T22:37:42.273Z"}
+{"level":"info","message":"Challenge timer for AE247F: 13s","timestamp":"2025-06-21T22:37:43.288Z"}
+{"level":"info","message":"Challenge timer for AE247F: 12s","timestamp":"2025-06-21T22:37:44.298Z"}
+{"level":"info","message":"Challenge timer for AE247F: 11s","timestamp":"2025-06-21T22:37:45.305Z"}
+{"level":"info","message":"Challenge timer for AE247F: 10s","timestamp":"2025-06-21T22:37:46.306Z"}
+{"level":"info","message":"Challenge timer for AE247F: 9s","timestamp":"2025-06-21T22:37:47.313Z"}
+{"level":"info","message":"Challenge timer for AE247F: 8s","timestamp":"2025-06-21T22:37:48.321Z"}
+{"level":"info","message":"Challenge timer for AE247F: 7s","timestamp":"2025-06-21T22:37:49.330Z"}
+{"level":"info","message":"Challenge timer for AE247F: 6s","timestamp":"2025-06-21T22:37:50.341Z"}
+{"level":"info","message":"Challenge timer for AE247F: 5s","timestamp":"2025-06-21T22:37:51.353Z"}
+{"level":"info","message":"Challenge timer for AE247F: 4s","timestamp":"2025-06-21T22:37:52.365Z"}
+{"level":"info","message":"Challenge timer for AE247F: 3s","timestamp":"2025-06-21T22:37:53.380Z"}
+{"level":"info","message":"Challenge timer for AE247F: 2s","timestamp":"2025-06-21T22:37:54.380Z"}
+{"level":"info","message":"Challenge timer for AE247F: 1s","timestamp":"2025-06-21T22:37:55.381Z"}
+{"level":"info","message":"Challenge timer for AE247F: 0s","timestamp":"2025-06-21T22:37:56.389Z"}
+{"level":"info","message":"Auto-GaveUp for SYMR3m6oeOcZXgzYAAAH in room AE247F due to timeout","timestamp":"2025-06-21T22:37:57.395Z"}
+{"level":"info","message":"Sent roundResult to socket cqHxCNd-nILDMZ_OAAAF in room AE247F","timestamp":"2025-06-21T22:37:57.398Z"}
+{"level":"info","message":"Sent roundResult to socket SYMR3m6oeOcZXgzYAAAH in room AE247F","timestamp":"2025-06-21T22:37:57.399Z"}
+{"level":"info","message":"New socket connection: AeKkBQAhNKr6zt9uAAAJ","timestamp":"2025-06-21T22:39:51.208Z"}
+{"level":"info","message":"New socket connection: yuoroMhxDwiet4k-AAAL","timestamp":"2025-06-21T22:39:53.840Z"}
+{"level":"info","message":"Room created: CA6755, maxPlayers: 2","timestamp":"2025-06-21T22:39:56.713Z"}
+{"level":"info","message":"Socket yuoroMhxDwiet4k-AAAL joined room CA6755, sockets: 1","timestamp":"2025-06-21T22:39:56.729Z"}
+{"level":"info","message":"Player joined room: CA6755, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:40:08.487Z"}
+{"level":"info","message":"Socket AeKkBQAhNKr6zt9uAAAJ joined room CA6755, sockets: 2","timestamp":"2025-06-21T22:40:08.523Z"}
+{"level":"info","message":"Countdown for CA6755: 3","timestamp":"2025-06-21T22:40:09.500Z"}
+{"level":"info","message":"Countdown for CA6755: 2","timestamp":"2025-06-21T22:40:10.506Z"}
+{"level":"info","message":"Countdown for CA6755: 1","timestamp":"2025-06-21T22:40:11.511Z"}
+{"level":"info","message":"Countdown for CA6755: 0","timestamp":"2025-06-21T22:40:12.523Z"}
+{"level":"info","message":"Game started for room: CA6755","timestamp":"2025-06-21T22:40:12.523Z"}
+{"level":"info","message":"Game initialized for room: CA6755, players: 2","timestamp":"2025-06-21T22:40:12.774Z"}
+{"level":"info","message":"Sent gameData to socket yuoroMhxDwiet4k-AAAL in room CA6755","timestamp":"2025-06-21T22:40:12.777Z"}
+{"level":"info","message":"Sent gameData to socket AeKkBQAhNKr6zt9uAAAJ in room CA6755","timestamp":"2025-06-21T22:40:12.778Z"}
+{"level":"info","message":"Game initialized for room: CA6755, players: 2","timestamp":"2025-06-21T22:40:12.900Z"}
+{"level":"info","message":"Sent gameData to socket yuoroMhxDwiet4k-AAAL in room CA6755","timestamp":"2025-06-21T22:40:12.901Z"}
+{"level":"info","message":"Sent gameData to socket AeKkBQAhNKr6zt9uAAAJ in room CA6755","timestamp":"2025-06-21T22:40:12.901Z"}
+{"level":"info","message":"Stat quoted by yuoroMhxDwiet4k-AAAL in room CA6755: cardIndex=0, runs=6943","timestamp":"2025-06-21T22:40:15.255Z"}
+{"level":"info","message":"Emitted challengeInitiated/statQuoted to socket yuoroMhxDwiet4k-AAAL in room CA6755","timestamp":"2025-06-21T22:40:15.256Z"}
+{"level":"info","message":"Emitted challengeInitiated/statQuoted to socket AeKkBQAhNKr6zt9uAAAJ in room CA6755","timestamp":"2025-06-21T22:40:15.257Z"}
+{"level":"info","message":"Challenge timer for CA6755: 14s","timestamp":"2025-06-21T22:40:16.269Z"}
+{"level":"info","message":"Challenge timer for CA6755: 13s","timestamp":"2025-06-21T22:40:17.275Z"}
+{"level":"info","message":"Challenge timer for CA6755: 12s","timestamp":"2025-06-21T22:40:18.285Z"}
+{"level":"info","message":"Challenge timer for CA6755: 11s","timestamp":"2025-06-21T22:40:19.296Z"}
+{"level":"info","message":"Challenge timer for CA6755: 10s","timestamp":"2025-06-21T22:40:20.305Z"}
+{"level":"info","message":"Challenge timer for CA6755: 9s","timestamp":"2025-06-21T22:40:21.308Z"}
+{"level":"info","message":"Challenge timer for CA6755: 8s","timestamp":"2025-06-21T22:40:22.310Z"}
+{"level":"info","message":"Challenge timer for CA6755: 7s","timestamp":"2025-06-21T22:40:23.323Z"}
+{"level":"info","message":"Challenge timer for CA6755: 6s","timestamp":"2025-06-21T22:40:24.325Z"}
+{"level":"info","message":"New socket connection: 3RS4uZAjnsSryIhmAAAN","timestamp":"2025-06-21T22:40:24.332Z"}
+{"level":"info","message":"New socket connection: xdOyTHYaswy7VL8IAAAP","timestamp":"2025-06-21T22:40:25.182Z"}
+{"level":"info","message":"Challenge timer for CA6755: 5s","timestamp":"2025-06-21T22:40:25.335Z"}
+{"level":"info","message":"Challenge timer for CA6755: 4s","timestamp":"2025-06-21T22:40:26.347Z"}
+{"level":"info","message":"Challenge timer for CA6755: 3s","timestamp":"2025-06-21T22:40:27.357Z"}
+{"level":"info","message":"Challenge timer for CA6755: 2s","timestamp":"2025-06-21T22:40:28.369Z"}
+{"level":"info","message":"Challenge timer for CA6755: 1s","timestamp":"2025-06-21T22:40:29.380Z"}
+{"level":"info","message":"Challenge timer for CA6755: 0s","timestamp":"2025-06-21T22:40:30.392Z"}
+{"level":"info","message":"Room created: 782D7E, maxPlayers: 2","timestamp":"2025-06-21T22:40:31.164Z"}
+{"level":"info","message":"Socket 3RS4uZAjnsSryIhmAAAN joined room 782D7E, sockets: 1","timestamp":"2025-06-21T22:40:31.187Z"}
+{"level":"info","message":"Auto-GaveUp for AeKkBQAhNKr6zt9uAAAJ in room CA6755 due to timeout","timestamp":"2025-06-21T22:40:31.405Z"}
+{"level":"info","message":"Sent roundResult to socket yuoroMhxDwiet4k-AAAL in room CA6755","timestamp":"2025-06-21T22:40:31.406Z"}
+{"level":"info","message":"Sent roundResult to socket AeKkBQAhNKr6zt9uAAAJ in room CA6755","timestamp":"2025-06-21T22:40:31.406Z"}
+{"level":"info","message":"Player joined room: 782D7E, playerCount: 2, sockets: 2","timestamp":"2025-06-21T22:40:41.028Z"}
+{"level":"info","message":"Socket xdOyTHYaswy7VL8IAAAP joined room 782D7E, sockets: 2","timestamp":"2025-06-21T22:40:41.064Z"}
+{"level":"info","message":"Countdown for 782D7E: 3","timestamp":"2025-06-21T22:40:42.044Z"}
+{"level":"info","message":"Countdown for 782D7E: 2","timestamp":"2025-06-21T22:40:43.046Z"}
+{"level":"info","message":"Countdown for 782D7E: 1","timestamp":"2025-06-21T22:40:44.050Z"}
+{"level":"info","message":"Countdown for 782D7E: 0","timestamp":"2025-06-21T22:40:45.060Z"}
+{"level":"info","message":"Game started for room: 782D7E","timestamp":"2025-06-21T22:40:45.060Z"}
+{"level":"info","message":"Game initialized for room: 782D7E, players: 2","timestamp":"2025-06-21T22:40:45.290Z"}
+{"level":"info","message":"Sent gameData to socket 3RS4uZAjnsSryIhmAAAN in room 782D7E","timestamp":"2025-06-21T22:40:45.292Z"}
+{"level":"info","message":"Sent gameData to socket xdOyTHYaswy7VL8IAAAP in room 782D7E","timestamp":"2025-06-21T22:40:45.293Z"}
+{"level":"info","message":"Game initialized for room: 782D7E, players: 2","timestamp":"2025-06-21T22:40:45.449Z"}
+{"level":"info","message":"Sent gameData to socket 3RS4uZAjnsSryIhmAAAN in room 782D7E","timestamp":"2025-06-21T22:40:45.449Z"}
+{"level":"info","message":"Sent gameData to socket xdOyTHYaswy7VL8IAAAP in room 782D7E","timestamp":"2025-06-21T22:40:45.450Z"}
+{"level":"info","message":"Stat quoted by 3RS4uZAjnsSryIhmAAAN in room 782D7E: cardIndex=0, runs=908","timestamp":"2025-06-21T22:40:52.437Z"}
+{"level":"info","message":"Emitted challengeInitiated/statQuoted to socket 3RS4uZAjnsSryIhmAAAN in room 782D7E","timestamp":"2025-06-21T22:40:52.438Z"}
+{"level":"info","message":"Emitted challengeInitiated/statQuoted to socket xdOyTHYaswy7VL8IAAAP in room 782D7E","timestamp":"2025-06-21T22:40:52.438Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 14s","timestamp":"2025-06-21T22:40:53.443Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 13s","timestamp":"2025-06-21T22:40:54.457Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 12s","timestamp":"2025-06-21T22:40:55.469Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 11s","timestamp":"2025-06-21T22:40:56.483Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 10s","timestamp":"2025-06-21T22:40:57.497Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 9s","timestamp":"2025-06-21T22:40:58.509Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 8s","timestamp":"2025-06-21T22:40:59.521Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 7s","timestamp":"2025-06-21T22:41:00.533Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 6s","timestamp":"2025-06-21T22:41:01.543Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 5s","timestamp":"2025-06-21T22:41:02.549Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 4s","timestamp":"2025-06-21T22:41:03.560Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 3s","timestamp":"2025-06-21T22:41:04.573Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 2s","timestamp":"2025-06-21T22:41:05.583Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 1s","timestamp":"2025-06-21T22:41:06.591Z"}
+{"level":"info","message":"Challenge timer for 782D7E: 0s","timestamp":"2025-06-21T22:41:07.602Z"}
+{"level":"info","message":"Auto-GaveUp for xdOyTHYaswy7VL8IAAAP in room 782D7E due to timeout","timestamp":"2025-06-21T22:41:08.613Z"}
+{"level":"info","message":"Sent roundResult to socket 3RS4uZAjnsSryIhmAAAN in room 782D7E","timestamp":"2025-06-21T22:41:08.614Z"}
+{"level":"info","message":"Sent roundResult to socket xdOyTHYaswy7VL8IAAAP in room 782D7E","timestamp":"2025-06-21T22:41:08.615Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T22:48:47.532Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-21T22:48:48.838Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-21T22:48:48.909Z"}
