@@ -1,0 +1,41 @@
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T12:18:12.020Z"}
+{"level":"error","message":"MongoDB connection failed:","timestamp":"2025-06-21T12:18:42.025Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T12:43:29.200Z"}
+{"level":"error","message":"MongoDB Atlas connection failed:","timestamp":"2025-06-21T12:43:31.444Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T12:44:47.180Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T12:44:50.387Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T13:43:30.065Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T13:43:32.736Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T13:53:33.510Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T13:53:35.186Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T13:56:23.307Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T13:56:23.317Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T13:57:08.333Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T13:57:09.633Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T13:57:09.644Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T13:57:54.646Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T13:57:55.687Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T13:57:55.975Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T13:58:40.979Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T13:59:54.052Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T13:59:54.960Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T14:00:05.506Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T14:01:01.354Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T14:01:41.292Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T14:02:15.693Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T14:02:23.728Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T14:05:58.763Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T14:05:59.534Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T14:07:17.285Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T14:07:20.390Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T14:07:21.570Z"}
+{"level":"info","message":"Client disconnected:","timestamp":"2025-06-21T14:08:26.825Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-21T14:14:45.296Z"}
+{"level":"info","message":"Connected to MongoDB Atlas","timestamp":"2025-06-21T14:14:47.862Z"}
+{"level":"info","message":"Client connected:","timestamp":"2025-06-21T14:15:19.635Z"}
+{"level":"info","message":"Room created: Y62YRT, maxPlayers: 4","timestamp":"2025-06-21T14:15:38.580Z"}
+{"level":"info","message":"Socket nh16BOJlSScZxx53AAAB joined room Y62YRT","timestamp":"2025-06-21T14:15:38.684Z"}
+{"level":"info","message":"Room created: KZPSXH, maxPlayers: 4","timestamp":"2025-06-21T14:17:40.074Z"}
+{"level":"info","message":"Player joined room: Y62YRT, playerCount: 2","timestamp":"2025-06-21T14:17:47.921Z"}
+{"level":"info","message":"Socket nh16BOJlSScZxx53AAAB joined room Y62YRT","timestamp":"2025-06-21T14:17:47.932Z"}
+{"level":"info","message":"Player joined room: KZPSXH, playerCount: 2","timestamp":"2025-06-21T14:18:53.219Z"}

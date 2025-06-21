@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.praveen.cardclash.network.SocketManager
+import com.praveen.cardclash.ui.app.LobbyScreen
 import com.praveen.cardclash.ui.theme.CardClashGameTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +24,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             CardClashTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    WelcomeScreen()
+                    LobbyScreen(onGameStart = {
+                        // Placeholder for game screen
+                    })
                 }
             }
         }
