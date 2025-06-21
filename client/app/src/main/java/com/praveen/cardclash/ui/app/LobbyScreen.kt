@@ -22,6 +22,7 @@ fun LobbyScreen(
     var playerCount by remember { mutableStateOf(0) }
     var countdown by remember { mutableStateOf<Int?>(null) }
     var error by remember { mutableStateOf("") }
+    var isLoading by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         SocketManager.countdownFlow.collect { value ->
@@ -30,41 +31,56 @@ fun LobbyScreen(
                 onGameStart()
             }
         }
+        SocketManager.gameStartFlow.collect {
+            countdown = null
+            onGameStart()
+        }
     }
 
     Column(
         modifier = Modifier.fillMaxSize().padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         Text("Card Clash Lobby", style = MaterialTheme.typography.headlineMedium)
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         // Create Room
         OutlinedTextField(
             value = maxPlayers,
-            onValueChange = { maxPlayers = it },
-            label = { Text("Max Players (2-6)") }
+            onValueChange = { maxPlayers = it.filter { c -> c.isDigit() } },
+            label = { Text("Max Players (2-6)") },
+            modifier = Modifier.fillMaxWidth()
         )
+        Spacer(modifier = Modifier.height(8.dp))
         Button(
             onClick = {
+                isLoading = true
+                error = ""
                 coroutineScope.launch {
                     try {
+                        val maxPlayersInt = maxPlayers.toIntOrNull() ?: 2
                         val response = RetrofitClient.apiService.createRoom(
-                            CreateRoomRequest(maxPlayers.toIntOrNull() ?: 2)
+                            CreateRoomRequest(maxPlayersInt)
                         )
                         if (response.isSuccessful) {
-                            roomCode = response.body()?.roomCode ?: ""
-                            playerCount = response.body()?.playerCount ?: 0
+                            val roomResponse = response.body()
+                            roomCode = roomResponse?.roomCode ?: ""
+                            playerCount = roomResponse?.playerCount ?: 0
+                            maxPlayers = roomResponse?.maxPlayers?.toString() ?: ""
                             SocketManager.joinRoom(roomCode)
                         } else {
-                            error = "Failed to create room"
+                            error = response.errorBody()?.string() ?: "Failed to create room"
                         }
                     } catch (e: Exception) {
-                        error = e.message ?: "Error"
+                        error = e.message ?: "Network error"
+                    } finally {
+                        isLoading = false
                     }
                 }
             },
-            enabled = maxPlayers.toIntOrNull() in 2..6
+            enabled = !isLoading && maxPlayers.toIntOrNull() in 2..6,
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text("Create Room")
         }
@@ -73,37 +89,58 @@ fun LobbyScreen(
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(
             value = roomCode,
-            onValueChange = { roomCode = it },
-            label = { Text("Room Code") }
+            onValueChange = { roomCode = it.uppercase() },
+            label = { Text("Room Code") },
+            modifier = Modifier.fillMaxWidth()
         )
+        Spacer(modifier = Modifier.height(8.dp))
         Button(
             onClick = {
+                isLoading = true
+                error = ""
                 coroutineScope.launch {
                     try {
                         val response = RetrofitClient.apiService.joinRoom(
                             JoinRoomRequest(roomCode)
                         )
                         if (response.isSuccessful) {
-                            playerCount = response.body()?.playerCount ?: 0
+                            val roomResponse = response.body()
+                            playerCount = roomResponse?.playerCount ?: 0
+                            maxPlayers = roomResponse?.maxPlayers?.toString() ?: ""
                             SocketManager.joinRoom(roomCode)
                         } else {
-                            error = "Failed to join room"
+                            error = response.errorBody()?.string() ?: "Failed to join room"
                         }
                     } catch (e: Exception) {
-                        error = e.message ?: "Error"
+                        error = e.message ?: "Network error"
+                    } finally {
+                        isLoading = false
                     }
                 }
-            }
+            },
+            enabled = !isLoading && roomCode.length >= 6,
+            modifier = Modifier.fillMaxWidth()
         ) {
             Text("Join Room")
         }
 
-        // Display Room Info
+        // Room Info
         if (roomCode.isNotEmpty()) {
-            Text("Room Code: $roomCode")
-            Text("Players: $playerCount/${maxPlayers.toIntOrNull() ?: 2}")
+            Spacer(modifier = Modifier.height(16.dp))
+            Text("Room Code: $roomCode", style = MaterialTheme.typography.bodyLarge)
+            Text("Players: $playerCount/$maxPlayers", style = MaterialTheme.typography.bodyLarge)
         }
-        countdown?.let { Text("Game starts in $it...") }
-        if (error.isNotEmpty()) Text(error, color = MaterialTheme.colorScheme.error)
+        countdown?.let {
+            Spacer(modifier = Modifier.height(16.dp))
+            Text("Game starts in $it...", style = MaterialTheme.typography.headlineSmall)
+        }
+        if (error.isNotEmpty()) {
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(error, color = MaterialTheme.colorScheme.error)
+        }
+        if (isLoading) {
+            Spacer(modifier = Modifier.height(16.dp))
+            CircularProgressIndicator()
+        }
     }
 }
