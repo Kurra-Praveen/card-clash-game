@@ -139,7 +139,7 @@ fun GameScreen(
                 countdownTime = 0
                 showResolutionScreen = true
                 currentRoundResult = result
-                resolutionCountdown = 15
+                resolutionCountdown = 5
                 // Start countdown
                 launch {
                     while (resolutionCountdown > 0) {

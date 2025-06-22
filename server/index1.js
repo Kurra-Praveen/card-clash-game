@@ -440,15 +440,9 @@ function processRoundResult(roomCode) {
         }
     });
 
-    // Handle active player timeout (if they didn't submit in time)
-    // This is not currently tracked, but you can add a flag if needed. For now, assume always submitted.
-    // If you want to support this, add a flag to room.activeStat like { ... , timedOut: true }
-
     // Card transfer and scoring
     if (activePlayerWins) {
-        // Active player wins: gets all challenged cards, gains points, remains active
         room.scores.set(activePlayer.socketId, (room.scores.get(activePlayer.socketId) || 0) + 1.5);
-        // Move active player's top card to bottom after collecting any won cards
         let collectedCards = [];
         challengers.forEach(([socketId, res]) => {
             const player = room.gameState.players.find(p => p.socketId === socketId);
@@ -458,21 +452,17 @@ function processRoundResult(roomCode) {
                 collectedCards.push(card);
             }
         });
-        // Remove active player's top card and add it to the end (bottom)
         if (activePlayer.cardCount > 0) {
             const topCard = activePlayer.cards.splice(room.activeStat.cardIndex, 1)[0];
             collectedCards.push(topCard);
             activePlayer.cardCount--;
         }
-        // Add all collected cards to the bottom of active player's stack
         collectedCards.forEach(card => {
             activePlayer.cards.push(card);
             activePlayer.cardCount++;
         });
     } else {
-        // Highest challenger wins: gets all challenged cards, gains points, becomes next active player
         const winnerPlayer = room.gameState.players.find(p => p.socketId == highestChallenger.socketId);
-        // Active player loses points and card
         room.scores.set(activePlayer.socketId, (room.scores.get(activePlayer.socketId) || 0) - 4);
         let collectedCards = [];
         if (activePlayer.cardCount > 0) {
@@ -481,7 +471,6 @@ function processRoundResult(roomCode) {
             activePlayer.cardCount--;
         }
         room.scores.set(highestChallenger.socketId, (room.scores.get(highestChallenger.socketId) || 0) + 1);
-        // Other challengers
         challengers.forEach(([socketId, res]) => {
             if (socketId !== highestChallenger.socketId) {
                 const player = room.gameState.players.find(p => p.socketId === socketId);
@@ -493,7 +482,6 @@ function processRoundResult(roomCode) {
                     player.cardCount--;
                 }
             } else {
-                // Remove the top card of the winning challenger and add it to the bottom after collecting
                 if (winnerPlayer.cardCount > 0) {
                     const topCard = winnerPlayer.cards.splice(res.cardIndex, 1)[0];
                     collectedCards.push(topCard);
@@ -501,11 +489,27 @@ function processRoundResult(roomCode) {
                 }
             }
         });
-        // Add all collected cards to the bottom of winner's stack
         collectedCards.forEach(card => {
             winnerPlayer.cards.push(card);
             winnerPlayer.cardCount++;
         });
+    }
+
+    // --- GAME END CHECK ---
+    const activePlayers = room.gameState.players.filter(p => p.cardCount > 0);
+    if (activePlayers.length <= 1) {
+        const gameWinner = activePlayers.length === 1 ? activePlayers[0].socketId : null;
+        room.sockets.forEach(socketId => {
+            if (!socketId.startsWith('mock_')) {
+                io.to(socketId).emit('gameEnd', {
+                    winner: gameWinner,
+                    scores: Object.fromEntries(room.scores)
+                });
+                logger.info(`Game ended in room ${roomCode}, winner: ${gameWinner || 'none'}`);
+            }
+        });
+        rooms.delete(roomCode);
+        return;
     }
 
     // Next turn logic
