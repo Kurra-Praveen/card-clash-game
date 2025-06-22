@@ -426,24 +426,38 @@ function processRoundResult(roomCode) {
     if (activePlayerWins) {
         // Active player wins: gets all challenged cards, gains points, remains active
         room.scores.set(activePlayer.socketId, (room.scores.get(activePlayer.socketId) || 0) + 1.5);
+        // Move active player's top card to bottom after collecting any won cards
+        let collectedCards = [];
         challengers.forEach(([socketId, res]) => {
             const player = room.gameState.players.find(p => p.socketId === socketId);
             if (player && player.cardCount > 0) {
                 const card = player.cards.splice(res.cardIndex, 1)[0];
                 player.cardCount--;
-                activePlayer.cards.push(card);
-                activePlayer.cardCount++;
+                collectedCards.push(card);
             }
+        });
+        // Remove active player's top card and add it to the end (bottom)
+        if (activePlayer.cardCount > 0) {
+            const topCard = activePlayer.cards.splice(room.activeStat.cardIndex, 1)[0];
+            collectedCards.push(topCard);
+            activePlayer.cardCount--;
+        }
+        // Add all collected cards to the bottom of active player's stack
+        collectedCards.forEach(card => {
+            activePlayer.cards.push(card);
+            activePlayer.cardCount++;
         });
     } else {
         // Highest challenger wins: gets all challenged cards, gains points, becomes next active player
         const winnerPlayer = room.gameState.players.find(p => p.socketId == highestChallenger.socketId);
         // Active player loses points and card
         room.scores.set(activePlayer.socketId, (room.scores.get(activePlayer.socketId) || 0) - 4);
-        const activeCard = activePlayer.cards.splice(room.activeStat.cardIndex, 1)[0];
-        activePlayer.cardCount--;
-        winnerPlayer.cards.push(activeCard);
-        winnerPlayer.cardCount++;
+        let collectedCards = [];
+        if (activePlayer.cardCount > 0) {
+            const activeCard = activePlayer.cards.splice(room.activeStat.cardIndex, 1)[0];
+            collectedCards.push(activeCard);
+            activePlayer.cardCount--;
+        }
         room.scores.set(highestChallenger.socketId, (room.scores.get(highestChallenger.socketId) || 0) + 1);
         // Other challengers
         challengers.forEach(([socketId, res]) => {
@@ -453,11 +467,22 @@ function processRoundResult(roomCode) {
                     room.scores.set(socketId, (room.scores.get(socketId) || 0) + 1);
                 } else if (player && player.cardCount > 0) {
                     const card = player.cards.splice(res.cardIndex, 1)[0];
+                    collectedCards.push(card);
                     player.cardCount--;
-                    activePlayer.cards.push(card);
-                    activePlayer.cardCount++;
+                }
+            } else {
+                // Remove the top card of the winning challenger and add it to the bottom after collecting
+                if (winnerPlayer.cardCount > 0) {
+                    const topCard = winnerPlayer.cards.splice(res.cardIndex, 1)[0];
+                    collectedCards.push(topCard);
+                    winnerPlayer.cardCount--;
                 }
             }
+        });
+        // Add all collected cards to the bottom of winner's stack
+        collectedCards.forEach(card => {
+            winnerPlayer.cards.push(card);
+            winnerPlayer.cardCount++;
         });
     }
 
