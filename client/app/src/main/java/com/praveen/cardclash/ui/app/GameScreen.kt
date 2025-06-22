@@ -62,7 +62,8 @@ fun GameScreen(
     var selectedStat by remember { mutableStateOf("runs") }
     var hasSubmitted by remember { mutableStateOf(false) }
 
-    LaunchedEffect(Unit) {
+    LaunchedEffect(roomCode) {
+        Log.d("GameScreen", "[COLLECTOR] LaunchedEffect(roomCode=$roomCode) started, socketId=${SocketManager.socketId}")
         if (roomCode.isBlank()) {
             error = "Room code is missing"
             Log.e("GameScreen", "Cannot call /start-game: roomCode is empty")
@@ -85,46 +86,64 @@ fun GameScreen(
             isLoading = false
         }
 
-        SocketManager.gameDataFlow.collect { data ->
-            gameData = data
-            isLoading = false
-            Log.d("GameScreen", "Received gameData: round=${data.round}, cards=${data.cards.size}, currentTurn=${data.currentTurn}, socketId=${SocketManager.socketId}")
-            if (data.players.none { it.socketId == SocketManager.socketId }) {
-                error = "Socket ID not found in game data. Please reconnect."
-                Log.e("GameScreen", "Socket ID ${SocketManager.socketId} not in players: ${data.players.map { it.socketId }}")
+        Log.d("GameScreen", "[COLLECTOR] Collecting all flows concurrently...")
+        launch {
+            Log.d("GameScreen", "[COLLECTOR] gameDataFlow collector STARTED, socketId=${SocketManager.socketId}")
+            SocketManager.gameDataFlow.collect { data ->
+                Log.d("GameScreen", "[COLLECTOR] gameDataFlow received: $data, socketId=${SocketManager.socketId}")
+                gameData = data
+                isLoading = false
+                Log.d("GameScreen", "Received gameData: round=${data.round}, cards=${data.cards.size}, currentTurn=${data.currentTurn}, socketId=${SocketManager.socketId}")
+                if (data.players.none { it.socketId == SocketManager.socketId }) {
+                    error = "Socket ID not found in game data. Please reconnect."
+                    Log.e("GameScreen", "Socket ID ${SocketManager.socketId} not in players: ${data.players.map { it.socketId }}")
+                }
             }
         }
-        SocketManager.challengeInitiatedFlow.collect { quoted ->
-            Log.d("GameScreen", "Received challengeInitiated: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=${quoted.timeRemaining}, isConfirmation=${quoted.isConfirmation}, socketId=${SocketManager.socketId}")
-            if (!quoted.isConfirmation && quoted.activePlayer != SocketManager.socketId) {
-                challengeState = quoted
-                countdownTime = quoted.timeRemaining
-                Log.d("GameScreen", "Set challengeState for opponent: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=$countdownTime")
-            } else if (quoted.isConfirmation) {
-                Log.d("GameScreen", "Ignored challengeInitiated: isConfirmation=true")
-            } else {
-                Log.d("GameScreen", "Ignored challengeInitiated: activePlayer is self")
+        launch {
+            Log.d("GameScreen", "[COLLECTOR] challengeInitiatedFlow collector STARTED, socketId=${SocketManager.socketId}")
+            SocketManager.challengeInitiatedFlow.collect { quoted ->
+                Log.d("GameScreen", "[COLLECTOR] challengeInitiatedFlow received: $quoted, socketId=${SocketManager.socketId}")
+                Log.d("GameScreen", "[UI] challengeInitiated: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=${quoted.timeRemaining}, isConfirmation=${quoted.isConfirmation}, socketId=${SocketManager.socketId}")
+                if (!quoted.isConfirmation && quoted.activePlayer != SocketManager.socketId) {
+                    challengeState = quoted
+                    countdownTime = quoted.timeRemaining
+                    hasSubmitted = false
+                    Log.d("GameScreen", "[UI] Set challengeState for opponent: $challengeState, countdown=$countdownTime")
+                }
             }
         }
-        SocketManager.statQuotedFlow.collect { quoted ->
-            Log.d("GameScreen", "Received statQuoted: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=${quoted.timeRemaining}, isConfirmation=${quoted.isConfirmation}, socketId=${SocketManager.socketId}")
-            if (!quoted.isConfirmation && challengeState?.activePlayer == quoted.activePlayer && challengeState?.stat == quoted.stat && quoted.activePlayer != SocketManager.socketId) {
-                countdownTime = quoted.timeRemaining
-                Log.d("GameScreen", "Updated countdown: time=${quoted.timeRemaining}")
+        launch {
+            Log.d("GameScreen", "[COLLECTOR] statQuotedFlow collector STARTED, socketId=${SocketManager.socketId}")
+            SocketManager.statQuotedFlow.collect { quoted ->
+                Log.d("GameScreen", "[COLLECTOR] statQuotedFlow received: $quoted, socketId=${SocketManager.socketId}")
+                Log.d("GameScreen", "[UI] statQuoted: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=${quoted.timeRemaining}, isConfirmation=${quoted.isConfirmation}, socketId=${SocketManager.socketId}")
+                if (!quoted.isConfirmation && challengeState != null && quoted.activePlayer == challengeState?.activePlayer && quoted.stat == challengeState?.stat && quoted.activePlayer != SocketManager.socketId) {
+                    countdownTime = quoted.timeRemaining
+                    Log.d("GameScreen", "[UI] Updated countdown: $countdownTime")
+                }
             }
         }
-        SocketManager.roundResultFlow.collect { result ->
-            roundResult = result
-            gameData = result.gameState
-            selectedCardIndex = 0
-            hasSubmitted = false
-            challengeState = null
-            countdownTime = 0
-            Log.d("GameScreen", "Received roundResult: winner=${result.winner}, stat=${result.stat}, socketId=${SocketManager.socketId}")
+        launch {
+            Log.d("GameScreen", "[COLLECTOR] roundResultFlow collector STARTED, socketId=${SocketManager.socketId}")
+            SocketManager.roundResultFlow.collect { result ->
+                Log.d("GameScreen", "[COLLECTOR] roundResultFlow received: $result, socketId=${SocketManager.socketId}")
+                roundResult = result
+                gameData = result.gameState
+                selectedCardIndex = 0
+                hasSubmitted = false
+                challengeState = null
+                countdownTime = 0
+                Log.d("GameScreen", "[UI] Received roundResult: winner=${result.winner}, stat=${result.stat}, socketId=${SocketManager.socketId}")
+            }
         }
-        SocketManager.gameEndFlow.collect { end ->
-            gameEnd = end
-            Log.d("GameScreen", "Received gameEnd: winner=${end.winner}, socketId=${SocketManager.socketId}")
+        launch {
+            Log.d("GameScreen", "[COLLECTOR] gameEndFlow collector STARTED, socketId=${SocketManager.socketId}")
+            SocketManager.gameEndFlow.collect { end ->
+                Log.d("GameScreen", "[COLLECTOR] gameEndFlow received: $end, socketId=${SocketManager.socketId}")
+                gameEnd = end
+                Log.d("GameScreen", "Received gameEnd: winner=${end.winner}, socketId=${SocketManager.socketId}")
+            }
         }
     }
 
@@ -170,139 +189,55 @@ fun GameScreen(
         } else if (gameData == null) {
             Text("Initializing game...")
         } else {
-            gameData?.let { data ->
-                // Game Info
-                Text("Round: ${data.round}", style = MaterialTheme.typography.bodyLarge)
-                Text("Current Turn: ${if (data.currentTurn == SocketManager.socketId) "You" else "Opponent"}")
-                Text("Your Cards: ${data.players.find { it.socketId == SocketManager.socketId }?.cardCount ?: 0}")
-                Text("Your Score: ${data.scores[SocketManager.socketId] ?: 0}")
-                Spacer(modifier = Modifier.height(16.dp))
+            val isActivePlayer = gameData!!.currentTurn == SocketManager.socketId
+            val isChallenged = challengeState?.let { it.activePlayer != SocketManager.socketId && countdownTime > 0 && !hasSubmitted } == true
 
-                // Scores
-                Text("Scores:", fontWeight = FontWeight.Bold)
-                data.scores.forEach { (socketId, score) ->
-                    Text("${if (socketId == SocketManager.socketId) "You" else "Opponent"}: $score")
-                }
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // Active Player Quoted Stat Banner and Buttons
-                challengeState?.let { quoted ->
-                    Log.d("GameScreen", "Rendering challengeState: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=$countdownTime, isOpponent=${quoted.activePlayer != SocketManager.socketId}, hasSubmitted=$hasSubmitted")
-                    if (countdownTime > 0 && quoted.activePlayer != SocketManager.socketId) {
-                        QuotedStatBanner(quoted, countdownTime)
-                        if (!hasSubmitted) {
-                            OpponentButtons(
-                                data = data,
-                                quoted = quoted,
-                                selectedCardIndex = selectedCardIndex,
-                                hasSubmitted = hasSubmitted,
-                                roomCode = roomCode,
-                                coroutineScope = coroutineScope,
-                                onChallengeSubmitted = { hasSubmitted = true },
-                                onGaveUpSubmitted = { hasSubmitted = true }
-                            )
-                        }
-                    }
-                }
-
-                // Card Selection
-                Text("Your Cards:", fontWeight = FontWeight.Bold)
-                LazyColumn(
-                    modifier = Modifier
-                        .height(200.dp)
-                        .fillMaxWidth()
-                ) {
-                    itemsIndexed(data.cards) { index, card ->
-                        val isSelectable = (data.currentTurn == SocketManager.socketId || (challengeState?.activePlayer != SocketManager.socketId && countdownTime > 0)) && !hasSubmitted
-                        Card(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(8.dp)
-                                .background(if (index == selectedCardIndex && isSelectable) Color.LightGray else Color.Transparent)
-                                .clickable(enabled = isSelectable) { selectedCardIndex = index },
-                            elevation = CardDefaults.cardElevation(4.dp)
-                        ) {
-                            Column(modifier = Modifier.padding(16.dp)) {
-                                Text("Player: ${card.playerName}", style = MaterialTheme.typography.bodyLarge)
-                                Text("Runs: ${card.runs} ${if (getStatStrength(card, "runs") > 0.8) "🔥" else ""}")
-                                Text("Wickets: ${card.wickets} ${if (getStatStrength(card, "wickets") > 0.8) "🔥" else ""}")
-                                Text("Batting Avg: ${String.format("%.2f", card.battingAverage)} ${if (getStatStrength(card, "battingAverage") > 0.8) "🔥" else ""}")
-                                Text("Strike Rate: ${String.format("%.2f", card.strikeRate)} ${if (getStatStrength(card, "strikeRate") > 0.8) "🔥" else ""}")
-                                Text("Matches: ${card.matchesPlayed} ${if (getStatStrength(card, "matchesPlayed") > 0.8) "🔥" else ""}")
-                                Text("Centuries: ${card.centuries} ${if (getStatStrength(card, "centuries") > 0.8) "🔥" else ""}")
-                                Text("Five Wicket Hauls: ${card.fiveWicketHauls} ${if (getStatStrength(card, "fiveWicketHauls") > 0.8) "🔥" else ""}")
+            // OpponentScreen is shown for all non-active players, always showing their cards
+            when {
+                isActivePlayer -> {
+                    ActivePlayerScreen(
+                        gameData = gameData!!,
+                        challengeState = challengeState,
+                        hasSubmitted = hasSubmitted,
+                        selectedCardIndex = selectedCardIndex,
+                        setSelectedCardIndex = { selectedCardIndex = it },
+                        selectedStat = selectedStat,
+                        setSelectedStat = { selectedStat = it },
+                        onSubmitStat = { stat, value ->
+                            coroutineScope.launch {
+                                SocketManager.submitStat(roomCode, selectedCardIndex, stat, value)
+                                hasSubmitted = true
+                                Log.d("GameScreen", "Stat submitted: cardIndex=$selectedCardIndex, stat=$stat, value=$value, socketId=${SocketManager.socketId}")
                             }
                         }
-                    }
+                    )
                 }
-
-                // Stat Selection for Active Player
-                if (data.currentTurn == SocketManager.socketId && challengeState == null && !hasSubmitted) {
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text("Select Stat to Quote:")
-                    LazyRow(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        items(listOf(
-                            "runs", "wickets", "battingAverage", "strikeRate",
-                            "matchesPlayed", "centuries", "fiveWicketHauls"
-                        )) { stat ->
-                            Button(
-                                onClick = { selectedStat = stat },
-                                enabled = !hasSubmitted,
-                                colors = ButtonDefaults.buttonColors(
-                                    containerColor = if (selectedStat == stat) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary
-                                ),
-                                modifier = Modifier.width(120.dp)
-                            ) {
-                                Text(stat.replaceFirstChar { it.uppercase() })
-                            }
-                        }
-                    }
-                    Spacer(modifier = Modifier.height(8.dp))
-                    Button(
-                        onClick = {
-                            data.cards.getOrNull(selectedCardIndex)?.let { card ->
-                                val value = when (selectedStat) {
-                                    "runs" -> card.runs
-                                    "wickets" -> card.wickets
-                                    "battingAverage" -> card.battingAverage
-                                    "strikeRate" -> card.strikeRate
-                                    "matchesPlayed" -> card.matchesPlayed
-                                    "centuries" -> card.centuries
-                                    "fiveWicketHauls" -> card.fiveWicketHauls
-                                    else -> 0
-                                }
-                                coroutineScope.launch {
-                                    SocketManager.submitStat(roomCode, selectedCardIndex, selectedStat, value)
-                                    hasSubmitted = true
-                                    Log.d("GameScreen", "Stat submitted: cardIndex=$selectedCardIndex, stat=$selectedStat, value=$value, socketId=${SocketManager.socketId}")
-                                }
+                else -> {
+                    OpponentScreen(
+                        gameData = gameData!!,
+                        challengeState = challengeState,
+                        countdownTime = countdownTime,
+                        hasSubmitted = hasSubmitted,
+                        selectedCardIndex = selectedCardIndex,
+                        setSelectedCardIndex = { selectedCardIndex = it },
+                        onChallenge = { stat, value ->
+                            coroutineScope.launch {
+                                SocketManager.challenge(roomCode, selectedCardIndex, stat, value)
+                                hasSubmitted = true
+                                Log.d("GameScreen", "Challenge submitted: cardIndex=$selectedCardIndex, stat=$stat, value=$value, socketId=${SocketManager.socketId}")
                             }
                         },
-                        enabled = !hasSubmitted && data.cards.isNotEmpty()
-                    ) {
-                        Text("Submit ${selectedStat.replaceFirstChar { it.uppercase() }}")
-                    }
-                    Spacer(modifier = Modifier.height(16.dp))
-                }
-
-                // Round Result
-                roundResult?.let { result ->
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Text(
-                        "Round ${data.round - 1} Result: ${if (result.winner == SocketManager.socketId) "You won!" else if (result.winner.isEmpty()) "No winner!" else "Opponent won!"}",
-                        fontWeight = FontWeight.Bold
+                        onGaveUp = {
+                            coroutineScope.launch {
+                                SocketManager.gaveUp(roomCode)
+                                hasSubmitted = true
+                                Log.d("GameScreen", "GaveUp submitted, socketId=${SocketManager.socketId}")
+                            }
+                        }
                     )
-                    Text("Stat: ${result.stat.replaceFirstChar { it.uppercase() }}")
-                    result.submissions.forEach { (socketId, submission) ->
-                        Text("${if (socketId == SocketManager.socketId) "You" else "Opponent"}: ${submission.stat.replaceFirstChar { it.uppercase() }}=${submission.value}")
-                    }
                 }
             }
         }
-
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = { onGameEnd() },
@@ -310,6 +245,215 @@ fun GameScreen(
         ) {
             Text("End Game (Test)")
         }
+    }
+}
+
+@Composable
+fun ActivePlayerScreen(
+    gameData: SocketManager.GameData,
+    challengeState: SocketManager.StatQuoted?,
+    hasSubmitted: Boolean,
+    selectedCardIndex: Int,
+    setSelectedCardIndex: (Int) -> Unit,
+    selectedStat: String,
+    setSelectedStat: (String) -> Unit,
+    onSubmitStat: (String, Number) -> Unit
+) {
+    // Game Info
+    Text("Round: ${gameData.round}", style = MaterialTheme.typography.bodyLarge)
+    Text("Current Turn: You")
+    Text("Your Cards: ${gameData.players.find { it.socketId == SocketManager.socketId }?.cardCount ?: 0}")
+    Text("Your Score: ${gameData.scores[SocketManager.socketId] ?: 0}")
+    Spacer(modifier = Modifier.height(16.dp))
+
+    // Card Selection
+    Text("Your Cards:", fontWeight = FontWeight.Bold)
+    LazyColumn(
+        modifier = Modifier
+            .height(200.dp)
+            .fillMaxWidth()
+    ) {
+        itemsIndexed(gameData.cards) { index, card ->
+            val isSelectable = !hasSubmitted
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .background(if (index == selectedCardIndex && isSelectable) Color.LightGray else Color.Transparent)
+                    .clickable(enabled = isSelectable) { setSelectedCardIndex(index) },
+                elevation = CardDefaults.cardElevation(4.dp)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text("Player: ${card.playerName}", style = MaterialTheme.typography.bodyLarge)
+                    Text("Runs: ${card.runs} ${if (getStatStrength(card, "runs") > 0.8) "🔥" else ""}")
+                    Text("Wickets: ${card.wickets} ${if (getStatStrength(card, "wickets") > 0.8) "🔥" else ""}")
+                    Text("Batting Avg: ${String.format("%.2f", card.battingAverage)} ${if (getStatStrength(card, "battingAverage") > 0.8) "🔥" else ""}")
+                    Text("Strike Rate: ${String.format("%.2f", card.strikeRate)} ${if (getStatStrength(card, "strikeRate") > 0.8) "🔥" else ""}")
+                    Text("Matches: ${card.matchesPlayed} ${if (getStatStrength(card, "matchesPlayed") > 0.8) "🔥" else ""}")
+                    Text("Centuries: ${card.centuries} ${if (getStatStrength(card, "centuries") > 0.8) "🔥" else ""}")
+                    Text("Five Wicket Hauls: ${card.fiveWicketHauls} ${if (getStatStrength(card, "fiveWicketHauls") > 0.8) "🔥" else ""}")
+                }
+            }
+        }
+    }
+
+    // Stat Selection
+    Spacer(modifier = Modifier.height(16.dp))
+    Text("Select Stat to Quote:")
+    LazyRow(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        items(listOf(
+            "runs", "wickets", "battingAverage", "strikeRate",
+            "matchesPlayed", "centuries", "fiveWicketHauls"
+        )) { stat ->
+            Button(
+                onClick = { setSelectedStat(stat) },
+                enabled = !hasSubmitted,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = if (selectedStat == stat) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary
+                ),
+                modifier = Modifier.width(120.dp)
+            ) {
+                Text(stat.replaceFirstChar { it.uppercase() })
+            }
+        }
+    }
+    Spacer(modifier = Modifier.height(8.dp))
+    Button(
+        onClick = {
+            gameData.cards.getOrNull(selectedCardIndex)?.let { card ->
+                val value = when (selectedStat) {
+                    "runs" -> card.runs
+                    "wickets" -> card.wickets
+                    "battingAverage" -> card.battingAverage
+                    "strikeRate" -> card.strikeRate
+                    "matchesPlayed" -> card.matchesPlayed
+                    "centuries" -> card.centuries
+                    "fiveWicketHauls" -> card.fiveWicketHauls
+                    else -> 0
+                }
+                onSubmitStat(selectedStat, value)
+            }
+        },
+        enabled = !hasSubmitted && gameData.cards.isNotEmpty()
+    ) {
+        Text("Submit ${selectedStat.replaceFirstChar { it.uppercase() }}")
+    }
+    Spacer(modifier = Modifier.height(16.dp))
+}
+
+@Composable
+fun OpponentScreen(
+    gameData: SocketManager.GameData,
+    challengeState: SocketManager.StatQuoted?,
+    countdownTime: Int,
+    hasSubmitted: Boolean,
+    selectedCardIndex: Int,
+    setSelectedCardIndex: (Int) -> Unit,
+    onChallenge: (String, Number) -> Unit,
+    onGaveUp: () -> Unit
+) {
+    // Game Info
+    Log.d("OpponentScreen", "RENDER OpponentScreen: challengeState=$challengeState, countdownTime=$countdownTime, hasSubmitted=$hasSubmitted, activePlayer=${challengeState?.activePlayer}, mySocketId=${SocketManager.socketId}")
+    Text("Round: ${gameData.round}", style = MaterialTheme.typography.bodyLarge)
+    Text("Current Turn: Opponent")
+    Text("Your Cards: ${gameData.players.find { it.socketId == SocketManager.socketId }?.cardCount ?: 0}")
+    Text("Your Score: ${gameData.scores[SocketManager.socketId] ?: 0}")
+    Spacer(modifier = Modifier.height(16.dp))
+
+    // Challenge Banner and Buttons
+    val shouldShowBanner = challengeState != null && challengeState.activePlayer != SocketManager.socketId
+    Log.d("OpponentScreen", "shouldShowBanner=$shouldShowBanner, challengeState=$challengeState, activePlayer=${challengeState?.activePlayer}, mySocketId=${SocketManager.socketId}")
+    if (shouldShowBanner) {
+        Log.d("OpponentScreen", "SHOWING BANNER: stat=${challengeState?.stat}, time=$countdownTime, hasSubmitted=$hasSubmitted")
+        QuotedStatBanner(challengeState!!, countdownTime)
+        if (!hasSubmitted) {
+            Log.d("OpponentScreen", "SHOWING BUTTONS: hasSubmitted=$hasSubmitted, selectedCardIndex=$selectedCardIndex")
+            OpponentButtons(
+                data = gameData,
+                quoted = challengeState!!,
+                selectedCardIndex = selectedCardIndex,
+                hasSubmitted = hasSubmitted,
+                roomCode = "", // Not needed, handled in parent
+                coroutineScope = rememberCoroutineScope(), // Not used, handled in parent
+                onChallengeSubmitted = { onChallenge(challengeState.stat, 0) }, // Value set below
+                onGaveUpSubmitted = { onGaveUp() }
+            )
+        } else {
+            Log.d("OpponentScreen", "BUTTONS HIDDEN: hasSubmitted=$hasSubmitted")
+        }
+    } else {
+        Log.d("OpponentScreen", "BANNER NOT SHOWN: shouldShowBanner=$shouldShowBanner")
+    }
+
+    // Card Selection
+    Text("Your Cards:", fontWeight = FontWeight.Bold)
+    LazyColumn(
+        modifier = Modifier
+            .height(200.dp)
+            .fillMaxWidth()
+    ) {
+        itemsIndexed(gameData.cards) { index, card ->
+            val isSelectable = (challengeState != null && challengeState.activePlayer != SocketManager.socketId && !hasSubmitted)
+            Log.d("OpponentScreen", "Card index=$index, isSelectable=$isSelectable, selectedCardIndex=$selectedCardIndex")
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .background(if (index == selectedCardIndex && isSelectable) Color.LightGray else Color.Transparent)
+                    .clickable(enabled = isSelectable) { setSelectedCardIndex(index) },
+                elevation = CardDefaults.cardElevation(4.dp)
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text("Player: ${card.playerName}", style = MaterialTheme.typography.bodyLarge)
+                    Text("Runs: ${card.runs} ${if (getStatStrength(card, "runs") > 0.8) "🔥" else ""}")
+                    Text("Wickets: ${card.wickets} ${if (getStatStrength(card, "wickets") > 0.8) "🔥" else ""}")
+                    Text("Batting Avg: ${String.format("%.2f", card.battingAverage)} ${if (getStatStrength(card, "battingAverage") > 0.8) "🔥" else ""}")
+                    Text("Strike Rate: ${String.format("%.2f", card.strikeRate)} ${if (getStatStrength(card, "strikeRate") > 0.8) "🔥" else ""}")
+                    Text("Matches: ${card.matchesPlayed} ${if (getStatStrength(card, "matchesPlayed") > 0.8) "🔥" else ""}")
+                    Text("Centuries: ${card.centuries} ${if (getStatStrength(card, "centuries") > 0.8) "🔥" else ""}")
+                    Text("Five Wicket Hauls: ${card.fiveWicketHauls} ${if (getStatStrength(card, "fiveWicketHauls") > 0.8) "🔥" else ""}")
+                }
+            }
+        }
+    }
+
+    // Challenge/Respond Buttons
+    if (challengeState != null && challengeState.activePlayer != SocketManager.socketId && countdownTime > 0 && !hasSubmitted) {
+        val card = gameData.cards.getOrNull(selectedCardIndex)
+        val value = when (challengeState.stat) {
+            "runs" -> card?.runs ?: 0
+            "wickets" -> card?.wickets ?: 0
+            "battingAverage" -> card?.battingAverage ?: 0
+            "strikeRate" -> card?.strikeRate ?: 0
+            "matchesPlayed" -> card?.matchesPlayed ?: 0
+            "centuries" -> card?.centuries ?: 0
+            "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+            else -> 0
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ) {
+            Button(
+                onClick = { onChallenge(challengeState.stat, value) },
+                enabled = !hasSubmitted && gameData.cards.isNotEmpty(),
+                modifier = Modifier.width(120.dp)
+            ) {
+                Text("Challenge")
+            }
+            Button(
+                onClick = { onGaveUp() },
+                enabled = !hasSubmitted,
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
+                modifier = Modifier.width(120.dp)
+            ) {
+                Text("Gave Up")
+            }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 

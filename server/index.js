@@ -146,6 +146,7 @@ require('dotenv').config();
                     cards: players.find(p => p.socketId === socketId)?.cards || []
                 });
             });
+            emitGameData(roomCode, room);
             logger.info(`Game initialized for room: ${roomCode}, players: ${room.sockets.length}`);
             res.status(200).json({ message: 'Game started' });
         } catch (err) {
@@ -176,61 +177,185 @@ require('dotenv').config();
             }
         });
 
-         socket.on('submitStat', ({ roomCode, stat, value }) => {
+         socket.on('submitStat', ({ roomCode, stat, value, challenge }) => {
              const room = rooms.get(roomCode);
              if (!room || !room.gameState) return;
              const playerIndex = room.gameState.players.findIndex(p => p.socketId === socket.id);
              if (playerIndex !== room.gameState.currentTurn) return;
 
-             room.gameState.selectedStats.push({ socketId: socket.id, stat, value });
+             // Add stat selection (and challenge/quote if present)
+             room.gameState.selectedStats.push({ socketId: socket.id, stat, value, challenge });
              if (room.gameState.selectedStats.length === room.playerCount) {
-                 // Process round
+                 // --- Advanced Challenge/Quote Logic (FRD extension) ---
+                 // Example: If challenge is present, resolve challenge (bluff, stat reveal, etc.)
+                 // For now, we proceed as normal, but you can expand this block for advanced rules.
+
+                 // Determine winner (highest stat value)
                  const winner = room.gameState.selectedStats.reduce((prev, curr) =>
                      curr.value > prev.value ? curr : prev
                  );
                  const winnerIndex = room.gameState.players.findIndex(p => p.socketId === winner.socketId);
                  room.gameState.players[winnerIndex].score += 1;
 
-                 // Remove played cards and redistribute winner's cards
+                 // Remove played cards and collect them for redistribution
+                 const playedCards = [];
                  room.gameState.players.forEach(p => {
-                     if (p.cards.length > 0) p.cards.shift();
+                     if (p.cards.length > 0) playedCards.push(p.cards.shift());
                  });
-                 room.gameState.players[winnerIndex].cards.push(
-                     ...room.gameState.selectedStats.map((_, i) =>
-                         room.gameState.players[i].cards[0]
-                     ).filter(c => c)
-                 );
+                 // Winner gets all played cards (if any)
+                 playedCards.forEach(card => {
+                     if (card) room.gameState.players[winnerIndex].cards.push(card);
+                 });
 
+                 // Eliminate players with no cards left
+                 room.gameState.players = room.gameState.players.filter(p => p.cards.length > 0);
+                 room.playerCount = room.gameState.players.length;
+                 // If currentTurn player eliminated, reset to 0
+                 if (room.gameState.currentTurn >= room.playerCount) {
+                     room.gameState.currentTurn = 0;
+                 }
+
+                 // Prepare scores map
+                 const scores = {};
+                 room.gameState.players.forEach(p => { scores[p.socketId] = p.score; });
                  // Check game end
-                 const activePlayers = room.gameState.players.filter(p => p.cards.length > 0);
-                 if (activePlayers.length <= 1 || room.gameState.round >= room.gameState.maxRounds) {
+                 if (room.playerCount <= 1 || room.gameState.round >= room.gameState.maxRounds) {
                      const gameWinner = room.gameState.players.reduce((prev, curr) =>
                          curr.score > prev.score ? curr : prev
                      );
                      io.to(roomCode).emit('gameEnd', {
-                         winner: gameWinner.socketId,
-                         scores: room.gameState.players.map(p => ({ socketId: p.socketId, score: p.score }))
+                         winner: gameWinner ? gameWinner.socketId : null,
+                         scores
                      });
                      rooms.delete(roomCode);
                      logger.info(`Game ended for room: ${roomCode}`);
                  } else {
                      room.gameState.round += 1;
                      room.gameState.currentTurn = (room.gameState.currentTurn + 1) % room.playerCount;
+                     const submissions = buildSubmissions(room.gameState.selectedStats);
                      room.gameState.selectedStats = [];
                      io.to(roomCode).emit('roundResult', {
                          winner: winner.socketId,
                          stat,
-                         players: room.gameState.players.map(p => ({
-                             socketId: p.socketId,
-                             cardCount: p.cards.length
-                         })),
-                         currentTurn: room.gameState.players[room.gameState.currentTurn].socketId,
-                         round: room.gameState.round
+                         submissions,
+                         scores,
+                         gameState: {
+                             players: room.gameState.players.map(p => ({ socketId: p.socketId, cardCount: p.cards.length })),
+                             currentTurn: room.gameState.players[room.gameState.currentTurn].socketId,
+                             round: room.gameState.round,
+                             cards: [], // Cards are sent individually in gameData
+                             scores
+                         }
                      });
+                     emitGameData(roomCode, room);
                  }
                  logger.info(`Round ${room.gameState.round} completed for room: ${roomCode}`);
              }
          });
+
+         // Handle challenge from opponent
+         socket.on('challenge', ({ roomCode, cardIndex, stat, value }) => {
+            const room = rooms.get(roomCode);
+            if (!room || !room.gameState) return;
+            room.gameState.selectedStats.push({ socketId: socket.id, stat, value, challenge: true });
+            if (room.gameState.selectedStats.length === room.playerCount) {
+                const winner = room.gameState.selectedStats.reduce((prev, curr) =>
+                    curr.value > prev.value ? curr : prev
+                );
+                const winnerIndex = room.gameState.players.findIndex(p => p.socketId === winner.socketId);
+                room.gameState.players[winnerIndex].score += 1;
+                const playedCards = [];
+                room.gameState.players.forEach(p => {
+                    if (p.cards.length > 0) playedCards.push(p.cards.shift());
+                });
+                playedCards.forEach(card => {
+                    if (card) room.gameState.players[winnerIndex].cards.push(card);
+                });
+                room.gameState.players = room.gameState.players.filter(p => p.cards.length > 0);
+                room.playerCount = room.gameState.players.length;
+                if (room.gameState.currentTurn >= room.playerCount) {
+                    room.gameState.currentTurn = 0;
+                }
+                const scores = {};
+                room.gameState.players.forEach(p => { scores[p.socketId] = p.score; });
+                if (room.playerCount <= 1 || room.gameState.round >= room.gameState.maxRounds) {
+                    const gameWinner = room.gameState.players.reduce((prev, curr) =>
+                        curr.score > prev.score ? curr : prev
+                    );
+                    io.to(roomCode).emit('gameEnd', {
+                        winner: gameWinner ? gameWinner.socketId : null,
+                        scores
+                    });
+                    rooms.delete(roomCode);
+                    logger.info(`Game ended for room: ${roomCode}`);
+                } else {
+                    room.gameState.round += 1;
+                    room.gameState.currentTurn = (room.gameState.currentTurn + 1) % room.playerCount;
+                    const submissions = buildSubmissions(room.gameState.selectedStats);
+                    room.gameState.selectedStats = [];
+                    io.to(roomCode).emit('roundResult', {
+                        winner: winner.socketId,
+                        stat,
+                        submissions,
+                        scores,
+                        gameState: {
+                            players: room.gameState.players.map(p => ({ socketId: p.socketId, cardCount: p.cards.length })),
+                            currentTurn: room.gameState.players[room.gameState.currentTurn].socketId,
+                            round: room.gameState.round,
+                            cards: [],
+                            scores
+                        }
+                    });
+                    emitGameData(roomCode, room);
+                }
+                logger.info(`Round ${room.gameState.round} completed for room: ${roomCode}`);
+            }
+        });
+
+        // Handle gave up (player forfeits the round)
+        socket.on('gaveUp', ({ roomCode }) => {
+            const room = rooms.get(roomCode);
+            if (!room || !room.gameState) return;
+            const player = room.gameState.players.find(p => p.socketId === socket.id);
+            if (player) player.cards = [];
+            room.gameState.players = room.gameState.players.filter(p => p.cards.length > 0);
+            room.playerCount = room.gameState.players.length;
+            if (room.gameState.currentTurn >= room.playerCount) {
+                room.gameState.currentTurn = 0;
+            }
+            const scores = {};
+            room.gameState.players.forEach(p => { scores[p.socketId] = p.score; });
+            if (room.playerCount <= 1 || room.gameState.round >= room.gameState.maxRounds) {
+                const gameWinner = room.gameState.players.reduce((prev, curr) =>
+                    curr.score > prev.score ? curr : prev
+                );
+                io.to(roomCode).emit('gameEnd', {
+                    winner: gameWinner ? gameWinner.socketId : null,
+                    scores
+                });
+                rooms.delete(roomCode);
+                logger.info(`Game ended for room: ${roomCode}`);
+            } else {
+                room.gameState.round += 1;
+                room.gameState.currentTurn = (room.gameState.currentTurn + 1) % room.playerCount;
+                room.gameState.selectedStats = [];
+                io.to(roomCode).emit('roundResult', {
+                    winner: null,
+                    stat: null,
+                    submissions: {},
+                    scores,
+                    gameState: {
+                        players: room.gameState.players.map(p => ({ socketId: p.socketId, cardCount: p.cards.length })),
+                        currentTurn: room.gameState.players[room.gameState.currentTurn].socketId,
+                        round: room.gameState.round,
+                        cards: [],
+                        scores
+                    }
+                });
+                emitGameData(roomCode, room);
+            }
+            logger.info(`Player ${socket.id} gave up in room: ${roomCode}`);
+        });
 
          socket.on('disconnect', () => {
             logger.info('Client disconnected:', socket.id);
@@ -263,6 +388,18 @@ require('dotenv').config();
              }
          }, 1000);
      }
+
+     function emitGameData(roomCode, room) {
+        room.gameState.players.forEach(player => {
+            io.to(player.socketId).emit('gameData', {
+                players: room.gameState.players.map(p => ({ socketId: p.socketId, cardCount: p.cards.length })),
+                currentTurn: room.gameState.players[room.gameState.currentTurn].socketId,
+                round: room.gameState.round,
+                cards: player.cards,
+                scores: Object.fromEntries(room.gameState.players.map(p => [p.socketId, p.score]))
+            });
+        });
+    }
 
      // Start server
      const PORT = 3000;

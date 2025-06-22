@@ -4,8 +4,8 @@ package com.praveen.cardclash.network
 import android.util.Log
 import io.socket.client.IO
 import io.socket.client.Socket
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import org.json.JSONObject
 
 import java.util.UUID
@@ -15,21 +15,36 @@ object SocketManager {
     private const val SERVER_URL = "http://192.168.31.210:3000"
     private var currentSocketId: String = ""
     private val instanceId: String = UUID.randomUUID().toString() // Unique per instance
-    private val countdownChannel = Channel<Int>()
-    private val gameStartChannel = Channel<Unit>()
-    private val gameDataChannel = Channel<GameData>()
-    private val roundResultChannel = Channel<RoundResult>()
-    private val gameEndChannel = Channel<GameEnd>()
-    private val statQuotedChannel = Channel<StatQuoted>()
-    private val challengeInitiatedChannel = Channel<StatQuoted>()
+    // Replace Channel with MutableSharedFlow (replay = 1) for all event flows
+    private val countdownFlowInternal = MutableSharedFlow<Int>(replay = 1)
+    private val gameStartFlowInternal = MutableSharedFlow<Unit>(replay = 1)
+    private val gameDataFlowInternal = MutableSharedFlow<GameData>(replay = 1)
+    private val roundResultFlowInternal = MutableSharedFlow<RoundResult>(replay = 1)
+    private val gameEndFlowInternal = MutableSharedFlow<GameEnd>(replay = 1)
+    private val statQuotedFlowInternal = MutableSharedFlow<StatQuoted>(replay = 1)
+    private val challengeInitiatedFlowInternal = MutableSharedFlow<StatQuoted>(replay = 1)
 
-    val countdownFlow = countdownChannel.receiveAsFlow()
-    val gameStartFlow = gameStartChannel.receiveAsFlow()
-    val gameDataFlow = gameDataChannel.receiveAsFlow()
-    val roundResultFlow = roundResultChannel.receiveAsFlow()
-    val gameEndFlow = gameEndChannel.receiveAsFlow()
-    val statQuotedFlow = statQuotedChannel.receiveAsFlow()
-    val challengeInitiatedFlow = challengeInitiatedChannel.receiveAsFlow()
+    val countdownFlow = countdownFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] countdownFlow created (asSharedFlow)")
+    }
+    val gameStartFlow = gameStartFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] gameStartFlow created (asSharedFlow)")
+    }
+    val gameDataFlow = gameDataFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] gameDataFlow created (asSharedFlow)")
+    }
+    val roundResultFlow = roundResultFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] roundResultFlow created (asSharedFlow)")
+    }
+    val gameEndFlow = gameEndFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] gameEndFlow created (asSharedFlow)")
+    }
+    val statQuotedFlow = statQuotedFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] statQuotedFlow created (asSharedFlow)")
+    }
+    val challengeInitiatedFlow = challengeInitiatedFlowInternal.asSharedFlow().also {
+        Log.d("SocketManager", "[FLOW] challengeInitiatedFlow created (asSharedFlow)")
+    }
 
     val socketId: String
         get() = currentSocketId
@@ -52,13 +67,14 @@ object SocketManager {
         val centuries: Int,
         val fiveWicketHauls: Int
     )
+    data class Submission(val stat: String, val value: Number)
     data class RoundResult(
-        val winner: String,
-        val stat: String,
+        val winner: String?,
+        val stat: String?,
         val submissions: Map<String, Submission>,
+        val scores: Map<String, Int>,
         val gameState: GameData
     )
-    data class Submission(val stat: String, val value: Number)
     data class GameEnd(val winner: String?, val scores: Map<String, Int>)
     data class StatQuoted(val activePlayer: String, val stat: String, val timeRemaining: Int, val isConfirmation: Boolean)
 
@@ -84,10 +100,12 @@ object SocketManager {
                 Log.d("SocketManager", "Disconnected: ${args.joinToString()}, instanceId=$instanceId")
             }?.on("countdown") { args ->
                 val value = args[0] as Int
-                countdownChannel.trySend(value)
+                val emitted = countdownFlowInternal.tryEmit(value)
+                Log.d("SocketManager", "[FLOW-EMIT] countdownFlowInternal.tryEmit: $emitted, value=$value")
                 Log.d("SocketManager", "Received countdown: $value, socketId=$currentSocketId, instanceId=$instanceId")
             }?.on("gameStart") {
-                gameStartChannel.trySend(Unit)
+                val emitted = gameStartFlowInternal.tryEmit(Unit)
+                Log.d("SocketManager", "[FLOW-EMIT] gameStartFlowInternal.tryEmit: $emitted, value=Unit")
                 Log.d("SocketManager", "Received gameStart, socketId=$currentSocketId, instanceId=$instanceId")
             }?.on("gameData") { args ->
                 try {
@@ -130,7 +148,8 @@ object SocketManager {
                         cards = cards,
                         scores = scores
                     )
-                    gameDataChannel.trySend(gameData)
+                    val emitted = gameDataFlowInternal.tryEmit(gameData)
+                    Log.d("SocketManager", "[FLOW-EMIT] gameDataFlowInternal.tryEmit: $emitted, value=$gameData")
                     Log.d("SocketManager", "Received gameData: round=${gameData.round}, cards=${gameData.cards.size}, socketId=$currentSocketId, instanceId=$instanceId")
                 } catch (e: Exception) {
                     Log.e("SocketManager", "Failed to parse gameData: ${e.message}, instanceId=$instanceId")
@@ -144,7 +163,8 @@ object SocketManager {
                         timeRemaining = data.getInt("timeRemaining"),
                         isConfirmation = data.optBoolean("isConfirmation", false)
                     )
-                    challengeInitiatedChannel.trySend(quoted)
+                    val emitted = challengeInitiatedFlowInternal.tryEmit(quoted)
+                    Log.d("SocketManager", "[FLOW-EMIT] challengeInitiatedFlowInternal.tryEmit: $emitted, value=$quoted")
                     Log.d("SocketManager", "Received challengeInitiated: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=${quoted.timeRemaining}, isConfirmation=${quoted.isConfirmation}, socketId=$currentSocketId, instanceId=$instanceId")
                 } catch (e: Exception) {
                     Log.e("SocketManager", "Failed to parse challengeInitiated: ${e.message}, instanceId=$instanceId")
@@ -158,7 +178,8 @@ object SocketManager {
                         timeRemaining = data.getInt("timeRemaining"),
                         isConfirmation = data.optBoolean("isConfirmation", false)
                     )
-                    statQuotedChannel.trySend(quoted)
+                    val emitted = statQuotedFlowInternal.tryEmit(quoted)
+                    Log.d("SocketManager", "[FLOW-EMIT] statQuotedFlowInternal.tryEmit: $emitted, value=$quoted")
                     Log.d("SocketManager", "Received statQuoted: activePlayer=${quoted.activePlayer}, stat=${quoted.stat}, time=${quoted.timeRemaining}, isConfirmation=${quoted.isConfirmation}, socketId=$currentSocketId, instanceId=$instanceId")
                 } catch (e: Exception) {
                     Log.e("SocketManager", "Failed to parse statQuoted: ${e.message}, instanceId=$instanceId")
@@ -209,10 +230,11 @@ object SocketManager {
                             scores[key] = scoresObj.getInt(key)
                         }
                     }
-                    roundResultChannel.trySend(RoundResult(
+                    val result = RoundResult(
                         winner = data.optString("winner", ""),
                         stat = data.optString("stat", ""),
                         submissions = submissions,
+                        scores = scores,
                         gameState = GameData(
                             players = players,
                             currentTurn = gameState.getString("currentTurn"),
@@ -220,7 +242,9 @@ object SocketManager {
                             cards = cards,
                             scores = scores
                         )
-                    ))
+                    )
+                    val emitted = roundResultFlowInternal.tryEmit(result)
+                    Log.d("SocketManager", "[FLOW-EMIT] roundResultFlowInternal.tryEmit: $emitted, value=$result")
                     Log.d("SocketManager", "Received roundResult, socketId=$currentSocketId, instanceId=$instanceId")
                 } catch (e: Exception) {
                     Log.e("SocketManager", "Failed to parse roundResult: ${e.message}, instanceId=$instanceId")
@@ -235,10 +259,12 @@ object SocketManager {
                             scores[key] = scoresObj.getInt(key)
                         }
                     }
-                    gameEndChannel.trySend(GameEnd(
+                    val end = GameEnd(
                         winner = data.optString("winner", null),
                         scores = scores
-                    ))
+                    )
+                    val emitted = gameEndFlowInternal.tryEmit(end)
+                    Log.d("SocketManager", "[FLOW-EMIT] gameEndFlowInternal.tryEmit: $emitted, value=$end")
                     Log.d("SocketManager", "Received gameEnd, socketId=$currentSocketId, instanceId=$instanceId")
                 } catch (e: Exception) {
                     Log.e("SocketManager", "Failed to parse gameEnd: ${e.message}, instanceId=$instanceId")
