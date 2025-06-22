@@ -72,6 +72,7 @@ object SocketManager {
         val winner: String?,
         val stat: String?,
         val submissions: Map<String, Submission>,
+        val revealedCards: Map<String, Card>, // <-- Added this line
         val scores: Map<String, Int>,
         val gameState: GameData
     )
@@ -230,10 +231,31 @@ object SocketManager {
                             scores[key] = scoresObj.getInt(key)
                         }
                     }
+                    // Parse revealedCards
+                    val revealedCardsObj = data.optJSONObject("revealedCards")
+                    val revealedCards = mutableMapOf<String, Card>()
+                    if (revealedCardsObj != null) {
+                        revealedCardsObj.keys().forEach { key ->
+                            if (key is String) {
+                                val c = revealedCardsObj.getJSONObject(key)
+                                revealedCards[key] = Card(
+                                    playerName = c.getString("playerName"),
+                                    runs = c.getInt("runs"),
+                                    wickets = c.getInt("wickets"),
+                                    battingAverage = c.getDouble("battingAverage").toFloat(),
+                                    strikeRate = c.getDouble("strikeRate").toFloat(),
+                                    matchesPlayed = c.getInt("matchesPlayed"),
+                                    centuries = c.getInt("centuries"),
+                                    fiveWicketHauls = c.getInt("fiveWicketHauls")
+                                )
+                            }
+                        }
+                    }
                     val result = RoundResult(
-                        winner = data.optString("winner", ""),
-                        stat = data.optString("stat", ""),
+                        winner = data.optString("winner", null),
+                        stat = data.optString("stat", null),
                         submissions = submissions,
+                        revealedCards = revealedCards,
                         scores = scores,
                         gameState = GameData(
                             players = players,

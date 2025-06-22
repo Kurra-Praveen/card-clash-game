@@ -2550,3 +2550,687 @@
 {"level":"info","message":"Sent roundResult to socket Dov1vT4dx6URHsfxAAAD in room 00A591","timestamp":"2025-06-22T17:54:30.068Z"}
 {"level":"info","message":"Sent roundResult to socket EFxgonit3URkr6t2AAAB in room 00A591","timestamp":"2025-06-22T17:54:30.069Z"}
 {"level":"info","message":"[processRoundResult] Round processed for room 00A591, winner: EFxgonit3URkr6t2AAAB","timestamp":"2025-06-22T17:54:30.069Z"}
+{"level":"info","message":"New socket connection: KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:33:43.880Z"}
+{"level":"info","message":"New socket connection: hgZmXxyyFvix_uzHAAAH","timestamp":"2025-06-22T18:33:57.951Z"}
+{"level":"info","message":"Room created: 4E64AD, maxPlayers: 2","timestamp":"2025-06-22T18:34:04.120Z"}
+{"level":"info","message":"Socket hgZmXxyyFvix_uzHAAAH joined room 4E64AD, sockets: 1","timestamp":"2025-06-22T18:34:04.173Z"}
+{"level":"info","message":"Player joined room: 4E64AD, playerCount: 2, sockets: 2","timestamp":"2025-06-22T18:34:15.694Z"}
+{"level":"info","message":"Socket KPAEsOGhcwODkbq_AAAF joined room 4E64AD, sockets: 2","timestamp":"2025-06-22T18:34:15.716Z"}
+{"level":"info","message":"Countdown for 4E64AD: 3","timestamp":"2025-06-22T18:34:16.707Z"}
+{"level":"info","message":"Countdown for 4E64AD: 2","timestamp":"2025-06-22T18:34:17.718Z"}
+{"level":"info","message":"Countdown for 4E64AD: 1","timestamp":"2025-06-22T18:34:18.730Z"}
+{"level":"info","message":"Countdown for 4E64AD: 0","timestamp":"2025-06-22T18:34:19.740Z"}
+{"level":"info","message":"Game started for room: 4E64AD","timestamp":"2025-06-22T18:34:19.740Z"}
+{"level":"info","message":"Game initialized for room: 4E64AD, players: 2","timestamp":"2025-06-22T18:34:20.018Z"}
+{"level":"info","message":"Sent gameData to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:34:20.022Z"}
+{"level":"info","message":"Sent gameData to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:34:20.023Z"}
+{"level":"info","message":"Game initialized for room: 4E64AD, players: 2","timestamp":"2025-06-22T18:34:20.106Z"}
+{"level":"info","message":"Sent gameData to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:34:20.107Z"}
+{"level":"info","message":"Sent gameData to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:34:20.108Z"}
+{"level":"info","message":"[submitStat] socket.id=hgZmXxyyFvix_uzHAAAH, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=76.05223","timestamp":"2025-06-22T18:34:34.689Z"}
+{"level":"info","message":"[submitStat] Stat quoted by hgZmXxyyFvix_uzHAAAH in room 4E64AD: cardIndex=0, battingAverage=76.05223","timestamp":"2025-06-22T18:34:34.691Z"}
+{"level":"info","message":"[submitStat] Room 4E64AD sockets: hgZmXxyyFvix_uzHAAAH, KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:34:34.691Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:34:34.691Z"}
+{"level":"info","message":"[submitStat] Considering sid=hgZmXxyyFvix_uzHAAAH for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:34:34.695Z"}
+{"level":"info","message":"[submitStat] Considering sid=KPAEsOGhcwODkbq_AAAF for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:34:34.695Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:34:34.696Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 4E64AD","timestamp":"2025-06-22T18:34:34.697Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=14","timestamp":"2025-06-22T18:34:35.711Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=14","timestamp":"2025-06-22T18:34:35.712Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 14s","timestamp":"2025-06-22T18:34:35.713Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=13","timestamp":"2025-06-22T18:34:36.724Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=13","timestamp":"2025-06-22T18:34:36.725Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 13s","timestamp":"2025-06-22T18:34:36.725Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=12","timestamp":"2025-06-22T18:34:37.729Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=12","timestamp":"2025-06-22T18:34:37.730Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 12s","timestamp":"2025-06-22T18:34:37.731Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=11","timestamp":"2025-06-22T18:34:38.728Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=11","timestamp":"2025-06-22T18:34:38.729Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 11s","timestamp":"2025-06-22T18:34:38.730Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=10","timestamp":"2025-06-22T18:34:39.737Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=10","timestamp":"2025-06-22T18:34:39.738Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 10s","timestamp":"2025-06-22T18:34:39.738Z"}
+{"level":"info","message":"[challenge] socket.id=KPAEsOGhcwODkbq_AAAF, roomCode=, cardIndex=0, stat=battingAverage, value=64.788","timestamp":"2025-06-22T18:34:40.725Z"}
+{"level":"error","message":"Challenge failed for socket KPAEsOGhcwODkbq_AAAF: Room  not found or no active stat","timestamp":"2025-06-22T18:34:40.726Z"}
+{"level":"info","message":"[challenge] socket.id=KPAEsOGhcwODkbq_AAAF, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=0","timestamp":"2025-06-22T18:34:40.729Z"}
+{"level":"info","message":"[challenge] Challenge submitted by KPAEsOGhcwODkbq_AAAF in room 4E64AD: cardIndex=0, battingAverage=0","timestamp":"2025-06-22T18:34:40.730Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=4E64AD, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:34:40.730Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 4E64AD","timestamp":"2025-06-22T18:34:40.730Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 4E64AD","timestamp":"2025-06-22T18:34:40.731Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 4E64AD","timestamp":"2025-06-22T18:34:40.731Z"}
+{"level":"info","message":"Sent roundResult to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:34:40.732Z"}
+{"level":"info","message":"Sent roundResult to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:34:40.733Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 4E64AD, winner: hgZmXxyyFvix_uzHAAAH","timestamp":"2025-06-22T18:34:40.733Z"}
+{"level":"info","message":"[submitStat] socket.id=hgZmXxyyFvix_uzHAAAH, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=86.19519","timestamp":"2025-06-22T18:35:00.079Z"}
+{"level":"info","message":"[submitStat] Stat quoted by hgZmXxyyFvix_uzHAAAH in room 4E64AD: cardIndex=0, battingAverage=86.19519","timestamp":"2025-06-22T18:35:00.080Z"}
+{"level":"info","message":"[submitStat] Room 4E64AD sockets: hgZmXxyyFvix_uzHAAAH, KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:35:00.080Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:00.080Z"}
+{"level":"info","message":"[submitStat] Considering sid=hgZmXxyyFvix_uzHAAAH for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:35:00.081Z"}
+{"level":"info","message":"[submitStat] Considering sid=KPAEsOGhcwODkbq_AAAF for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:35:00.081Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:00.082Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:00.082Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=14","timestamp":"2025-06-22T18:35:01.087Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=14","timestamp":"2025-06-22T18:35:01.088Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 14s","timestamp":"2025-06-22T18:35:01.089Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=13","timestamp":"2025-06-22T18:35:02.094Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=13","timestamp":"2025-06-22T18:35:02.095Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 13s","timestamp":"2025-06-22T18:35:02.095Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=12","timestamp":"2025-06-22T18:35:03.098Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=12","timestamp":"2025-06-22T18:35:03.098Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 12s","timestamp":"2025-06-22T18:35:03.099Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=11","timestamp":"2025-06-22T18:35:04.110Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=11","timestamp":"2025-06-22T18:35:04.111Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 11s","timestamp":"2025-06-22T18:35:04.112Z"}
+{"level":"info","message":"[challenge] socket.id=KPAEsOGhcwODkbq_AAAF, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=56.62179","timestamp":"2025-06-22T18:35:04.442Z"}
+{"level":"info","message":"[challenge] Challenge submitted by KPAEsOGhcwODkbq_AAAF in room 4E64AD: cardIndex=0, battingAverage=56.62179","timestamp":"2025-06-22T18:35:04.442Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=4E64AD, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:35:04.443Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 4E64AD","timestamp":"2025-06-22T18:35:04.444Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:04.444Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 4E64AD","timestamp":"2025-06-22T18:35:04.444Z"}
+{"level":"info","message":"Sent roundResult to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:04.445Z"}
+{"level":"info","message":"Sent roundResult to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:04.446Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 4E64AD, winner: hgZmXxyyFvix_uzHAAAH","timestamp":"2025-06-22T18:35:04.447Z"}
+{"level":"info","message":"[submitStat] socket.id=hgZmXxyyFvix_uzHAAAH, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=36.408443","timestamp":"2025-06-22T18:35:22.305Z"}
+{"level":"info","message":"[submitStat] Stat quoted by hgZmXxyyFvix_uzHAAAH in room 4E64AD: cardIndex=0, battingAverage=36.408443","timestamp":"2025-06-22T18:35:22.306Z"}
+{"level":"info","message":"[submitStat] Room 4E64AD sockets: hgZmXxyyFvix_uzHAAAH, KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:35:22.306Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:22.307Z"}
+{"level":"info","message":"[submitStat] Considering sid=hgZmXxyyFvix_uzHAAAH for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:35:22.307Z"}
+{"level":"info","message":"[submitStat] Considering sid=KPAEsOGhcwODkbq_AAAF for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:35:22.308Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:22.308Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:22.309Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=14","timestamp":"2025-06-22T18:35:23.318Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=14","timestamp":"2025-06-22T18:35:23.318Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 14s","timestamp":"2025-06-22T18:35:23.319Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=13","timestamp":"2025-06-22T18:35:24.330Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=13","timestamp":"2025-06-22T18:35:24.330Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 13s","timestamp":"2025-06-22T18:35:24.331Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=12","timestamp":"2025-06-22T18:35:25.341Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=12","timestamp":"2025-06-22T18:35:25.342Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 12s","timestamp":"2025-06-22T18:35:25.342Z"}
+{"level":"info","message":"[challenge] socket.id=KPAEsOGhcwODkbq_AAAF, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=35.483303","timestamp":"2025-06-22T18:35:26.214Z"}
+{"level":"info","message":"[challenge] Challenge submitted by KPAEsOGhcwODkbq_AAAF in room 4E64AD: cardIndex=0, battingAverage=35.483303","timestamp":"2025-06-22T18:35:26.214Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=4E64AD, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:35:26.215Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 4E64AD","timestamp":"2025-06-22T18:35:26.215Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:26.215Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 4E64AD","timestamp":"2025-06-22T18:35:26.215Z"}
+{"level":"info","message":"Sent roundResult to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:26.216Z"}
+{"level":"info","message":"Sent roundResult to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:26.218Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 4E64AD, winner: hgZmXxyyFvix_uzHAAAH","timestamp":"2025-06-22T18:35:26.218Z"}
+{"level":"info","message":"[submitStat] socket.id=hgZmXxyyFvix_uzHAAAH, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=27.887836","timestamp":"2025-06-22T18:35:34.874Z"}
+{"level":"info","message":"[submitStat] Stat quoted by hgZmXxyyFvix_uzHAAAH in room 4E64AD: cardIndex=0, battingAverage=27.887836","timestamp":"2025-06-22T18:35:34.875Z"}
+{"level":"info","message":"[submitStat] Room 4E64AD sockets: hgZmXxyyFvix_uzHAAAH, KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:35:34.875Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:34.875Z"}
+{"level":"info","message":"[submitStat] Considering sid=hgZmXxyyFvix_uzHAAAH for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:35:34.875Z"}
+{"level":"info","message":"[submitStat] Considering sid=KPAEsOGhcwODkbq_AAAF for opponent event emission (socket.id=hgZmXxyyFvix_uzHAAAH)","timestamp":"2025-06-22T18:35:34.876Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:34.876Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:34.876Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=14","timestamp":"2025-06-22T18:35:35.886Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=14","timestamp":"2025-06-22T18:35:35.887Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 14s","timestamp":"2025-06-22T18:35:35.888Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=13","timestamp":"2025-06-22T18:35:36.898Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=13","timestamp":"2025-06-22T18:35:36.899Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 13s","timestamp":"2025-06-22T18:35:36.899Z"}
+{"level":"info","message":"[challenge] socket.id=KPAEsOGhcwODkbq_AAAF, roomCode=4E64AD, cardIndex=0, stat=battingAverage, value=49.986233","timestamp":"2025-06-22T18:35:37.099Z"}
+{"level":"info","message":"[challenge] Challenge submitted by KPAEsOGhcwODkbq_AAAF in room 4E64AD: cardIndex=0, battingAverage=49.986233","timestamp":"2025-06-22T18:35:37.100Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=4E64AD, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:35:37.100Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 4E64AD","timestamp":"2025-06-22T18:35:37.100Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:37.100Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 4E64AD","timestamp":"2025-06-22T18:35:37.101Z"}
+{"level":"info","message":"Sent roundResult to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:37.101Z"}
+{"level":"info","message":"Sent roundResult to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:37.102Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 4E64AD, winner: KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:35:37.102Z"}
+{"level":"info","message":"[submitStat] socket.id=KPAEsOGhcwODkbq_AAAF, roomCode=4E64AD, cardIndex=0, stat=runs, value=5090","timestamp":"2025-06-22T18:35:50.835Z"}
+{"level":"info","message":"[submitStat] Stat quoted by KPAEsOGhcwODkbq_AAAF in room 4E64AD: cardIndex=0, runs=5090","timestamp":"2025-06-22T18:35:50.836Z"}
+{"level":"info","message":"[submitStat] Room 4E64AD sockets: hgZmXxyyFvix_uzHAAAH, KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:35:50.836Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:50.837Z"}
+{"level":"info","message":"[submitStat] Considering sid=hgZmXxyyFvix_uzHAAAH for opponent event emission (socket.id=KPAEsOGhcwODkbq_AAAF)","timestamp":"2025-06-22T18:35:50.837Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:50.837Z"}
+{"level":"info","message":"[submitStat] Considering sid=KPAEsOGhcwODkbq_AAAF for opponent event emission (socket.id=KPAEsOGhcwODkbq_AAAF)","timestamp":"2025-06-22T18:35:50.838Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:50.838Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=hgZmXxyyFvix_uzHAAAH with timeRemaining=14","timestamp":"2025-06-22T18:35:51.841Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=KPAEsOGhcwODkbq_AAAF with timeRemaining=14","timestamp":"2025-06-22T18:35:51.842Z"}
+{"level":"info","message":"Challenge timer for 4E64AD: 14s","timestamp":"2025-06-22T18:35:51.843Z"}
+{"level":"info","message":"[challenge] socket.id=hgZmXxyyFvix_uzHAAAH, roomCode=, cardIndex=0, stat=runs, value=1610","timestamp":"2025-06-22T18:35:52.670Z"}
+{"level":"error","message":"Challenge failed for socket hgZmXxyyFvix_uzHAAAH: Room  not found or no active stat","timestamp":"2025-06-22T18:35:52.671Z"}
+{"level":"info","message":"[challenge] socket.id=hgZmXxyyFvix_uzHAAAH, roomCode=4E64AD, cardIndex=0, stat=runs, value=0","timestamp":"2025-06-22T18:35:52.675Z"}
+{"level":"info","message":"[challenge] Challenge submitted by hgZmXxyyFvix_uzHAAAH in room 4E64AD: cardIndex=0, runs=0","timestamp":"2025-06-22T18:35:52.675Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=4E64AD, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:35:52.676Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 4E64AD","timestamp":"2025-06-22T18:35:52.676Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 4E64AD","timestamp":"2025-06-22T18:35:52.676Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 4E64AD","timestamp":"2025-06-22T18:35:52.677Z"}
+{"level":"info","message":"Sent roundResult to socket hgZmXxyyFvix_uzHAAAH in room 4E64AD","timestamp":"2025-06-22T18:35:52.677Z"}
+{"level":"info","message":"Sent roundResult to socket KPAEsOGhcwODkbq_AAAF in room 4E64AD","timestamp":"2025-06-22T18:35:52.678Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 4E64AD, winner: KPAEsOGhcwODkbq_AAAF","timestamp":"2025-06-22T18:35:52.679Z"}
+{"level":"info","message":"New socket connection: p9R1T71jjgxlVfgqAAAJ","timestamp":"2025-06-22T18:37:34.458Z"}
+{"level":"info","message":"New socket connection: EsKBfuNSZy4p8MqSAAAL","timestamp":"2025-06-22T18:37:44.060Z"}
+{"level":"info","message":"Room created: BC0D5E, maxPlayers: 2","timestamp":"2025-06-22T18:37:55.260Z"}
+{"level":"info","message":"Socket EsKBfuNSZy4p8MqSAAAL joined room BC0D5E, sockets: 1","timestamp":"2025-06-22T18:37:55.298Z"}
+{"level":"info","message":"Player joined room: BC0D5E, playerCount: 2, sockets: 2","timestamp":"2025-06-22T18:38:04.636Z"}
+{"level":"info","message":"Socket p9R1T71jjgxlVfgqAAAJ joined room BC0D5E, sockets: 2","timestamp":"2025-06-22T18:38:04.666Z"}
+{"level":"info","message":"Countdown for BC0D5E: 3","timestamp":"2025-06-22T18:38:05.643Z"}
+{"level":"info","message":"Countdown for BC0D5E: 2","timestamp":"2025-06-22T18:38:06.654Z"}
+{"level":"info","message":"Countdown for BC0D5E: 1","timestamp":"2025-06-22T18:38:07.664Z"}
+{"level":"info","message":"Countdown for BC0D5E: 0","timestamp":"2025-06-22T18:38:08.674Z"}
+{"level":"info","message":"Game started for room: BC0D5E","timestamp":"2025-06-22T18:38:08.675Z"}
+{"level":"info","message":"Game initialized for room: BC0D5E, players: 2","timestamp":"2025-06-22T18:38:08.951Z"}
+{"level":"info","message":"Sent gameData to socket EsKBfuNSZy4p8MqSAAAL in room BC0D5E","timestamp":"2025-06-22T18:38:08.955Z"}
+{"level":"info","message":"Sent gameData to socket p9R1T71jjgxlVfgqAAAJ in room BC0D5E","timestamp":"2025-06-22T18:38:08.957Z"}
+{"level":"info","message":"Game initialized for room: BC0D5E, players: 2","timestamp":"2025-06-22T18:38:08.963Z"}
+{"level":"info","message":"Sent gameData to socket EsKBfuNSZy4p8MqSAAAL in room BC0D5E","timestamp":"2025-06-22T18:38:08.964Z"}
+{"level":"info","message":"Sent gameData to socket p9R1T71jjgxlVfgqAAAJ in room BC0D5E","timestamp":"2025-06-22T18:38:08.965Z"}
+{"level":"info","message":"[submitStat] socket.id=EsKBfuNSZy4p8MqSAAAL, roomCode=BC0D5E, cardIndex=0, stat=centuries, value=41","timestamp":"2025-06-22T18:38:24.007Z"}
+{"level":"info","message":"[submitStat] Stat quoted by EsKBfuNSZy4p8MqSAAAL in room BC0D5E: cardIndex=0, centuries=41","timestamp":"2025-06-22T18:38:24.008Z"}
+{"level":"info","message":"[submitStat] Room BC0D5E sockets: EsKBfuNSZy4p8MqSAAAL, p9R1T71jjgxlVfgqAAAJ","timestamp":"2025-06-22T18:38:24.008Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player EsKBfuNSZy4p8MqSAAAL in room BC0D5E","timestamp":"2025-06-22T18:38:24.009Z"}
+{"level":"info","message":"[submitStat] Considering sid=EsKBfuNSZy4p8MqSAAAL for opponent event emission (socket.id=EsKBfuNSZy4p8MqSAAAL)","timestamp":"2025-06-22T18:38:24.010Z"}
+{"level":"info","message":"[submitStat] Considering sid=p9R1T71jjgxlVfgqAAAJ for opponent event emission (socket.id=EsKBfuNSZy4p8MqSAAAL)","timestamp":"2025-06-22T18:38:24.010Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent p9R1T71jjgxlVfgqAAAJ in room BC0D5E","timestamp":"2025-06-22T18:38:24.010Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room BC0D5E","timestamp":"2025-06-22T18:38:24.011Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=EsKBfuNSZy4p8MqSAAAL with timeRemaining=14","timestamp":"2025-06-22T18:38:25.020Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=p9R1T71jjgxlVfgqAAAJ with timeRemaining=14","timestamp":"2025-06-22T18:38:25.021Z"}
+{"level":"info","message":"Challenge timer for BC0D5E: 14s","timestamp":"2025-06-22T18:38:25.022Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=EsKBfuNSZy4p8MqSAAAL with timeRemaining=13","timestamp":"2025-06-22T18:38:26.030Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=p9R1T71jjgxlVfgqAAAJ with timeRemaining=13","timestamp":"2025-06-22T18:38:26.031Z"}
+{"level":"info","message":"Challenge timer for BC0D5E: 13s","timestamp":"2025-06-22T18:38:26.031Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=EsKBfuNSZy4p8MqSAAAL with timeRemaining=12","timestamp":"2025-06-22T18:38:27.042Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=p9R1T71jjgxlVfgqAAAJ with timeRemaining=12","timestamp":"2025-06-22T18:38:27.043Z"}
+{"level":"info","message":"Challenge timer for BC0D5E: 12s","timestamp":"2025-06-22T18:38:27.043Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=EsKBfuNSZy4p8MqSAAAL with timeRemaining=11","timestamp":"2025-06-22T18:38:28.047Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=p9R1T71jjgxlVfgqAAAJ with timeRemaining=11","timestamp":"2025-06-22T18:38:28.048Z"}
+{"level":"info","message":"Challenge timer for BC0D5E: 11s","timestamp":"2025-06-22T18:38:28.048Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=EsKBfuNSZy4p8MqSAAAL with timeRemaining=10","timestamp":"2025-06-22T18:38:29.054Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=p9R1T71jjgxlVfgqAAAJ with timeRemaining=10","timestamp":"2025-06-22T18:38:29.055Z"}
+{"level":"info","message":"Challenge timer for BC0D5E: 10s","timestamp":"2025-06-22T18:38:29.056Z"}
+{"level":"info","message":"[challenge] socket.id=p9R1T71jjgxlVfgqAAAJ, roomCode=BC0D5E, cardIndex=0, stat=centuries, value=35","timestamp":"2025-06-22T18:38:30.030Z"}
+{"level":"info","message":"[challenge] Challenge submitted by p9R1T71jjgxlVfgqAAAJ in room BC0D5E: cardIndex=0, centuries=35","timestamp":"2025-06-22T18:38:30.031Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=BC0D5E, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:38:30.031Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room BC0D5E","timestamp":"2025-06-22T18:38:30.031Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room BC0D5E","timestamp":"2025-06-22T18:38:30.032Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room BC0D5E","timestamp":"2025-06-22T18:38:30.032Z"}
+{"level":"info","message":"Sent roundResult to socket EsKBfuNSZy4p8MqSAAAL in room BC0D5E","timestamp":"2025-06-22T18:38:30.033Z"}
+{"level":"info","message":"Sent roundResult to socket p9R1T71jjgxlVfgqAAAJ in room BC0D5E","timestamp":"2025-06-22T18:38:30.034Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room BC0D5E, winner: EsKBfuNSZy4p8MqSAAAL","timestamp":"2025-06-22T18:38:30.034Z"}
+{"level":"info","message":"New socket connection: xpnLOIDxbyHhezdBAAAN","timestamp":"2025-06-22T18:44:01.918Z"}
+{"level":"info","message":"New socket connection: kgcU3a68P9Xu67zAAAAP","timestamp":"2025-06-22T18:44:12.559Z"}
+{"level":"info","message":"Room created: 7F66A8, maxPlayers: 2","timestamp":"2025-06-22T18:44:20.179Z"}
+{"level":"info","message":"Socket kgcU3a68P9Xu67zAAAAP joined room 7F66A8, sockets: 1","timestamp":"2025-06-22T18:44:20.247Z"}
+{"level":"info","message":"Player joined room: 7F66A8, playerCount: 2, sockets: 2","timestamp":"2025-06-22T18:44:31.620Z"}
+{"level":"info","message":"Countdown for 7F66A8: 3","timestamp":"2025-06-22T18:44:32.627Z"}
+{"level":"info","message":"Socket xpnLOIDxbyHhezdBAAAN joined room 7F66A8, sockets: 2","timestamp":"2025-06-22T18:44:32.805Z"}
+{"level":"info","message":"Countdown for 7F66A8: 2","timestamp":"2025-06-22T18:44:33.631Z"}
+{"level":"info","message":"Countdown for 7F66A8: 1","timestamp":"2025-06-22T18:44:34.640Z"}
+{"level":"info","message":"Countdown for 7F66A8: 0","timestamp":"2025-06-22T18:44:35.649Z"}
+{"level":"info","message":"Game started for room: 7F66A8","timestamp":"2025-06-22T18:44:35.650Z"}
+{"level":"info","message":"Game initialized for room: 7F66A8, players: 2","timestamp":"2025-06-22T18:44:36.481Z"}
+{"level":"info","message":"Sent gameData to socket kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:44:36.484Z"}
+{"level":"info","message":"Sent gameData to socket xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:44:36.485Z"}
+{"level":"info","message":"Game initialized for room: 7F66A8, players: 2","timestamp":"2025-06-22T18:44:37.890Z"}
+{"level":"info","message":"Sent gameData to socket kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:44:37.891Z"}
+{"level":"info","message":"Sent gameData to socket xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:44:37.892Z"}
+{"level":"info","message":"[submitStat] socket.id=kgcU3a68P9Xu67zAAAAP, roomCode=7F66A8, cardIndex=0, stat=wickets, value=451","timestamp":"2025-06-22T18:44:46.286Z"}
+{"level":"info","message":"[submitStat] Stat quoted by kgcU3a68P9Xu67zAAAAP in room 7F66A8: cardIndex=0, wickets=451","timestamp":"2025-06-22T18:44:46.288Z"}
+{"level":"info","message":"[submitStat] Room 7F66A8 sockets: kgcU3a68P9Xu67zAAAAP, xpnLOIDxbyHhezdBAAAN","timestamp":"2025-06-22T18:44:46.288Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:44:46.289Z"}
+{"level":"info","message":"[submitStat] Considering sid=kgcU3a68P9Xu67zAAAAP for opponent event emission (socket.id=kgcU3a68P9Xu67zAAAAP)","timestamp":"2025-06-22T18:44:46.290Z"}
+{"level":"info","message":"[submitStat] Considering sid=xpnLOIDxbyHhezdBAAAN for opponent event emission (socket.id=kgcU3a68P9Xu67zAAAAP)","timestamp":"2025-06-22T18:44:46.291Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:44:46.291Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 7F66A8","timestamp":"2025-06-22T18:44:46.292Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=14","timestamp":"2025-06-22T18:44:47.306Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=14","timestamp":"2025-06-22T18:44:47.307Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 14s","timestamp":"2025-06-22T18:44:47.307Z"}
+{"level":"info","message":"[challenge] socket.id=xpnLOIDxbyHhezdBAAAN, roomCode=7F66A8, cardIndex=0, stat=wickets, value=131","timestamp":"2025-06-22T18:44:47.812Z"}
+{"level":"info","message":"[challenge] Challenge submitted by xpnLOIDxbyHhezdBAAAN in room 7F66A8: cardIndex=0, wickets=131","timestamp":"2025-06-22T18:44:47.813Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=7F66A8, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:44:47.813Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 7F66A8","timestamp":"2025-06-22T18:44:47.813Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 7F66A8","timestamp":"2025-06-22T18:44:47.814Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 7F66A8","timestamp":"2025-06-22T18:44:47.814Z"}
+{"level":"info","message":"Sent roundResult to socket kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:44:47.816Z"}
+{"level":"info","message":"Sent roundResult to socket xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:44:47.816Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 7F66A8, winner: kgcU3a68P9Xu67zAAAAP","timestamp":"2025-06-22T18:44:47.817Z"}
+{"level":"info","message":"[submitStat] socket.id=kgcU3a68P9Xu67zAAAAP, roomCode=7F66A8, cardIndex=0, stat=wickets, value=290","timestamp":"2025-06-22T18:45:32.639Z"}
+{"level":"info","message":"[submitStat] Stat quoted by kgcU3a68P9Xu67zAAAAP in room 7F66A8: cardIndex=0, wickets=290","timestamp":"2025-06-22T18:45:32.639Z"}
+{"level":"info","message":"[submitStat] Room 7F66A8 sockets: kgcU3a68P9Xu67zAAAAP, xpnLOIDxbyHhezdBAAAN","timestamp":"2025-06-22T18:45:32.639Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:45:32.640Z"}
+{"level":"info","message":"[submitStat] Considering sid=kgcU3a68P9Xu67zAAAAP for opponent event emission (socket.id=kgcU3a68P9Xu67zAAAAP)","timestamp":"2025-06-22T18:45:32.640Z"}
+{"level":"info","message":"[submitStat] Considering sid=xpnLOIDxbyHhezdBAAAN for opponent event emission (socket.id=kgcU3a68P9Xu67zAAAAP)","timestamp":"2025-06-22T18:45:32.640Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:45:32.640Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 7F66A8","timestamp":"2025-06-22T18:45:32.641Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=14","timestamp":"2025-06-22T18:45:33.651Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=14","timestamp":"2025-06-22T18:45:33.651Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 14s","timestamp":"2025-06-22T18:45:33.652Z"}
+{"level":"info","message":"[challenge] socket.id=xpnLOIDxbyHhezdBAAAN, roomCode=7F66A8, cardIndex=0, stat=wickets, value=299","timestamp":"2025-06-22T18:45:34.149Z"}
+{"level":"info","message":"[challenge] Challenge submitted by xpnLOIDxbyHhezdBAAAN in room 7F66A8: cardIndex=0, wickets=299","timestamp":"2025-06-22T18:45:34.149Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=7F66A8, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:45:34.150Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 7F66A8","timestamp":"2025-06-22T18:45:34.150Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 7F66A8","timestamp":"2025-06-22T18:45:34.150Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 7F66A8","timestamp":"2025-06-22T18:45:34.151Z"}
+{"level":"info","message":"Sent roundResult to socket kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:45:34.151Z"}
+{"level":"info","message":"Sent roundResult to socket xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:45:34.152Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 7F66A8, winner: xpnLOIDxbyHhezdBAAAN","timestamp":"2025-06-22T18:45:34.152Z"}
+{"level":"info","message":"[submitStat] socket.id=xpnLOIDxbyHhezdBAAAN, roomCode=7F66A8, cardIndex=0, stat=runs, value=755","timestamp":"2025-06-22T18:45:59.117Z"}
+{"level":"info","message":"[submitStat] Stat quoted by xpnLOIDxbyHhezdBAAAN in room 7F66A8: cardIndex=0, runs=755","timestamp":"2025-06-22T18:45:59.117Z"}
+{"level":"info","message":"[submitStat] Room 7F66A8 sockets: kgcU3a68P9Xu67zAAAAP, xpnLOIDxbyHhezdBAAAN","timestamp":"2025-06-22T18:45:59.118Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:45:59.118Z"}
+{"level":"info","message":"[submitStat] Considering sid=kgcU3a68P9Xu67zAAAAP for opponent event emission (socket.id=xpnLOIDxbyHhezdBAAAN)","timestamp":"2025-06-22T18:45:59.119Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:45:59.119Z"}
+{"level":"info","message":"[submitStat] Considering sid=xpnLOIDxbyHhezdBAAAN for opponent event emission (socket.id=xpnLOIDxbyHhezdBAAAN)","timestamp":"2025-06-22T18:45:59.119Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 7F66A8","timestamp":"2025-06-22T18:45:59.120Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=14","timestamp":"2025-06-22T18:46:00.124Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=14","timestamp":"2025-06-22T18:46:00.125Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 14s","timestamp":"2025-06-22T18:46:00.125Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=13","timestamp":"2025-06-22T18:46:01.132Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=13","timestamp":"2025-06-22T18:46:01.133Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 13s","timestamp":"2025-06-22T18:46:01.134Z"}
+{"level":"info","message":"[challenge] socket.id=kgcU3a68P9Xu67zAAAAP, roomCode=7F66A8, cardIndex=0, stat=runs, value=6943","timestamp":"2025-06-22T18:46:01.606Z"}
+{"level":"info","message":"[challenge] Challenge submitted by kgcU3a68P9Xu67zAAAAP in room 7F66A8: cardIndex=0, runs=6943","timestamp":"2025-06-22T18:46:01.607Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=7F66A8, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:46:01.607Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 7F66A8","timestamp":"2025-06-22T18:46:01.607Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 7F66A8","timestamp":"2025-06-22T18:46:01.607Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 7F66A8","timestamp":"2025-06-22T18:46:01.608Z"}
+{"level":"info","message":"Sent roundResult to socket kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:46:01.608Z"}
+{"level":"info","message":"Sent roundResult to socket xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:46:01.610Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 7F66A8, winner: kgcU3a68P9Xu67zAAAAP","timestamp":"2025-06-22T18:46:01.610Z"}
+{"level":"info","message":"[submitStat] socket.id=kgcU3a68P9Xu67zAAAAP, roomCode=7F66A8, cardIndex=0, stat=wickets, value=59","timestamp":"2025-06-22T18:47:01.217Z"}
+{"level":"info","message":"[submitStat] Stat quoted by kgcU3a68P9Xu67zAAAAP in room 7F66A8: cardIndex=0, wickets=59","timestamp":"2025-06-22T18:47:01.217Z"}
+{"level":"info","message":"[submitStat] Room 7F66A8 sockets: kgcU3a68P9Xu67zAAAAP, xpnLOIDxbyHhezdBAAAN","timestamp":"2025-06-22T18:47:01.218Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:47:01.218Z"}
+{"level":"info","message":"[submitStat] Considering sid=kgcU3a68P9Xu67zAAAAP for opponent event emission (socket.id=kgcU3a68P9Xu67zAAAAP)","timestamp":"2025-06-22T18:47:01.218Z"}
+{"level":"info","message":"[submitStat] Considering sid=xpnLOIDxbyHhezdBAAAN for opponent event emission (socket.id=kgcU3a68P9Xu67zAAAAP)","timestamp":"2025-06-22T18:47:01.219Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:47:01.219Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 7F66A8","timestamp":"2025-06-22T18:47:01.219Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=14","timestamp":"2025-06-22T18:47:02.227Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=14","timestamp":"2025-06-22T18:47:02.228Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 14s","timestamp":"2025-06-22T18:47:02.228Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=13","timestamp":"2025-06-22T18:47:03.232Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=13","timestamp":"2025-06-22T18:47:03.232Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 13s","timestamp":"2025-06-22T18:47:03.233Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=12","timestamp":"2025-06-22T18:47:04.240Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=12","timestamp":"2025-06-22T18:47:04.241Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 12s","timestamp":"2025-06-22T18:47:04.242Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=11","timestamp":"2025-06-22T18:47:05.253Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=11","timestamp":"2025-06-22T18:47:05.254Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 11s","timestamp":"2025-06-22T18:47:05.254Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=10","timestamp":"2025-06-22T18:47:06.265Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=10","timestamp":"2025-06-22T18:47:06.266Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 10s","timestamp":"2025-06-22T18:47:06.266Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=9","timestamp":"2025-06-22T18:47:07.277Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=9","timestamp":"2025-06-22T18:47:07.278Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 9s","timestamp":"2025-06-22T18:47:07.278Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=8","timestamp":"2025-06-22T18:47:08.289Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=8","timestamp":"2025-06-22T18:47:08.289Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 8s","timestamp":"2025-06-22T18:47:08.289Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=7","timestamp":"2025-06-22T18:47:09.299Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=7","timestamp":"2025-06-22T18:47:09.300Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 7s","timestamp":"2025-06-22T18:47:09.300Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=6","timestamp":"2025-06-22T18:47:10.307Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=6","timestamp":"2025-06-22T18:47:10.308Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 6s","timestamp":"2025-06-22T18:47:10.309Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=5","timestamp":"2025-06-22T18:47:11.322Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=5","timestamp":"2025-06-22T18:47:11.323Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 5s","timestamp":"2025-06-22T18:47:11.323Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=4","timestamp":"2025-06-22T18:47:12.332Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=4","timestamp":"2025-06-22T18:47:12.333Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 4s","timestamp":"2025-06-22T18:47:12.333Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=3","timestamp":"2025-06-22T18:47:13.342Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=3","timestamp":"2025-06-22T18:47:13.343Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 3s","timestamp":"2025-06-22T18:47:13.343Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=2","timestamp":"2025-06-22T18:47:14.353Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=2","timestamp":"2025-06-22T18:47:14.354Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 2s","timestamp":"2025-06-22T18:47:14.354Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=1","timestamp":"2025-06-22T18:47:15.361Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=1","timestamp":"2025-06-22T18:47:15.362Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 1s","timestamp":"2025-06-22T18:47:15.363Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=kgcU3a68P9Xu67zAAAAP with timeRemaining=0","timestamp":"2025-06-22T18:47:16.372Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=xpnLOIDxbyHhezdBAAAN with timeRemaining=0","timestamp":"2025-06-22T18:47:16.373Z"}
+{"level":"info","message":"Challenge timer for 7F66A8: 0s","timestamp":"2025-06-22T18:47:16.373Z"}
+{"level":"info","message":"[startChallengeTimer] Auto-GaveUp for xpnLOIDxbyHhezdBAAAN in room 7F66A8 due to timeout","timestamp":"2025-06-22T18:47:17.399Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 7F66A8","timestamp":"2025-06-22T18:47:17.399Z"}
+{"level":"info","message":"Sent roundResult to socket kgcU3a68P9Xu67zAAAAP in room 7F66A8","timestamp":"2025-06-22T18:47:17.403Z"}
+{"level":"info","message":"Sent roundResult to socket xpnLOIDxbyHhezdBAAAN in room 7F66A8","timestamp":"2025-06-22T18:47:17.403Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 7F66A8, winner: kgcU3a68P9Xu67zAAAAP","timestamp":"2025-06-22T18:47:17.404Z"}
+{"level":"info","message":"New socket connection: d0Eku3wb9WSqqIvyAAAR","timestamp":"2025-06-22T18:47:35.391Z"}
+{"level":"info","message":"New socket connection: NXlSP1Tlww62RqFEAAAT","timestamp":"2025-06-22T18:47:44.095Z"}
+{"level":"info","message":"Room created: 9C4E3D, maxPlayers: 2","timestamp":"2025-06-22T18:47:52.795Z"}
+{"level":"info","message":"Socket NXlSP1Tlww62RqFEAAAT joined room 9C4E3D, sockets: 1","timestamp":"2025-06-22T18:47:52.853Z"}
+{"level":"info","message":"Player joined room: 9C4E3D, playerCount: 2, sockets: 2","timestamp":"2025-06-22T18:48:05.038Z"}
+{"level":"info","message":"Socket d0Eku3wb9WSqqIvyAAAR joined room 9C4E3D, sockets: 2","timestamp":"2025-06-22T18:48:05.055Z"}
+{"level":"info","message":"Countdown for 9C4E3D: 3","timestamp":"2025-06-22T18:48:06.047Z"}
+{"level":"info","message":"Countdown for 9C4E3D: 2","timestamp":"2025-06-22T18:48:07.055Z"}
+{"level":"info","message":"Countdown for 9C4E3D: 1","timestamp":"2025-06-22T18:48:08.064Z"}
+{"level":"info","message":"Countdown for 9C4E3D: 0","timestamp":"2025-06-22T18:48:09.071Z"}
+{"level":"info","message":"Game started for room: 9C4E3D","timestamp":"2025-06-22T18:48:09.072Z"}
+{"level":"info","message":"Game initialized for room: 9C4E3D, players: 2","timestamp":"2025-06-22T18:48:11.475Z"}
+{"level":"info","message":"Sent gameData to socket NXlSP1Tlww62RqFEAAAT in room 9C4E3D","timestamp":"2025-06-22T18:48:11.477Z"}
+{"level":"info","message":"Sent gameData to socket d0Eku3wb9WSqqIvyAAAR in room 9C4E3D","timestamp":"2025-06-22T18:48:11.478Z"}
+{"level":"info","message":"Game initialized for room: 9C4E3D, players: 2","timestamp":"2025-06-22T18:48:13.881Z"}
+{"level":"info","message":"Sent gameData to socket NXlSP1Tlww62RqFEAAAT in room 9C4E3D","timestamp":"2025-06-22T18:48:13.882Z"}
+{"level":"info","message":"Sent gameData to socket d0Eku3wb9WSqqIvyAAAR in room 9C4E3D","timestamp":"2025-06-22T18:48:13.884Z"}
+{"level":"info","message":"[submitStat] socket.id=NXlSP1Tlww62RqFEAAAT, roomCode=9C4E3D, cardIndex=0, stat=wickets, value=33","timestamp":"2025-06-22T18:48:24.921Z"}
+{"level":"info","message":"[submitStat] Stat quoted by NXlSP1Tlww62RqFEAAAT in room 9C4E3D: cardIndex=0, wickets=33","timestamp":"2025-06-22T18:48:24.921Z"}
+{"level":"info","message":"[submitStat] Room 9C4E3D sockets: NXlSP1Tlww62RqFEAAAT, d0Eku3wb9WSqqIvyAAAR","timestamp":"2025-06-22T18:48:24.922Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player NXlSP1Tlww62RqFEAAAT in room 9C4E3D","timestamp":"2025-06-22T18:48:24.922Z"}
+{"level":"info","message":"[submitStat] Considering sid=NXlSP1Tlww62RqFEAAAT for opponent event emission (socket.id=NXlSP1Tlww62RqFEAAAT)","timestamp":"2025-06-22T18:48:24.923Z"}
+{"level":"info","message":"[submitStat] Considering sid=d0Eku3wb9WSqqIvyAAAR for opponent event emission (socket.id=NXlSP1Tlww62RqFEAAAT)","timestamp":"2025-06-22T18:48:24.923Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent d0Eku3wb9WSqqIvyAAAR in room 9C4E3D","timestamp":"2025-06-22T18:48:24.923Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 9C4E3D","timestamp":"2025-06-22T18:48:24.924Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=NXlSP1Tlww62RqFEAAAT with timeRemaining=14","timestamp":"2025-06-22T18:48:25.924Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=d0Eku3wb9WSqqIvyAAAR with timeRemaining=14","timestamp":"2025-06-22T18:48:25.925Z"}
+{"level":"info","message":"Challenge timer for 9C4E3D: 14s","timestamp":"2025-06-22T18:48:25.926Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=NXlSP1Tlww62RqFEAAAT with timeRemaining=13","timestamp":"2025-06-22T18:48:26.930Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=d0Eku3wb9WSqqIvyAAAR with timeRemaining=13","timestamp":"2025-06-22T18:48:26.931Z"}
+{"level":"info","message":"Challenge timer for 9C4E3D: 13s","timestamp":"2025-06-22T18:48:26.931Z"}
+{"level":"info","message":"[challenge] socket.id=d0Eku3wb9WSqqIvyAAAR, roomCode=9C4E3D, cardIndex=0, stat=wickets, value=338","timestamp":"2025-06-22T18:48:27.690Z"}
+{"level":"info","message":"[challenge] Challenge submitted by d0Eku3wb9WSqqIvyAAAR in room 9C4E3D: cardIndex=0, wickets=338","timestamp":"2025-06-22T18:48:27.691Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=9C4E3D, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T18:48:27.691Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 9C4E3D","timestamp":"2025-06-22T18:48:27.691Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 9C4E3D","timestamp":"2025-06-22T18:48:27.692Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 9C4E3D","timestamp":"2025-06-22T18:48:27.692Z"}
+{"level":"info","message":"Sent roundResult to socket NXlSP1Tlww62RqFEAAAT in room 9C4E3D","timestamp":"2025-06-22T18:48:27.693Z"}
+{"level":"info","message":"Sent roundResult to socket d0Eku3wb9WSqqIvyAAAR in room 9C4E3D","timestamp":"2025-06-22T18:48:27.694Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 9C4E3D, winner: d0Eku3wb9WSqqIvyAAAR","timestamp":"2025-06-22T18:48:27.694Z"}
+{"level":"info","message":"New socket connection: zCwW82hCaZxG46zFAAAV","timestamp":"2025-06-22T18:51:13.085Z"}
+{"level":"info","message":"New socket connection: VWM3_4rxRRLuOHKSAAAX","timestamp":"2025-06-22T18:51:59.166Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-22T18:56:02.911Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-22T18:56:05.551Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-22T18:56:05.644Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-22T19:00:41.523Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-22T19:00:53.269Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-22T19:00:53.352Z"}
+{"level":"info","message":"New socket connection: 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:01:47.145Z"}
+{"level":"info","message":"New socket connection: vhio8rNWo7NOwmEdAAAD","timestamp":"2025-06-22T19:01:54.487Z"}
+{"level":"info","message":"Room created: 9FC008, maxPlayers: 2","timestamp":"2025-06-22T19:02:01.507Z"}
+{"level":"info","message":"Socket vhio8rNWo7NOwmEdAAAD joined room 9FC008, sockets: 1","timestamp":"2025-06-22T19:02:01.561Z"}
+{"level":"info","message":"Player joined room: 9FC008, playerCount: 2, sockets: 2","timestamp":"2025-06-22T19:02:12.356Z"}
+{"level":"info","message":"Countdown for 9FC008: 3","timestamp":"2025-06-22T19:02:13.376Z"}
+{"level":"info","message":"Socket 46wQ_CIOUuPfhEKuAAAB joined room 9FC008, sockets: 2","timestamp":"2025-06-22T19:02:13.500Z"}
+{"level":"info","message":"Countdown for 9FC008: 2","timestamp":"2025-06-22T19:02:14.380Z"}
+{"level":"info","message":"Countdown for 9FC008: 1","timestamp":"2025-06-22T19:02:15.390Z"}
+{"level":"info","message":"Countdown for 9FC008: 0","timestamp":"2025-06-22T19:02:16.402Z"}
+{"level":"info","message":"Game started for room: 9FC008","timestamp":"2025-06-22T19:02:16.403Z"}
+{"level":"info","message":"Game initialized for room: 9FC008, players: 2","timestamp":"2025-06-22T19:02:16.670Z"}
+{"level":"info","message":"Sent gameData to socket vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:02:16.674Z"}
+{"level":"info","message":"Sent gameData to socket 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:02:16.675Z"}
+{"level":"info","message":"Game initialized for room: 9FC008, players: 2","timestamp":"2025-06-22T19:02:17.424Z"}
+{"level":"info","message":"Sent gameData to socket vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:02:17.425Z"}
+{"level":"info","message":"Sent gameData to socket 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:02:17.426Z"}
+{"level":"info","message":"[submitStat] socket.id=vhio8rNWo7NOwmEdAAAD, roomCode=9FC008, cardIndex=0, stat=runs, value=9452","timestamp":"2025-06-22T19:02:19.580Z"}
+{"level":"info","message":"[submitStat] Stat quoted by vhio8rNWo7NOwmEdAAAD in room 9FC008: cardIndex=0, runs=9452","timestamp":"2025-06-22T19:02:19.581Z"}
+{"level":"info","message":"[submitStat] Room 9FC008 sockets: vhio8rNWo7NOwmEdAAAD, 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:02:19.582Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:02:19.582Z"}
+{"level":"info","message":"[submitStat] Considering sid=vhio8rNWo7NOwmEdAAAD for opponent event emission (socket.id=vhio8rNWo7NOwmEdAAAD)","timestamp":"2025-06-22T19:02:19.583Z"}
+{"level":"info","message":"[submitStat] Considering sid=46wQ_CIOUuPfhEKuAAAB for opponent event emission (socket.id=vhio8rNWo7NOwmEdAAAD)","timestamp":"2025-06-22T19:02:19.584Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:02:19.584Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 9FC008","timestamp":"2025-06-22T19:02:19.587Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=vhio8rNWo7NOwmEdAAAD with timeRemaining=14","timestamp":"2025-06-22T19:02:20.602Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=46wQ_CIOUuPfhEKuAAAB with timeRemaining=14","timestamp":"2025-06-22T19:02:20.603Z"}
+{"level":"info","message":"Challenge timer for 9FC008: 14s","timestamp":"2025-06-22T19:02:20.604Z"}
+{"level":"info","message":"[challenge] socket.id=46wQ_CIOUuPfhEKuAAAB, roomCode=9FC008, cardIndex=0, stat=runs, value=893","timestamp":"2025-06-22T19:02:20.827Z"}
+{"level":"info","message":"[challenge] Challenge submitted by 46wQ_CIOUuPfhEKuAAAB in room 9FC008: cardIndex=0, runs=893","timestamp":"2025-06-22T19:02:20.827Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=9FC008, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:02:20.828Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 9FC008","timestamp":"2025-06-22T19:02:20.828Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 9FC008","timestamp":"2025-06-22T19:02:20.829Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 9FC008","timestamp":"2025-06-22T19:02:20.829Z"}
+{"level":"info","message":"Sent roundResult to socket vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:02:20.831Z"}
+{"level":"info","message":"Sent roundResult to socket 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:02:20.832Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 9FC008, winner: vhio8rNWo7NOwmEdAAAD","timestamp":"2025-06-22T19:02:20.832Z"}
+{"level":"info","message":"[submitStat] socket.id=vhio8rNWo7NOwmEdAAAD, roomCode=9FC008, cardIndex=0, stat=runs, value=8662","timestamp":"2025-06-22T19:02:39.705Z"}
+{"level":"info","message":"[submitStat] Stat quoted by vhio8rNWo7NOwmEdAAAD in room 9FC008: cardIndex=0, runs=8662","timestamp":"2025-06-22T19:02:39.705Z"}
+{"level":"info","message":"[submitStat] Room 9FC008 sockets: vhio8rNWo7NOwmEdAAAD, 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:02:39.706Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:02:39.706Z"}
+{"level":"info","message":"[submitStat] Considering sid=vhio8rNWo7NOwmEdAAAD for opponent event emission (socket.id=vhio8rNWo7NOwmEdAAAD)","timestamp":"2025-06-22T19:02:39.707Z"}
+{"level":"info","message":"[submitStat] Considering sid=46wQ_CIOUuPfhEKuAAAB for opponent event emission (socket.id=vhio8rNWo7NOwmEdAAAD)","timestamp":"2025-06-22T19:02:39.707Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:02:39.707Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 9FC008","timestamp":"2025-06-22T19:02:39.708Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=vhio8rNWo7NOwmEdAAAD with timeRemaining=14","timestamp":"2025-06-22T19:02:40.721Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=46wQ_CIOUuPfhEKuAAAB with timeRemaining=14","timestamp":"2025-06-22T19:02:40.721Z"}
+{"level":"info","message":"Challenge timer for 9FC008: 14s","timestamp":"2025-06-22T19:02:40.722Z"}
+{"level":"info","message":"[challenge] socket.id=46wQ_CIOUuPfhEKuAAAB, roomCode=9FC008, cardIndex=0, stat=runs, value=2833","timestamp":"2025-06-22T19:02:40.903Z"}
+{"level":"info","message":"[challenge] Challenge submitted by 46wQ_CIOUuPfhEKuAAAB in room 9FC008: cardIndex=0, runs=2833","timestamp":"2025-06-22T19:02:40.904Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=9FC008, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:02:40.904Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 9FC008","timestamp":"2025-06-22T19:02:40.904Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 9FC008","timestamp":"2025-06-22T19:02:40.905Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 9FC008","timestamp":"2025-06-22T19:02:40.905Z"}
+{"level":"info","message":"Sent roundResult to socket vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:02:40.906Z"}
+{"level":"info","message":"Sent roundResult to socket 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:02:40.906Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 9FC008, winner: vhio8rNWo7NOwmEdAAAD","timestamp":"2025-06-22T19:02:40.907Z"}
+{"level":"info","message":"[submitStat] socket.id=vhio8rNWo7NOwmEdAAAD, roomCode=9FC008, cardIndex=0, stat=strikeRate, value=37.346447","timestamp":"2025-06-22T19:03:12.551Z"}
+{"level":"info","message":"[submitStat] Stat quoted by vhio8rNWo7NOwmEdAAAD in room 9FC008: cardIndex=0, strikeRate=37.346447","timestamp":"2025-06-22T19:03:12.551Z"}
+{"level":"info","message":"[submitStat] Room 9FC008 sockets: vhio8rNWo7NOwmEdAAAD, 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:03:12.552Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:03:12.553Z"}
+{"level":"info","message":"[submitStat] Considering sid=vhio8rNWo7NOwmEdAAAD for opponent event emission (socket.id=vhio8rNWo7NOwmEdAAAD)","timestamp":"2025-06-22T19:03:12.554Z"}
+{"level":"info","message":"[submitStat] Considering sid=46wQ_CIOUuPfhEKuAAAB for opponent event emission (socket.id=vhio8rNWo7NOwmEdAAAD)","timestamp":"2025-06-22T19:03:12.554Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:03:12.554Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 9FC008","timestamp":"2025-06-22T19:03:12.555Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=vhio8rNWo7NOwmEdAAAD with timeRemaining=14","timestamp":"2025-06-22T19:03:13.570Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=46wQ_CIOUuPfhEKuAAAB with timeRemaining=14","timestamp":"2025-06-22T19:03:13.571Z"}
+{"level":"info","message":"Challenge timer for 9FC008: 14s","timestamp":"2025-06-22T19:03:13.571Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=vhio8rNWo7NOwmEdAAAD with timeRemaining=13","timestamp":"2025-06-22T19:03:14.576Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=46wQ_CIOUuPfhEKuAAAB with timeRemaining=13","timestamp":"2025-06-22T19:03:14.577Z"}
+{"level":"info","message":"Challenge timer for 9FC008: 13s","timestamp":"2025-06-22T19:03:14.578Z"}
+{"level":"info","message":"[challenge] socket.id=46wQ_CIOUuPfhEKuAAAB, roomCode=9FC008, cardIndex=0, stat=strikeRate, value=179.99788","timestamp":"2025-06-22T19:03:14.666Z"}
+{"level":"info","message":"[challenge] Challenge submitted by 46wQ_CIOUuPfhEKuAAAB in room 9FC008: cardIndex=0, strikeRate=179.99788","timestamp":"2025-06-22T19:03:14.667Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=9FC008, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:03:14.667Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 9FC008","timestamp":"2025-06-22T19:03:14.667Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 9FC008","timestamp":"2025-06-22T19:03:14.668Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 9FC008","timestamp":"2025-06-22T19:03:14.668Z"}
+{"level":"info","message":"Sent roundResult to socket vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:03:14.670Z"}
+{"level":"info","message":"Sent roundResult to socket 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:03:14.671Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 9FC008, winner: 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:03:14.671Z"}
+{"level":"info","message":"[submitStat] socket.id=46wQ_CIOUuPfhEKuAAAB, roomCode=9FC008, cardIndex=0, stat=fiveWicketHauls, value=8","timestamp":"2025-06-22T19:03:40.866Z"}
+{"level":"info","message":"[submitStat] Stat quoted by 46wQ_CIOUuPfhEKuAAAB in room 9FC008: cardIndex=0, fiveWicketHauls=8","timestamp":"2025-06-22T19:03:40.866Z"}
+{"level":"info","message":"[submitStat] Room 9FC008 sockets: vhio8rNWo7NOwmEdAAAD, 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:03:40.866Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:03:40.867Z"}
+{"level":"info","message":"[submitStat] Considering sid=vhio8rNWo7NOwmEdAAAD for opponent event emission (socket.id=46wQ_CIOUuPfhEKuAAAB)","timestamp":"2025-06-22T19:03:40.867Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:03:40.868Z"}
+{"level":"info","message":"[submitStat] Considering sid=46wQ_CIOUuPfhEKuAAAB for opponent event emission (socket.id=46wQ_CIOUuPfhEKuAAAB)","timestamp":"2025-06-22T19:03:40.868Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 9FC008","timestamp":"2025-06-22T19:03:40.868Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=vhio8rNWo7NOwmEdAAAD with timeRemaining=14","timestamp":"2025-06-22T19:03:41.870Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=46wQ_CIOUuPfhEKuAAAB with timeRemaining=14","timestamp":"2025-06-22T19:03:41.871Z"}
+{"level":"info","message":"Challenge timer for 9FC008: 14s","timestamp":"2025-06-22T19:03:41.872Z"}
+{"level":"info","message":"[challenge] socket.id=vhio8rNWo7NOwmEdAAAD, roomCode=9FC008, cardIndex=0, stat=fiveWicketHauls, value=0","timestamp":"2025-06-22T19:03:42.500Z"}
+{"level":"info","message":"[challenge] Challenge submitted by vhio8rNWo7NOwmEdAAAD in room 9FC008: cardIndex=0, fiveWicketHauls=0","timestamp":"2025-06-22T19:03:42.501Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=9FC008, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:03:42.501Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 9FC008","timestamp":"2025-06-22T19:03:42.501Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 9FC008","timestamp":"2025-06-22T19:03:42.501Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 9FC008","timestamp":"2025-06-22T19:03:42.502Z"}
+{"level":"info","message":"Sent roundResult to socket vhio8rNWo7NOwmEdAAAD in room 9FC008","timestamp":"2025-06-22T19:03:42.503Z"}
+{"level":"info","message":"Sent roundResult to socket 46wQ_CIOUuPfhEKuAAAB in room 9FC008","timestamp":"2025-06-22T19:03:42.503Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 9FC008, winner: 46wQ_CIOUuPfhEKuAAAB","timestamp":"2025-06-22T19:03:42.504Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-22T19:09:13.497Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2025-06-22T19:09:17.675Z"}
+{"level":"info","message":"Initial card count: 50","timestamp":"2025-06-22T19:09:17.863Z"}
+{"level":"info","message":"New socket connection: 4F86vW8BERvScXTiAAAB","timestamp":"2025-06-22T19:09:41.996Z"}
+{"level":"info","message":"New socket connection: Wb_aWfpICKLrt96MAAAD","timestamp":"2025-06-22T19:09:52.210Z"}
+{"level":"info","message":"Room created: 399328, maxPlayers: 2","timestamp":"2025-06-22T19:09:58.981Z"}
+{"level":"info","message":"Socket Wb_aWfpICKLrt96MAAAD joined room 399328, sockets: 1","timestamp":"2025-06-22T19:09:59.077Z"}
+{"level":"info","message":"Player joined room: 399328, playerCount: 2, sockets: 2","timestamp":"2025-06-22T19:10:08.460Z"}
+{"level":"info","message":"Socket 4F86vW8BERvScXTiAAAB joined room 399328, sockets: 2","timestamp":"2025-06-22T19:10:08.472Z"}
+{"level":"info","message":"Countdown for 399328: 3","timestamp":"2025-06-22T19:10:09.469Z"}
+{"level":"info","message":"Countdown for 399328: 2","timestamp":"2025-06-22T19:10:10.476Z"}
+{"level":"info","message":"Countdown for 399328: 1","timestamp":"2025-06-22T19:10:11.487Z"}
+{"level":"info","message":"Countdown for 399328: 0","timestamp":"2025-06-22T19:10:12.498Z"}
+{"level":"info","message":"Game started for room: 399328","timestamp":"2025-06-22T19:10:12.499Z"}
+{"level":"info","message":"Game initialized for room: 399328, players: 2","timestamp":"2025-06-22T19:10:17.362Z"}
+{"level":"info","message":"Sent gameData to socket Wb_aWfpICKLrt96MAAAD in room 399328","timestamp":"2025-06-22T19:10:17.369Z"}
+{"level":"info","message":"Sent gameData to socket 4F86vW8BERvScXTiAAAB in room 399328","timestamp":"2025-06-22T19:10:17.370Z"}
+{"level":"info","message":"Game initialized for room: 399328, players: 2","timestamp":"2025-06-22T19:10:18.211Z"}
+{"level":"info","message":"Sent gameData to socket Wb_aWfpICKLrt96MAAAD in room 399328","timestamp":"2025-06-22T19:10:18.212Z"}
+{"level":"info","message":"Sent gameData to socket 4F86vW8BERvScXTiAAAB in room 399328","timestamp":"2025-06-22T19:10:18.212Z"}
+{"level":"info","message":"[submitStat] socket.id=Wb_aWfpICKLrt96MAAAD, roomCode=399328, cardIndex=0, stat=runs, value=8283","timestamp":"2025-06-22T19:10:23.297Z"}
+{"level":"info","message":"[submitStat] Stat quoted by Wb_aWfpICKLrt96MAAAD in room 399328: cardIndex=0, runs=8283","timestamp":"2025-06-22T19:10:23.298Z"}
+{"level":"info","message":"[submitStat] Room 399328 sockets: Wb_aWfpICKLrt96MAAAD, 4F86vW8BERvScXTiAAAB","timestamp":"2025-06-22T19:10:23.298Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player Wb_aWfpICKLrt96MAAAD in room 399328","timestamp":"2025-06-22T19:10:23.298Z"}
+{"level":"info","message":"[submitStat] Considering sid=Wb_aWfpICKLrt96MAAAD for opponent event emission (socket.id=Wb_aWfpICKLrt96MAAAD)","timestamp":"2025-06-22T19:10:23.299Z"}
+{"level":"info","message":"[submitStat] Considering sid=4F86vW8BERvScXTiAAAB for opponent event emission (socket.id=Wb_aWfpICKLrt96MAAAD)","timestamp":"2025-06-22T19:10:23.299Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent 4F86vW8BERvScXTiAAAB in room 399328","timestamp":"2025-06-22T19:10:23.300Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 399328","timestamp":"2025-06-22T19:10:23.301Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=Wb_aWfpICKLrt96MAAAD with timeRemaining=14","timestamp":"2025-06-22T19:10:24.313Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=4F86vW8BERvScXTiAAAB with timeRemaining=14","timestamp":"2025-06-22T19:10:24.314Z"}
+{"level":"info","message":"Challenge timer for 399328: 14s","timestamp":"2025-06-22T19:10:24.315Z"}
+{"level":"info","message":"[challenge] socket.id=4F86vW8BERvScXTiAAAB, roomCode=399328, cardIndex=0, stat=runs, value=6262","timestamp":"2025-06-22T19:10:24.625Z"}
+{"level":"info","message":"[challenge] Challenge submitted by 4F86vW8BERvScXTiAAAB in room 399328: cardIndex=0, runs=6262","timestamp":"2025-06-22T19:10:24.626Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=399328, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:10:24.626Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 399328","timestamp":"2025-06-22T19:10:24.627Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 399328","timestamp":"2025-06-22T19:10:24.628Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 399328","timestamp":"2025-06-22T19:10:24.628Z"}
+{"level":"info","message":"Sent roundResult to socket Wb_aWfpICKLrt96MAAAD in room 399328","timestamp":"2025-06-22T19:10:24.629Z"}
+{"level":"info","message":"Sent roundResult to socket 4F86vW8BERvScXTiAAAB in room 399328","timestamp":"2025-06-22T19:10:24.630Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 399328, winner: Wb_aWfpICKLrt96MAAAD","timestamp":"2025-06-22T19:10:24.630Z"}
+{"level":"info","message":"[submitStat] socket.id=Wb_aWfpICKLrt96MAAAD, roomCode=399328, cardIndex=0, stat=runs, value=4556","timestamp":"2025-06-22T19:10:47.647Z"}
+{"level":"info","message":"[submitStat] Stat quoted by Wb_aWfpICKLrt96MAAAD in room 399328: cardIndex=0, runs=4556","timestamp":"2025-06-22T19:10:47.647Z"}
+{"level":"info","message":"[submitStat] Room 399328 sockets: Wb_aWfpICKLrt96MAAAD, 4F86vW8BERvScXTiAAAB","timestamp":"2025-06-22T19:10:47.648Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player Wb_aWfpICKLrt96MAAAD in room 399328","timestamp":"2025-06-22T19:10:47.648Z"}
+{"level":"info","message":"[submitStat] Considering sid=Wb_aWfpICKLrt96MAAAD for opponent event emission (socket.id=Wb_aWfpICKLrt96MAAAD)","timestamp":"2025-06-22T19:10:47.648Z"}
+{"level":"info","message":"[submitStat] Considering sid=4F86vW8BERvScXTiAAAB for opponent event emission (socket.id=Wb_aWfpICKLrt96MAAAD)","timestamp":"2025-06-22T19:10:47.649Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent 4F86vW8BERvScXTiAAAB in room 399328","timestamp":"2025-06-22T19:10:47.649Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 399328","timestamp":"2025-06-22T19:10:47.650Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=Wb_aWfpICKLrt96MAAAD with timeRemaining=14","timestamp":"2025-06-22T19:10:48.660Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=4F86vW8BERvScXTiAAAB with timeRemaining=14","timestamp":"2025-06-22T19:10:48.661Z"}
+{"level":"info","message":"Challenge timer for 399328: 14s","timestamp":"2025-06-22T19:10:48.662Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=Wb_aWfpICKLrt96MAAAD with timeRemaining=13","timestamp":"2025-06-22T19:10:49.667Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=4F86vW8BERvScXTiAAAB with timeRemaining=13","timestamp":"2025-06-22T19:10:49.668Z"}
+{"level":"info","message":"Challenge timer for 399328: 13s","timestamp":"2025-06-22T19:10:49.669Z"}
+{"level":"info","message":"[challenge] socket.id=4F86vW8BERvScXTiAAAB, roomCode=399328, cardIndex=0, stat=runs, value=8545","timestamp":"2025-06-22T19:10:50.527Z"}
+{"level":"info","message":"[challenge] Challenge submitted by 4F86vW8BERvScXTiAAAB in room 399328: cardIndex=0, runs=8545","timestamp":"2025-06-22T19:10:50.528Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=399328, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:10:50.528Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 399328","timestamp":"2025-06-22T19:10:50.528Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 399328","timestamp":"2025-06-22T19:10:50.528Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 399328","timestamp":"2025-06-22T19:10:50.529Z"}
+{"level":"info","message":"Sent roundResult to socket Wb_aWfpICKLrt96MAAAD in room 399328","timestamp":"2025-06-22T19:10:50.529Z"}
+{"level":"info","message":"Sent roundResult to socket 4F86vW8BERvScXTiAAAB in room 399328","timestamp":"2025-06-22T19:10:50.530Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 399328, winner: 4F86vW8BERvScXTiAAAB","timestamp":"2025-06-22T19:10:50.530Z"}
+{"level":"info","message":"New socket connection: s3KO7rvzvOrhulhHAAAF","timestamp":"2025-06-22T19:12:00.023Z"}
+{"level":"info","message":"New socket connection: HhrjPYtTdb1SPfiuAAAH","timestamp":"2025-06-22T19:12:07.388Z"}
+{"level":"info","message":"Room created: 74884D, maxPlayers: 2","timestamp":"2025-06-22T19:12:13.969Z"}
+{"level":"info","message":"Socket HhrjPYtTdb1SPfiuAAAH joined room 74884D, sockets: 1","timestamp":"2025-06-22T19:12:14.011Z"}
+{"level":"info","message":"Player joined room: 74884D, playerCount: 2, sockets: 2","timestamp":"2025-06-22T19:12:26.412Z"}
+{"level":"info","message":"Socket s3KO7rvzvOrhulhHAAAF joined room 74884D, sockets: 2","timestamp":"2025-06-22T19:12:26.431Z"}
+{"level":"info","message":"Countdown for 74884D: 3","timestamp":"2025-06-22T19:12:27.418Z"}
+{"level":"info","message":"Countdown for 74884D: 2","timestamp":"2025-06-22T19:12:28.430Z"}
+{"level":"info","message":"Countdown for 74884D: 1","timestamp":"2025-06-22T19:12:29.441Z"}
+{"level":"info","message":"Countdown for 74884D: 0","timestamp":"2025-06-22T19:12:30.456Z"}
+{"level":"info","message":"Game started for room: 74884D","timestamp":"2025-06-22T19:12:30.457Z"}
+{"level":"info","message":"Game initialized for room: 74884D, players: 2","timestamp":"2025-06-22T19:12:31.272Z"}
+{"level":"info","message":"Sent gameData to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:12:31.275Z"}
+{"level":"info","message":"Sent gameData to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:12:31.276Z"}
+{"level":"info","message":"Game initialized for room: 74884D, players: 2","timestamp":"2025-06-22T19:12:31.351Z"}
+{"level":"info","message":"Sent gameData to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:12:31.352Z"}
+{"level":"info","message":"Sent gameData to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:12:31.352Z"}
+{"level":"info","message":"[submitStat] socket.id=HhrjPYtTdb1SPfiuAAAH, roomCode=74884D, cardIndex=0, stat=runs, value=2833","timestamp":"2025-06-22T19:12:42.030Z"}
+{"level":"info","message":"[submitStat] Stat quoted by HhrjPYtTdb1SPfiuAAAH in room 74884D: cardIndex=0, runs=2833","timestamp":"2025-06-22T19:12:42.031Z"}
+{"level":"info","message":"[submitStat] Room 74884D sockets: HhrjPYtTdb1SPfiuAAAH, s3KO7rvzvOrhulhHAAAF","timestamp":"2025-06-22T19:12:42.031Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:12:42.031Z"}
+{"level":"info","message":"[submitStat] Considering sid=HhrjPYtTdb1SPfiuAAAH for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:12:42.032Z"}
+{"level":"info","message":"[submitStat] Considering sid=s3KO7rvzvOrhulhHAAAF for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:12:42.032Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:12:42.032Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 74884D","timestamp":"2025-06-22T19:12:42.033Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=14","timestamp":"2025-06-22T19:12:43.046Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=14","timestamp":"2025-06-22T19:12:43.047Z"}
+{"level":"info","message":"Challenge timer for 74884D: 14s","timestamp":"2025-06-22T19:12:43.047Z"}
+{"level":"info","message":"[challenge] socket.id=s3KO7rvzvOrhulhHAAAF, roomCode=74884D, cardIndex=0, stat=runs, value=1610","timestamp":"2025-06-22T19:12:43.112Z"}
+{"level":"info","message":"[challenge] Challenge submitted by s3KO7rvzvOrhulhHAAAF in room 74884D: cardIndex=0, runs=1610","timestamp":"2025-06-22T19:12:43.112Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=74884D, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:12:43.113Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 74884D","timestamp":"2025-06-22T19:12:43.113Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 74884D","timestamp":"2025-06-22T19:12:43.113Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 74884D","timestamp":"2025-06-22T19:12:43.114Z"}
+{"level":"info","message":"Sent roundResult to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:12:43.114Z"}
+{"level":"info","message":"Sent roundResult to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:12:43.115Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 74884D, winner: HhrjPYtTdb1SPfiuAAAH","timestamp":"2025-06-22T19:12:43.115Z"}
+{"level":"info","message":"[submitStat] socket.id=HhrjPYtTdb1SPfiuAAAH, roomCode=74884D, cardIndex=0, stat=wickets, value=486","timestamp":"2025-06-22T19:13:05.307Z"}
+{"level":"info","message":"[submitStat] Stat quoted by HhrjPYtTdb1SPfiuAAAH in room 74884D: cardIndex=0, wickets=486","timestamp":"2025-06-22T19:13:05.308Z"}
+{"level":"info","message":"[submitStat] Room 74884D sockets: HhrjPYtTdb1SPfiuAAAH, s3KO7rvzvOrhulhHAAAF","timestamp":"2025-06-22T19:13:05.308Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:13:05.308Z"}
+{"level":"info","message":"[submitStat] Considering sid=HhrjPYtTdb1SPfiuAAAH for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:13:05.309Z"}
+{"level":"info","message":"[submitStat] Considering sid=s3KO7rvzvOrhulhHAAAF for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:13:05.309Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:13:05.310Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 74884D","timestamp":"2025-06-22T19:13:05.310Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=14","timestamp":"2025-06-22T19:13:06.320Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=14","timestamp":"2025-06-22T19:13:06.321Z"}
+{"level":"info","message":"Challenge timer for 74884D: 14s","timestamp":"2025-06-22T19:13:06.322Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=13","timestamp":"2025-06-22T19:13:07.334Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=13","timestamp":"2025-06-22T19:13:07.335Z"}
+{"level":"info","message":"Challenge timer for 74884D: 13s","timestamp":"2025-06-22T19:13:07.336Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=12","timestamp":"2025-06-22T19:13:08.347Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=12","timestamp":"2025-06-22T19:13:08.347Z"}
+{"level":"info","message":"Challenge timer for 74884D: 12s","timestamp":"2025-06-22T19:13:08.348Z"}
+{"level":"info","message":"[gaveUp] socket.id=s3KO7rvzvOrhulhHAAAF, roomCode=74884D","timestamp":"2025-06-22T19:13:09.104Z"}
+{"level":"info","message":"[gaveUp] GaveUp by s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:13:09.104Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=74884D, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:13:09.105Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 74884D","timestamp":"2025-06-22T19:13:09.105Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 74884D","timestamp":"2025-06-22T19:13:09.106Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 74884D","timestamp":"2025-06-22T19:13:09.106Z"}
+{"level":"info","message":"Sent roundResult to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:13:09.107Z"}
+{"level":"info","message":"Sent roundResult to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:13:09.107Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 74884D, winner: HhrjPYtTdb1SPfiuAAAH","timestamp":"2025-06-22T19:13:09.108Z"}
+{"level":"info","message":"[submitStat] socket.id=HhrjPYtTdb1SPfiuAAAH, roomCode=74884D, cardIndex=0, stat=runs, value=6061","timestamp":"2025-06-22T19:13:34.153Z"}
+{"level":"info","message":"[submitStat] Stat quoted by HhrjPYtTdb1SPfiuAAAH in room 74884D: cardIndex=0, runs=6061","timestamp":"2025-06-22T19:13:34.153Z"}
+{"level":"info","message":"[submitStat] Room 74884D sockets: HhrjPYtTdb1SPfiuAAAH, s3KO7rvzvOrhulhHAAAF","timestamp":"2025-06-22T19:13:34.154Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:13:34.154Z"}
+{"level":"info","message":"[submitStat] Considering sid=HhrjPYtTdb1SPfiuAAAH for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:13:34.154Z"}
+{"level":"info","message":"[submitStat] Considering sid=s3KO7rvzvOrhulhHAAAF for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:13:34.154Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:13:34.155Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 74884D","timestamp":"2025-06-22T19:13:34.155Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=14","timestamp":"2025-06-22T19:13:35.171Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=14","timestamp":"2025-06-22T19:13:35.172Z"}
+{"level":"info","message":"Challenge timer for 74884D: 14s","timestamp":"2025-06-22T19:13:35.173Z"}
+{"level":"info","message":"[challenge] socket.id=s3KO7rvzvOrhulhHAAAF, roomCode=74884D, cardIndex=0, stat=runs, value=4285","timestamp":"2025-06-22T19:13:36.016Z"}
+{"level":"info","message":"[challenge] Challenge submitted by s3KO7rvzvOrhulhHAAAF in room 74884D: cardIndex=0, runs=4285","timestamp":"2025-06-22T19:13:36.017Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=74884D, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:13:36.017Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 74884D","timestamp":"2025-06-22T19:13:36.017Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 74884D","timestamp":"2025-06-22T19:13:36.017Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 74884D","timestamp":"2025-06-22T19:13:36.018Z"}
+{"level":"info","message":"Sent roundResult to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:13:36.018Z"}
+{"level":"info","message":"Sent roundResult to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:13:36.019Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 74884D, winner: HhrjPYtTdb1SPfiuAAAH","timestamp":"2025-06-22T19:13:36.019Z"}
+{"level":"info","message":"[submitStat] socket.id=HhrjPYtTdb1SPfiuAAAH, roomCode=74884D, cardIndex=0, stat=wickets, value=451","timestamp":"2025-06-22T19:13:56.601Z"}
+{"level":"info","message":"[submitStat] Stat quoted by HhrjPYtTdb1SPfiuAAAH in room 74884D: cardIndex=0, wickets=451","timestamp":"2025-06-22T19:13:56.601Z"}
+{"level":"info","message":"[submitStat] Room 74884D sockets: HhrjPYtTdb1SPfiuAAAH, s3KO7rvzvOrhulhHAAAF","timestamp":"2025-06-22T19:13:56.602Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:13:56.602Z"}
+{"level":"info","message":"[submitStat] Considering sid=HhrjPYtTdb1SPfiuAAAH for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:13:56.602Z"}
+{"level":"info","message":"[submitStat] Considering sid=s3KO7rvzvOrhulhHAAAF for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:13:56.603Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:13:56.603Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 74884D","timestamp":"2025-06-22T19:13:56.604Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=14","timestamp":"2025-06-22T19:13:57.605Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=14","timestamp":"2025-06-22T19:13:57.606Z"}
+{"level":"info","message":"Challenge timer for 74884D: 14s","timestamp":"2025-06-22T19:13:57.606Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=13","timestamp":"2025-06-22T19:13:58.609Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=13","timestamp":"2025-06-22T19:13:58.610Z"}
+{"level":"info","message":"Challenge timer for 74884D: 13s","timestamp":"2025-06-22T19:13:58.611Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=12","timestamp":"2025-06-22T19:13:59.612Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=12","timestamp":"2025-06-22T19:13:59.613Z"}
+{"level":"info","message":"Challenge timer for 74884D: 12s","timestamp":"2025-06-22T19:13:59.613Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=11","timestamp":"2025-06-22T19:14:00.622Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=11","timestamp":"2025-06-22T19:14:00.623Z"}
+{"level":"info","message":"Challenge timer for 74884D: 11s","timestamp":"2025-06-22T19:14:00.623Z"}
+{"level":"info","message":"[challenge] socket.id=s3KO7rvzvOrhulhHAAAF, roomCode=74884D, cardIndex=0, stat=wickets, value=388","timestamp":"2025-06-22T19:14:00.781Z"}
+{"level":"info","message":"[challenge] Challenge submitted by s3KO7rvzvOrhulhHAAAF in room 74884D: cardIndex=0, wickets=388","timestamp":"2025-06-22T19:14:00.782Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=74884D, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:14:00.782Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 74884D","timestamp":"2025-06-22T19:14:00.782Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 74884D","timestamp":"2025-06-22T19:14:00.783Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 74884D","timestamp":"2025-06-22T19:14:00.783Z"}
+{"level":"info","message":"Sent roundResult to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:14:00.784Z"}
+{"level":"info","message":"Sent roundResult to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:14:00.784Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 74884D, winner: HhrjPYtTdb1SPfiuAAAH","timestamp":"2025-06-22T19:14:00.785Z"}
+{"level":"info","message":"[submitStat] socket.id=HhrjPYtTdb1SPfiuAAAH, roomCode=74884D, cardIndex=0, stat=wickets, value=469","timestamp":"2025-06-22T19:14:27.603Z"}
+{"level":"info","message":"[submitStat] Stat quoted by HhrjPYtTdb1SPfiuAAAH in room 74884D: cardIndex=0, wickets=469","timestamp":"2025-06-22T19:14:27.604Z"}
+{"level":"info","message":"[submitStat] Room 74884D sockets: HhrjPYtTdb1SPfiuAAAH, s3KO7rvzvOrhulhHAAAF","timestamp":"2025-06-22T19:14:27.604Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to active player HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:14:27.604Z"}
+{"level":"info","message":"[submitStat] Considering sid=HhrjPYtTdb1SPfiuAAAH for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:14:27.605Z"}
+{"level":"info","message":"[submitStat] Considering sid=s3KO7rvzvOrhulhHAAAF for opponent event emission (socket.id=HhrjPYtTdb1SPfiuAAAH)","timestamp":"2025-06-22T19:14:27.605Z"}
+{"level":"info","message":"[submitStat] Emitting challengeInitiated/statQuoted to opponent s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:14:27.606Z"}
+{"level":"info","message":"[startChallengeTimer] Starting challenge timer for room 74884D","timestamp":"2025-06-22T19:14:27.607Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=14","timestamp":"2025-06-22T19:14:28.609Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=14","timestamp":"2025-06-22T19:14:28.610Z"}
+{"level":"info","message":"Challenge timer for 74884D: 14s","timestamp":"2025-06-22T19:14:28.611Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=HhrjPYtTdb1SPfiuAAAH with timeRemaining=13","timestamp":"2025-06-22T19:14:29.624Z"}
+{"level":"info","message":"[startChallengeTimer] Emitting statQuoted to sid=s3KO7rvzvOrhulhHAAAF with timeRemaining=13","timestamp":"2025-06-22T19:14:29.625Z"}
+{"level":"info","message":"Challenge timer for 74884D: 13s","timestamp":"2025-06-22T19:14:29.626Z"}
+{"level":"info","message":"[challenge] socket.id=s3KO7rvzvOrhulhHAAAF, roomCode=74884D, cardIndex=0, stat=wickets, value=89","timestamp":"2025-06-22T19:14:30.130Z"}
+{"level":"info","message":"[challenge] Challenge submitted by s3KO7rvzvOrhulhHAAAF in room 74884D: cardIndex=0, wickets=89","timestamp":"2025-06-22T19:14:30.130Z"}
+{"level":"info","message":"[checkChallengeResponses] roomCode=74884D, challengeResponses.size=1, opponents.length=1","timestamp":"2025-06-22T19:14:30.131Z"}
+{"level":"info","message":"[checkChallengeResponses] All responses received, processing round result for room 74884D","timestamp":"2025-06-22T19:14:30.131Z"}
+{"level":"info","message":"[processRoundResult] Cleared challenge timer for room 74884D","timestamp":"2025-06-22T19:14:30.132Z"}
+{"level":"info","message":"[processRoundResult] Processing round for room 74884D","timestamp":"2025-06-22T19:14:30.132Z"}
+{"level":"info","message":"Sent roundResult to socket HhrjPYtTdb1SPfiuAAAH in room 74884D","timestamp":"2025-06-22T19:14:30.133Z"}
+{"level":"info","message":"Sent roundResult to socket s3KO7rvzvOrhulhHAAAF in room 74884D","timestamp":"2025-06-22T19:14:30.134Z"}
+{"level":"info","message":"[processRoundResult] Round processed for room 74884D, winner: HhrjPYtTdb1SPfiuAAAH","timestamp":"2025-06-22T19:14:30.134Z"}

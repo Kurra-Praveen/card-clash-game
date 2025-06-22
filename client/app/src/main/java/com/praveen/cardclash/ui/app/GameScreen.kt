@@ -61,6 +61,9 @@ fun GameScreen(
     var selectedCardIndex by remember { mutableStateOf(0) }
     var selectedStat by remember { mutableStateOf("runs") }
     var hasSubmitted by remember { mutableStateOf(false) }
+    var showResolutionScreen by remember { mutableStateOf(false) }
+    var currentRoundResult by remember { mutableStateOf<SocketManager.RoundResult?>(null) }
+    var resolutionCountdown by remember { mutableStateOf(5) }
 
     LaunchedEffect(roomCode) {
         Log.d("GameScreen", "[COLLECTOR] LaunchedEffect(roomCode=$roomCode) started, socketId=${SocketManager.socketId}")
@@ -134,6 +137,18 @@ fun GameScreen(
                 hasSubmitted = false
                 challengeState = null
                 countdownTime = 0
+                showResolutionScreen = true
+                currentRoundResult = result
+                resolutionCountdown = 15
+                // Start countdown
+                launch {
+                    while (resolutionCountdown > 0) {
+                        kotlinx.coroutines.delay(1000)
+                        resolutionCountdown--
+                    }
+                    showResolutionScreen = false
+                    currentRoundResult = null
+                }
                 Log.d("GameScreen", "[UI] Received roundResult: winner=${result.winner}, stat=${result.stat}, socketId=${SocketManager.socketId}")
             }
         }
@@ -157,7 +172,14 @@ fun GameScreen(
         Text("Card Clash - Room: $roomCode", style = MaterialTheme.typography.headlineSmall)
         Spacer(modifier = Modifier.height(16.dp))
 
-        if (isLoading) {
+        if (showResolutionScreen && currentRoundResult != null) {
+            ResolutionScreen(
+                roundResult = currentRoundResult!!,
+                mySocketId = SocketManager.socketId,
+                onContinue = {}, // No manual continue, auto after countdown
+                countdown = resolutionCountdown
+            )
+        } else if (isLoading) {
             CircularProgressIndicator()
             Text("Loading game data...")
         } else if (error.isNotBlank()) {
@@ -549,6 +571,89 @@ fun OpponentButtons(
         }
     }
     Spacer(modifier = Modifier.height(16.dp))
+}
+
+@Composable
+fun ResolutionScreen(
+    roundResult: SocketManager.RoundResult,
+    mySocketId: String,
+    onContinue: () -> Unit,
+    countdown: Int
+) {
+    val winner = roundResult.winner
+    val stat = roundResult.stat
+    val submissions = roundResult.submissions
+    val gameState = roundResult.gameState
+    val scores = roundResult.scores
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text("Round Resolution", style = MaterialTheme.typography.headlineMedium)
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            when {
+                winner == null -> "Round Draw!"
+                winner == mySocketId -> "You won the round!"
+                else -> "Opponent won the round!"
+            },
+            style = MaterialTheme.typography.headlineSmall
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("Stat: ${stat?.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }}", fontWeight = FontWeight.Bold)
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("Submissions:", fontWeight = FontWeight.Bold)
+        submissions.forEach { (sid, sub) ->
+            val playerLabel = if (sid == mySocketId) "You" else "Opponent"
+            Text("$playerLabel: ${sub.stat} = ${sub.value}")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("All Player Top Cards:", fontWeight = FontWeight.Bold)
+        val revealedCards = roundResult.revealedCards as? Map<String, SocketManager.Card> ?: emptyMap()
+        Column(modifier = Modifier.fillMaxWidth()) {
+            revealedCards.forEach { (sid, card) ->
+                val playerLabel = if (sid == mySocketId) "You" else "Opponent"
+                Card(
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxWidth()
+                        .background(
+                            if (winner == sid) Color(0xFFD4EDDA) else Color.White
+                        ),
+                    elevation = CardDefaults.cardElevation(8.dp)
+                ) {
+                    Column(
+                        modifier = Modifier.padding(12.dp),
+                        horizontalAlignment = Alignment.Start
+                    ) {
+                        Text("$playerLabel", fontWeight = FontWeight.Bold)
+                        Text("Player: ${card.playerName}")
+                        Text("Runs: ${card.runs}")
+                        Text("Wickets: ${card.wickets}")
+                        Text("Batting Avg: ${String.format("%.2f", card.battingAverage)}")
+                        Text("Strike Rate: ${String.format("%.2f", card.strikeRate)}")
+                        Text("Matches: ${card.matchesPlayed}")
+                        Text("Centuries: ${card.centuries}")
+                        Text("Five Wicket Hauls: ${card.fiveWicketHauls}")
+                        if (winner == sid) {
+                            Spacer(modifier = Modifier.height(8.dp))
+                            Text("Winner!", color = Color(0xFF155724), fontWeight = FontWeight.Bold)
+                        }
+                    }
+                }
+            }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Text("Scores:", fontWeight = FontWeight.Bold)
+        scores.forEach { (sid, score) ->
+            val playerLabel = if (sid == mySocketId) "You" else "Opponent"
+            Text("$playerLabel: $score")
+        }
+        Spacer(modifier = Modifier.height(24.dp))
+        Text("Continuing in $countdown seconds...", fontWeight = FontWeight.Bold)
+    }
 }
 
 fun getStatStrength(card: SocketManager.Card, stat: String): Float {

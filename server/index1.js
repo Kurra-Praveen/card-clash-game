@@ -361,6 +361,33 @@ function processRoundResult(roomCode) {
         logger.error(`[processRoundResult] Process round failed: Room ${roomCode} not found or game not started`);
         return;
     }
+    // --- SNAPSHOT revealed cards for this round BEFORE any card movement ---
+    const revealedCards = {};
+    const activePlayer = room.gameState.players.find(p => p.socketId === room.activeStat.socketId);
+    if (activePlayer && typeof room.activeStat.cardIndex === 'number' && activePlayer.cards.length > room.activeStat.cardIndex) {
+        revealedCards[activePlayer.socketId] = { ...activePlayer.cards[room.activeStat.cardIndex] };
+    }
+    const challengers = Array.from(room.challengeResponses.entries()).filter(([_, res]) => res.action === 'challenge');
+    challengers.forEach(([socketId, res]) => {
+        const player = room.gameState.players.find(p => p.socketId === socketId);
+        if (player && typeof res.cardIndex === 'number' && player.cards.length > res.cardIndex) {
+            revealedCards[socketId] = { ...player.cards[res.cardIndex] };
+        }
+    });
+    const gaveUps = Array.from(room.challengeResponses.entries()).filter(([_, res]) => res.action === 'gaveUp');
+    gaveUps.forEach(([socketId, _]) => {
+        const player = room.gameState.players.find(p => p.socketId === socketId);
+        if (player && player.cards.length > 0) {
+            revealedCards[socketId] = { ...player.cards[0] };
+        }
+    });
+    const timeouts = room.sockets.filter(sid => sid !== room.activeStat.socketId && !room.challengeResponses.has(sid));
+    timeouts.forEach(sid => {
+        const player = room.gameState.players.find(p => p.socketId === sid);
+        if (player && player.cards.length > 0) {
+            revealedCards[sid] = { ...player.cards[0] };
+        }
+    });
     // Stop and clear challenge timer if running
     if (room.challengeTimer) {
         clearInterval(room.challengeTimer);
@@ -368,12 +395,7 @@ function processRoundResult(roomCode) {
         logger.info(`[processRoundResult] Cleared challenge timer for room ${roomCode}`);
     }
     logger.info(`[processRoundResult] Processing round for room ${roomCode}`);
-    const activePlayer = room.gameState.players.find(p => p.socketId === room.activeStat.socketId);
     const activeValue = room.activeStat.value * statWeights[room.activeStat.stat];
-    const challengers = Array.from(room.challengeResponses.entries()).filter(([_, res]) => res.action === 'challenge');
-    const gaveUps = Array.from(room.challengeResponses.entries()).filter(([_, res]) => res.action === 'gaveUp');
-    const timeouts = room.sockets.filter(sid => sid !== room.activeStat.socketId && !room.challengeResponses.has(sid));
-
     let winnerSocketId = room.activeStat.socketId;
     let highestValue = activeValue;
     let highestChallenger = null;
@@ -486,23 +508,6 @@ function processRoundResult(roomCode) {
         });
     }
 
-    // Check for game end
-    const activePlayers = room.gameState.players.filter(p => p.cardCount > 0);
-    if (activePlayers.length <= 1) {
-        const gameWinner = activePlayers.length === 1 ? activePlayers[0].socketId : null;
-        room.sockets.forEach(socketId => {
-            if (!socketId.startsWith('mock_')) {
-                io.to(socketId).emit('gameEnd', {
-                    winner: gameWinner,
-                    scores: Object.fromEntries(room.scores)
-                });
-                logger.info(`Game ended in room ${roomCode}, winner: ${gameWinner || 'none'}`);
-            }
-        });
-        rooms.delete(roomCode);
-        return;
-    }
-
     // Next turn logic
     let nextActivePlayer;
     if (activePlayerWins) {
@@ -522,6 +527,7 @@ function processRoundResult(roomCode) {
                 winner: winnerSocketId,
                 stat: room.activeStat ? room.activeStat.stat : '',
                 submissions: Object.fromEntries(challengers.map(([sid, res]) => [sid, { stat: res.stat, value: res.value }]).concat(gaveUps.map(([sid, _]) => [sid, { stat: 'gaveUp', value: 0 }]))),
+                revealedCards, // <-- send all revealed cards (from snapshot)
                 gameState: {
                     players: room.gameState.players.map(p => ({
                         socketId: p.socketId,
