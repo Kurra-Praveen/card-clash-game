@@ -40,6 +40,9 @@ import androidx.compose.ui.unit.dp
 import com.praveen.cardclash.network.RetrofitClient
 import com.praveen.cardclash.network.SocketManager
 import com.praveen.cardclash.network.StartGameRequest
+import com.praveen.cardclash.ui.mockups.RefactoredActivePlayerScreen
+import com.praveen.cardclash.ui.mockups.RefactoredOpponentScreen
+import com.praveen.cardclash.ui.mockups.MockCard
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.*
 import kotlinx.coroutines.CoroutineScope
@@ -214,48 +217,84 @@ fun GameScreen(
             val isActivePlayer = gameData!!.currentTurn == SocketManager.socketId
             val isChallenged = challengeState?.let { it.activePlayer != SocketManager.socketId && countdownTime > 0 && !hasSubmitted } == true
 
-            // OpponentScreen is shown for all non-active players, always showing their cards
+            // Convert real cards to MockCard for UI
+            val myCards = gameData!!.cards.map {
+                MockCard(
+                    playerName = it.playerName,
+                    runs = it.runs,
+                    wickets = it.wickets,
+                    battingAverage = it.battingAverage,
+                    strikeRate = it.strikeRate,
+                    matchesPlayed = it.matchesPlayed,
+                    centuries = it.centuries,
+                    fiveWicketHauls = it.fiveWicketHauls
+                )
+            }
+            val myScore = gameData!!.scores[SocketManager.socketId] ?: 0
+            val round = gameData!!.round
+
             when {
                 isActivePlayer -> {
-                    ActivePlayerScreen(
-                        gameData = gameData!!,
-                        challengeState = challengeState,
-                        hasSubmitted = hasSubmitted,
+                    RefactoredActivePlayerScreen(
+                        round = round,
+                        yourCards = myCards,
                         selectedCardIndex = selectedCardIndex,
-                        setSelectedCardIndex = { selectedCardIndex = it },
+                        onSelectCard = { selectedCardIndex = it },
                         selectedStat = selectedStat,
-                        setSelectedStat = { selectedStat = it },
-                        onSubmitStat = { stat, value ->
-                            coroutineScope.launch {
-                                SocketManager.submitStat(roomCode, selectedCardIndex, stat, value)
-                                hasSubmitted = true
-                                Log.d("GameScreen", "Stat submitted: cardIndex=$selectedCardIndex, stat=$stat, value=$value, socketId=${SocketManager.socketId}")
+                        onStatSelected = { selectedStat = it },
+                        onSubmitStat = {
+                            val card = gameData!!.cards.getOrNull(selectedCardIndex)
+                            val value = when (selectedStat) {
+                                "runs" -> card?.runs ?: 0
+                                "wickets" -> card?.wickets ?: 0
+                                "battingAverage" -> card?.battingAverage ?: 0
+                                "strikeRate" -> card?.strikeRate ?: 0
+                                "matchesPlayed" -> card?.matchesPlayed ?: 0
+                                "centuries" -> card?.centuries ?: 0
+                                "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+                                else -> 0
                             }
-                        }
+                            coroutineScope.launch {
+                                SocketManager.submitStat(roomCode, selectedCardIndex, selectedStat, value)
+                                hasSubmitted = true
+                            }
+                        },
+                        yourScore = myScore
                     )
                 }
                 else -> {
-                    OpponentScreen(
-                        gameData = gameData!!,
-                        challengeState = challengeState,
-                        countdownTime = countdownTime,
-                        hasSubmitted = hasSubmitted,
+                    RefactoredOpponentScreen(
+                        round = round,
+                        yourCards = myCards,
                         selectedCardIndex = selectedCardIndex,
-                        setSelectedCardIndex = { selectedCardIndex = it },
-                        onChallenge = { stat, value ->
+                        onSelectCard = { selectedCardIndex = it },
+                        challengeStat = challengeState?.stat,
+                        timer = if (isChallenged) countdownTime else null,
+                        hasSubmitted = hasSubmitted,
+                        onChallenge = {
+                            val card = gameData!!.cards.getOrNull(selectedCardIndex)
+                            val value = when (challengeState?.stat) {
+                                "runs" -> card?.runs ?: 0
+                                "wickets" -> card?.wickets ?: 0
+                                "battingAverage" -> card?.battingAverage ?: 0
+                                "strikeRate" -> card?.strikeRate ?: 0
+                                "matchesPlayed" -> card?.matchesPlayed ?: 0
+                                "centuries" -> card?.centuries ?: 0
+                                "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+                                else -> 0
+                            }
                             coroutineScope.launch {
-                                SocketManager.challenge(roomCode, selectedCardIndex, stat, value)
+                                SocketManager.challenge(roomCode, selectedCardIndex, challengeState?.stat ?: "", value)
                                 hasSubmitted = true
-                                Log.d("GameScreen", "Challenge submitted: cardIndex=$selectedCardIndex, stat=$stat, value=$value, socketId=${SocketManager.socketId}")
                             }
                         },
-                        onGaveUp = {
+                        onGiveUp = {
                             coroutineScope.launch {
                                 SocketManager.gaveUp(roomCode)
                                 hasSubmitted = true
-                                Log.d("GameScreen", "GaveUp submitted, socketId=${SocketManager.socketId}")
                             }
-                        }
+                        },
+                        yourScore = myScore
                     )
                 }
             }
