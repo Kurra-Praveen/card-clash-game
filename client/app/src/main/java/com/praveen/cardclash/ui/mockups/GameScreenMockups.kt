@@ -1,6 +1,7 @@
 package com.praveen.cardclash.ui.mockups
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -311,8 +312,7 @@ fun StylishTopCard(
                 )
             ).let { BrushColor -> Color.Transparent }, // For Compose 1.6+, use Brush as background
             contentColor = Color.White
-        )
-    ) {
+        )) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -472,6 +472,302 @@ fun RefactoredOpponentScreen(
     }
 }
 
+// --- TablePlayer Data Class (for Table Layout) ---
+data class TablePlayer(
+    val name: String,
+    val isLocal: Boolean,
+    val card: MockCard?,
+    val cardsLeft: Int,
+    val revealed: Boolean
+)
+
+// --- GameTableLayout Composable (Stub/Minimal) ---
+@Composable
+fun GameTableLayout(
+    players: List<TablePlayer>,
+    onLocalCardClick: (() -> Unit)? = null,
+    modifier: Modifier = Modifier
+) {
+    // Minimal placeholder for compilation; replace with real layout as needed
+    Row(modifier = modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+        players.forEach { player ->
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                StylishTopCard(
+                    card = if (player.revealed) player.card else null,
+                    isSelectable = false,
+                    isSelected = false
+                )
+                Text(player.name, style = MaterialTheme.typography.labelMedium)
+            }
+        }
+    }
+}
+
+// --- Resolution Screen (Results) ---
+@Composable
+fun ResolutionScreen(
+    round: Int,
+    players: List<TablePlayer>,
+    winnerName: String?,
+    yourScore: Int,
+    modifier: Modifier = Modifier
+) {
+    Box(modifier = modifier.fillMaxSize()) {
+        // --- Game Table Layout with all cards revealed ---
+        GameTableLayout(
+            players = players.map { it.copy(revealed = true) },
+            onLocalCardClick = null,
+            modifier = Modifier.fillMaxSize()
+        )
+        // --- Top Info Bar ---
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(Alignment.TopCenter),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            GameInfoBar(
+                round = round,
+                currentTurn = "Results",
+                yourCards = players.lastOrNull()?.cardsLeft ?: 0,
+                yourScore = yourScore
+            )
+            if (winnerName != null) {
+                Card(
+                    modifier = Modifier
+                        .padding(12.dp)
+                        .fillMaxWidth(),
+                    elevation = CardDefaults.cardElevation(8.dp),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+                ) {
+                    Text(
+                        text = "$winnerName wins the round!",
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+// --- Modernized Resolution Screen (Results) ---
+@Composable
+fun ModernResolutionScreen(
+    round: Int,
+    players: List<TablePlayer>,
+    winnerName: String?,
+    stat: String?,
+    statValues: Map<String, Any?>,
+    yourScore: Int,
+    countdown: Int,
+    modifier: Modifier = Modifier
+) {
+    Box(modifier = modifier.fillMaxSize()) {
+        // Top overlays: info bar and winner banner
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .align(Alignment.TopCenter),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            GameInfoBar(
+                round = round,
+                currentTurn = "Results",
+                yourCards = players.lastOrNull()?.cardsLeft ?: 0,
+                yourScore = yourScore
+            )
+            if (winnerName != null) {
+                Row(
+                    modifier = Modifier.padding(12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Icon(Icons.Filled.Star, contentDescription = null, tint = Color(0xFFFFD600))
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "$winnerName wins the round!",
+                        style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+            if (stat != null) {
+                Text(
+                    text = "Stat: ${stat.replaceFirstChar { it.uppercase() }}",
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(bottom = 8.dp),
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
+                )
+            }
+            // All player cards, winner highlighted (vertical stack)
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 8.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                players.forEach { player ->
+                    val isWinner = player.name == winnerName
+                    val cardBg = if (isWinner) {
+                        Brush.linearGradient(
+                            listOf(
+                                Color(0xFFFFC107),
+                                Color(0xFFFF4081),
+                                Color(0xFF00E676)
+                            )
+                        )
+                    } else {
+                        Brush.linearGradient(
+                            listOf(
+                                Color(0xFFBDBDBD),
+                                Color(0xFFE0E0E0)
+                            )
+                        )
+                    }
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth(0.9f)
+                            .height(180.dp)
+                            .padding(vertical = 8.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        StylishTopCardCustomBg(
+                            card = player.card,
+                            isSelectable = false,
+                            isSelected = isWinner,
+                            backgroundBrush = cardBg
+                        )
+                    }
+                }
+            }
+        }
+        // Circular countdown timer (bottom right)
+        Box(
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(24.dp)
+        ) {
+            ModernCircularTimer(timer = countdown, total = 5)
+        }
+    }
+}
+
+// --- StylishTopCard with custom background ---
+@Composable
+fun StylishTopCardCustomBg(
+    card: MockCard?,
+    isSelectable: Boolean,
+    isSelected: Boolean,
+    backgroundBrush: Brush,
+    onClick: (() -> Unit)? = null
+) {
+    if (card == null) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(180.dp)
+                .background(Color.LightGray, shape = MaterialTheme.shapes.extraLarge)
+                .padding(16.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Text("No Cards Left", style = MaterialTheme.typography.titleMedium)
+        }
+        return
+    }
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(180.dp)
+            .padding(16.dp)
+            .then(
+                if (isSelectable && onClick != null) Modifier.clickable { onClick() } else Modifier
+            ),
+        elevation = CardDefaults.cardElevation(if (isSelected) 16.dp else 8.dp),
+        shape = MaterialTheme.shapes.extraLarge,
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Transparent,
+            contentColor = Color.White
+        )
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(backgroundBrush, shape = MaterialTheme.shapes.extraLarge)
+        ) {
+            // Glossy overlay
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(40.dp)
+                    .align(Alignment.TopCenter)
+                    .background(
+                        Brush.verticalGradient(
+                            listOf(
+                                Color.White.copy(alpha = 0.35f),
+                                Color.Transparent
+                            )
+                        )
+                    )
+            )
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(20.dp),
+                verticalArrangement = Arrangement.SpaceBetween,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    card.playerName,
+                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                    color = Color.White,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                )
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Runs", style = MaterialTheme.typography.labelMedium)
+                        Text("${card.runs}", fontWeight = FontWeight.Bold)
+                    }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Wickets", style = MaterialTheme.typography.labelMedium)
+                        Text("${card.wickets}", fontWeight = FontWeight.Bold)
+                    }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Avg", style = MaterialTheme.typography.labelMedium)
+                        Text("${card.battingAverage}", fontWeight = FontWeight.Bold)
+                    }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("SR", style = MaterialTheme.typography.labelMedium)
+                        Text("${card.strikeRate}", fontWeight = FontWeight.Bold)
+                    }
+                }
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Matches", style = MaterialTheme.typography.labelSmall)
+                        Text("${card.matchesPlayed}")
+                    }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("100s", style = MaterialTheme.typography.labelSmall)
+                        Text("${card.centuries}")
+                    }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("5W", style = MaterialTheme.typography.labelSmall)
+                        Text("${card.fiveWicketHauls}")
+                    }
+                }
+            }
+        }
+    }
+}
+
 // --- Previews for Main Screens ---
 @Preview(showBackground = true)
 @Composable
@@ -510,5 +806,48 @@ fun RefactoredOpponentScreenPreview() {
         onChallenge = {},
         onGiveUp = {},
         yourScore = 15
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ResolutionScreenPreview() {
+    val players = listOf(
+        TablePlayer("Player2", false, MockCard("Player2", 8000, 100, 45.0f, 80.0f, 300, 20, 2), 3, true),
+        TablePlayer("Player3", false, MockCard("Player3", 9000, 120, 50.0f, 85.0f, 320, 18, 3), 2, true),
+        TablePlayer("Player4", false, MockCard("Player4", 7000, 90, 40.0f, 70.0f, 250, 10, 1), 1, true),
+        TablePlayer("You", true, MockCard("You", 10000, 200, 55.5f, 90.0f, 400, 51, 5), 5, true)
+    )
+    ResolutionScreen(
+        round = 3,
+        players = players,
+        winnerName = "You",
+        yourScore = 15
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ModernResolutionScreenPreview() {
+    val players = listOf(
+        TablePlayer("Player2", false, MockCard("Player2", 8000, 100, 45.0f, 80.0f, 300, 20, 2), 3, true),
+        TablePlayer("Player3", false, MockCard("Player3", 9000, 120, 50.0f, 85.0f, 320, 18, 3), 2, true),
+        TablePlayer("Player4", false, MockCard("Player4", 7000, 90, 40.0f, 70.0f, 250, 10, 1), 1, true),
+        TablePlayer("You", true, MockCard("You", 10000, 200, 55.5f, 90.0f, 400, 51, 5), 5, true)
+    )
+    val statValues = mapOf(
+        "Player2" to 8000,
+        "Player3" to 9000,
+        "Player4" to 7000,
+        "You" to 10000
+    )
+    ModernResolutionScreen(
+        round = 3,
+        players = players,
+        winnerName = "You",
+        stat = "runs",
+        statValues = statValues,
+        yourScore = 15,
+        countdown = 3
     )
 }

@@ -43,8 +43,10 @@ import com.praveen.cardclash.network.StartGameRequest
 import com.praveen.cardclash.ui.mockups.RefactoredActivePlayerScreen
 import com.praveen.cardclash.ui.mockups.RefactoredOpponentScreen
 import com.praveen.cardclash.ui.mockups.MockCard
+import com.praveen.cardclash.ui.mockups.TablePlayer
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.*
+import com.praveen.cardclash.ui.mockups.ModernResolutionScreen
 import kotlinx.coroutines.CoroutineScope
 
 
@@ -176,10 +178,42 @@ fun GameScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         if (showResolutionScreen && currentRoundResult != null) {
-            ResolutionScreen(
-                roundResult = currentRoundResult!!,
-                mySocketId = SocketManager.socketId,
-                onContinue = {}, // No manual continue, auto after countdown
+            // --- Modernized Resolution Screen Integration ---
+            val rr = currentRoundResult!!
+            // Map SocketManager.RoundResult to TablePlayer and statValues
+            val players = rr.revealedCards.map { (socketId, card) ->
+                val playerName = card.playerName
+                val isLocal = socketId == SocketManager.socketId
+                val cardsLeft = rr.gameState.players.find { it.socketId == socketId }?.cardCount ?: 0
+                TablePlayer(
+                    name = playerName,
+                    isLocal = isLocal,
+                    card = MockCard(
+                        playerName = card.playerName,
+                        runs = card.runs,
+                        wickets = card.wickets,
+                        battingAverage = card.battingAverage,
+                        strikeRate = card.strikeRate,
+                        matchesPlayed = card.matchesPlayed,
+                        centuries = card.centuries,
+                        fiveWicketHauls = card.fiveWicketHauls
+                    ),
+                    cardsLeft = cardsLeft,
+                    revealed = true
+                )
+            }
+            val winnerName = players.find { it.isLocal && rr.winner == SocketManager.socketId }?.name
+                ?: players.find { !it.isLocal && rr.winner != null && rr.winner == rr.revealedCards.keys.elementAtOrNull(players.indexOfFirst { p -> !p.isLocal }) }?.name
+                ?: players.find { it.name == rr.winner }?.name
+                ?: rr.winner
+            val statValues = rr.submissions.mapValues { it.value.value }
+            ModernResolutionScreen(
+                round = rr.gameState.round,
+                players = players,
+                winnerName = winnerName,
+                stat = rr.stat,
+                statValues = statValues,
+                yourScore = rr.scores[SocketManager.socketId] ?: 0,
                 countdown = resolutionCountdown
             )
         } else if (isLoading) {
