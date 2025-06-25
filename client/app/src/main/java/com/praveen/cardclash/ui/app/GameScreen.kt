@@ -308,7 +308,8 @@ fun GameScreen(
                                 hasSubmitted = true
                             }
                         },
-                        yourScore = myScore
+                        yourScore = myScore,
+                        hasSubmitted = hasSubmitted // Pass the new param
                     )
                 }
                 else -> {
@@ -447,9 +448,20 @@ fun ActivePlayerScreen(
                 onSubmitStat(selectedStat, value)
             }
         },
-        enabled = !hasSubmitted && gameData.cards.isNotEmpty()
+        enabled = !hasSubmitted && gameData.cards.isNotEmpty(),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (hasSubmitted) Color.Gray else MaterialTheme.colorScheme.primary
+        )
     ) {
-        Text("Submit ${selectedStat.replaceFirstChar { it.uppercase() }}")
+        Text(if (hasSubmitted) "Submitted" else "Submit ${selectedStat.replaceFirstChar { it.uppercase() }}")
+    }
+    if (hasSubmitted) {
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            "Waiting for other players...",
+            color = Color.Gray,
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
     Spacer(modifier = Modifier.height(16.dp))
 }

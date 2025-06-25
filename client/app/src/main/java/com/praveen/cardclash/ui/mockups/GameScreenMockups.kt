@@ -406,7 +406,8 @@ fun RefactoredActivePlayerScreen(
     selectedStat: String?,
     onStatSelected: (String) -> Unit,
     onSubmitStat: () -> Unit,
-    yourScore: Int
+    yourScore: Int,
+    hasSubmitted: Boolean // NEW PARAM
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(modifier = Modifier.fillMaxWidth()) {
@@ -421,12 +422,19 @@ fun RefactoredActivePlayerScreen(
         ) {
             StylishTopCard(
                 card = yourCards.firstOrNull(),
-                isSelectable = true,
+                isSelectable = !hasSubmitted,
                 isSelected = true,
-                onClick = { onSelectCard(0) }
+                onClick = { if (!hasSubmitted) onSelectCard(0) }
             )
-            StatSelectionBar(selectedStat = selectedStat, onStatSelected = onStatSelected, enabled = true)
-            SubmitStatButton(selectedStat = selectedStat, enabled = true, onSubmit = onSubmitStat)
+            StatSelectionBar(selectedStat = selectedStat, onStatSelected = onStatSelected, enabled = !hasSubmitted)
+            if (!hasSubmitted) {
+                SubmitStatButton(selectedStat = selectedStat, enabled = true, onSubmit = onSubmitStat)
+            } else {
+                Button(onClick = {}, enabled = false, modifier = Modifier.padding(vertical = 8.dp), colors = ButtonDefaults.buttonColors(containerColor = Color.Gray)) {
+                    Text("Submitted")
+                }
+                Text("Waiting for other players...", color = Color.Gray, modifier = Modifier.padding(top = 8.dp))
+            }
         }
     }
 }
@@ -776,16 +784,33 @@ fun RefactoredActivePlayerScreenPreview() {
         MockCard("Sachin", 10000, 200, 55.5f, 90.0f, 400, 51, 5),
         MockCard("Dravid", 9000, 50, 52.3f, 75.0f, 350, 36, 0)
     )
-    RefactoredActivePlayerScreen(
-        round = 3,
-        yourCards = cards,
-        selectedCardIndex = 0,
-        onSelectCard = {},
-        selectedStat = "runs",
-        onStatSelected = {},
-        onSubmitStat = {},
-        yourScore = 15
-    )
+    Column {
+        Text("Active Player - Not Submitted")
+        RefactoredActivePlayerScreen(
+            round = 3,
+            yourCards = cards,
+            selectedCardIndex = 0,
+            onSelectCard = {},
+            selectedStat = "runs",
+            onStatSelected = {},
+            onSubmitStat = {},
+            yourScore = 15,
+            hasSubmitted = false
+        )
+        Spacer(modifier = Modifier.height(24.dp))
+        Text("Active Player - Submitted")
+        RefactoredActivePlayerScreen(
+            round = 3,
+            yourCards = cards,
+            selectedCardIndex = 0,
+            onSelectCard = {},
+            selectedStat = "runs",
+            onStatSelected = {},
+            onSubmitStat = {},
+            yourScore = 15,
+            hasSubmitted = true
+        )
+    }
 }
 
 @Preview(showBackground = true)
