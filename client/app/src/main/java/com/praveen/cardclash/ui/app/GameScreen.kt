@@ -5,15 +5,7 @@ package com.praveen.cardclash.ui.app
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -25,13 +17,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -45,10 +31,25 @@ import com.praveen.cardclash.ui.mockups.RefactoredOpponentScreen
 import com.praveen.cardclash.ui.mockups.MockCard
 import com.praveen.cardclash.ui.mockups.TablePlayer
 import kotlinx.coroutines.launch
-import androidx.compose.foundation.layout.*
 import com.praveen.cardclash.ui.mockups.ModernResolutionScreen
 import kotlinx.coroutines.CoroutineScope
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.ui.draw.clip
 
+
+@Composable
+fun ConnectionStatusDot(isConnected: Boolean, modifier: Modifier = Modifier) {
+    val color = if (isConnected) Color(0xFF4CAF50) else Color(0xFFF44336)
+    Box(
+        modifier = modifier
+            .size(14.dp)
+            .clip(CircleShape)
+            .background(color)
+    )
+}
 
 @Composable
 fun GameScreen(
@@ -167,6 +168,16 @@ fun GameScreen(
         }
     }
 
+    // Use a state that updates when the connection changes
+    val isSocketConnected = remember { mutableStateOf(SocketManager.isConnected()) }
+    // Listen for connection changes
+    LaunchedEffect(Unit) {
+        while (true) {
+            isSocketConnected.value = SocketManager.isConnected()
+            kotlinx.coroutines.delay(500)
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -174,7 +185,11 @@ fun GameScreen(
             .wrapContentHeight(Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Card Clash - Room: $roomCode", style = MaterialTheme.typography.headlineSmall)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Card Clash - Room: $roomCode", style = MaterialTheme.typography.headlineSmall)
+            Spacer(modifier = Modifier.width(8.dp))
+            ConnectionStatusDot(isConnected = isSocketConnected.value)
+        }
         Spacer(modifier = Modifier.height(16.dp))
 
         if (showResolutionScreen && currentRoundResult != null) {
