@@ -5,7 +5,7 @@ require('dotenv').config();
      const winston = require('winston');
      const mongoose = require('mongoose');
      const cors = require('cors');
-     const Card = require('./models/Card');
+     const Card = require('../models/Card');
 
      const app = express();
      const server = http.createServer(app);
