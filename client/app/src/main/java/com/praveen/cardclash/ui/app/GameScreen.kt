@@ -5,15 +5,7 @@ package com.praveen.cardclash.ui.app
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -25,13 +17,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -40,10 +26,30 @@ import androidx.compose.ui.unit.dp
 import com.praveen.cardclash.network.RetrofitClient
 import com.praveen.cardclash.network.SocketManager
 import com.praveen.cardclash.network.StartGameRequest
+import com.praveen.cardclash.ui.mockups.RefactoredActivePlayerScreen
+import com.praveen.cardclash.ui.mockups.RefactoredOpponentScreen
+import com.praveen.cardclash.ui.mockups.MockCard
+import com.praveen.cardclash.ui.mockups.TablePlayer
 import kotlinx.coroutines.launch
-import androidx.compose.foundation.layout.*
+import com.praveen.cardclash.ui.mockups.ModernResolutionScreen
 import kotlinx.coroutines.CoroutineScope
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.ui.draw.clip
 
+
+@Composable
+fun ConnectionStatusDot(isConnected: Boolean, modifier: Modifier = Modifier) {
+    val color = if (isConnected) Color(0xFF4CAF50) else Color(0xFFF44336)
+    Box(
+        modifier = modifier
+            .size(14.dp)
+            .clip(CircleShape)
+            .background(color)
+    )
+}
 
 @Composable
 fun GameScreen(
@@ -162,6 +168,16 @@ fun GameScreen(
         }
     }
 
+    // Use a state that updates when the connection changes
+    val isSocketConnected = remember { mutableStateOf(SocketManager.isConnected()) }
+    // Listen for connection changes
+    LaunchedEffect(Unit) {
+        while (true) {
+            isSocketConnected.value = SocketManager.isConnected()
+            kotlinx.coroutines.delay(500)
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -169,14 +185,50 @@ fun GameScreen(
             .wrapContentHeight(Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Card Clash - Room: $roomCode", style = MaterialTheme.typography.headlineSmall)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Card Clash - Room: $roomCode", style = MaterialTheme.typography.headlineSmall)
+            Spacer(modifier = Modifier.width(8.dp))
+            ConnectionStatusDot(isConnected = isSocketConnected.value)
+        }
         Spacer(modifier = Modifier.height(16.dp))
 
         if (showResolutionScreen && currentRoundResult != null) {
-            ResolutionScreen(
-                roundResult = currentRoundResult!!,
-                mySocketId = SocketManager.socketId,
-                onContinue = {}, // No manual continue, auto after countdown
+            // --- Modernized Resolution Screen Integration ---
+            val rr = currentRoundResult!!
+            // Map SocketManager.RoundResult to TablePlayer and statValues
+            val players = rr.revealedCards.map { (socketId, card) ->
+                val playerName = card.playerName
+                val isLocal = socketId == SocketManager.socketId
+                val cardsLeft = rr.gameState.players.find { it.socketId == socketId }?.cardCount ?: 0
+                TablePlayer(
+                    name = playerName,
+                    isLocal = isLocal,
+                    card = MockCard(
+                        playerName = card.playerName,
+                        runs = card.runs,
+                        wickets = card.wickets,
+                        battingAverage = card.battingAverage,
+                        strikeRate = card.strikeRate,
+                        matchesPlayed = card.matchesPlayed,
+                        centuries = card.centuries,
+                        fiveWicketHauls = card.fiveWicketHauls
+                    ),
+                    cardsLeft = cardsLeft,
+                    revealed = true
+                )
+            }
+            val winnerName = players.find { it.isLocal && rr.winner == SocketManager.socketId }?.name
+                ?: players.find { !it.isLocal && rr.winner != null && rr.winner == rr.revealedCards.keys.elementAtOrNull(players.indexOfFirst { p -> !p.isLocal }) }?.name
+                ?: players.find { it.name == rr.winner }?.name
+                ?: rr.winner
+            val statValues = rr.submissions.mapValues { it.value.value }
+            ModernResolutionScreen(
+                round = rr.gameState.round,
+                players = players,
+                winnerName = winnerName,
+                stat = rr.stat,
+                statValues = statValues,
+                yourScore = rr.scores[SocketManager.socketId] ?: 0,
                 countdown = resolutionCountdown
             )
         } else if (isLoading) {
@@ -214,48 +266,85 @@ fun GameScreen(
             val isActivePlayer = gameData!!.currentTurn == SocketManager.socketId
             val isChallenged = challengeState?.let { it.activePlayer != SocketManager.socketId && countdownTime > 0 && !hasSubmitted } == true
 
-            // OpponentScreen is shown for all non-active players, always showing their cards
+            // Convert real cards to MockCard for UI
+            val myCards = gameData!!.cards.map {
+                MockCard(
+                    playerName = it.playerName,
+                    runs = it.runs,
+                    wickets = it.wickets,
+                    battingAverage = it.battingAverage,
+                    strikeRate = it.strikeRate,
+                    matchesPlayed = it.matchesPlayed,
+                    centuries = it.centuries,
+                    fiveWicketHauls = it.fiveWicketHauls
+                )
+            }
+            val myScore = gameData!!.scores[SocketManager.socketId] ?: 0
+            val round = gameData!!.round
+
             when {
                 isActivePlayer -> {
-                    ActivePlayerScreen(
-                        gameData = gameData!!,
-                        challengeState = challengeState,
-                        hasSubmitted = hasSubmitted,
+                    RefactoredActivePlayerScreen(
+                        round = round,
+                        yourCards = myCards,
                         selectedCardIndex = selectedCardIndex,
-                        setSelectedCardIndex = { selectedCardIndex = it },
+                        onSelectCard = { selectedCardIndex = it },
                         selectedStat = selectedStat,
-                        setSelectedStat = { selectedStat = it },
-                        onSubmitStat = { stat, value ->
-                            coroutineScope.launch {
-                                SocketManager.submitStat(roomCode, selectedCardIndex, stat, value)
-                                hasSubmitted = true
-                                Log.d("GameScreen", "Stat submitted: cardIndex=$selectedCardIndex, stat=$stat, value=$value, socketId=${SocketManager.socketId}")
+                        onStatSelected = { selectedStat = it },
+                        onSubmitStat = {
+                            val card = gameData!!.cards.getOrNull(selectedCardIndex)
+                            val value = when (selectedStat) {
+                                "runs" -> card?.runs ?: 0
+                                "wickets" -> card?.wickets ?: 0
+                                "battingAverage" -> card?.battingAverage ?: 0
+                                "strikeRate" -> card?.strikeRate ?: 0
+                                "matchesPlayed" -> card?.matchesPlayed ?: 0
+                                "centuries" -> card?.centuries ?: 0
+                                "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+                                else -> 0
                             }
-                        }
+                            coroutineScope.launch {
+                                SocketManager.submitStat(roomCode, selectedCardIndex, selectedStat, value)
+                                hasSubmitted = true
+                            }
+                        },
+                        yourScore = myScore,
+                        hasSubmitted = hasSubmitted // Pass the new param
                     )
                 }
                 else -> {
-                    OpponentScreen(
-                        gameData = gameData!!,
-                        challengeState = challengeState,
-                        countdownTime = countdownTime,
-                        hasSubmitted = hasSubmitted,
+                    RefactoredOpponentScreen(
+                        round = round,
+                        yourCards = myCards,
                         selectedCardIndex = selectedCardIndex,
-                        setSelectedCardIndex = { selectedCardIndex = it },
-                        onChallenge = { stat, value ->
+                        onSelectCard = { selectedCardIndex = it },
+                        challengeStat = challengeState?.stat,
+                        timer = if (isChallenged) countdownTime else null,
+                        hasSubmitted = hasSubmitted,
+                        onChallenge = {
+                            val card = gameData!!.cards.getOrNull(selectedCardIndex)
+                            val value = when (challengeState?.stat) {
+                                "runs" -> card?.runs ?: 0
+                                "wickets" -> card?.wickets ?: 0
+                                "battingAverage" -> card?.battingAverage ?: 0
+                                "strikeRate" -> card?.strikeRate ?: 0
+                                "matchesPlayed" -> card?.matchesPlayed ?: 0
+                                "centuries" -> card?.centuries ?: 0
+                                "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+                                else -> 0
+                            }
                             coroutineScope.launch {
-                                SocketManager.challenge(roomCode, selectedCardIndex, stat, value)
+                                SocketManager.challenge(roomCode, selectedCardIndex, challengeState?.stat ?: "", value)
                                 hasSubmitted = true
-                                Log.d("GameScreen", "Challenge submitted: cardIndex=$selectedCardIndex, stat=$stat, value=$value, socketId=${SocketManager.socketId}")
                             }
                         },
-                        onGaveUp = {
+                        onGiveUp = {
                             coroutineScope.launch {
                                 SocketManager.gaveUp(roomCode)
                                 hasSubmitted = true
-                                Log.d("GameScreen", "GaveUp submitted, socketId=${SocketManager.socketId}")
                             }
-                        }
+                        },
+                        yourScore = myScore
                     )
                 }
             }
@@ -359,9 +448,20 @@ fun ActivePlayerScreen(
                 onSubmitStat(selectedStat, value)
             }
         },
-        enabled = !hasSubmitted && gameData.cards.isNotEmpty()
+        enabled = !hasSubmitted && gameData.cards.isNotEmpty(),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (hasSubmitted) Color.Gray else MaterialTheme.colorScheme.primary
+        )
     ) {
-        Text("Submit ${selectedStat.replaceFirstChar { it.uppercase() }}")
+        Text(if (hasSubmitted) "Submitted" else "Submit ${selectedStat.replaceFirstChar { it.uppercase() }}")
+    }
+    if (hasSubmitted) {
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            "Waiting for other players...",
+            color = Color.Gray,
+            style = MaterialTheme.typography.bodyMedium
+        )
     }
     Spacer(modifier = Modifier.height(16.dp))
 }
