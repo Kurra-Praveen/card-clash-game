@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Card = require('./models/Card');
+const Card = require('../models/Card');
 const winston = require('winston');
 const fs = require('fs').promises; // For reading JSON file
 
