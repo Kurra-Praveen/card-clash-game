@@ -33,7 +33,9 @@ data class MockCard(
     val strikeRate: Float,
     val matchesPlayed: Int,
     val centuries: Int,
-    val fiveWicketHauls: Int
+    val fiveWicketHauls: Int,
+    val economy: Float, // Bowling economy rate
+    val format: String  // e.g., "ODI"
 )
 
 // --- Modernized Game Info Bar (Reusable) ---
@@ -133,6 +135,8 @@ fun CardList(cards: List<MockCard>, selectedIndex: Int?, onSelect: (Int) -> Unit
                     Text("Matches: ${card.matchesPlayed}")
                     Text("100s: ${card.centuries}")
                     Text("5W: ${card.fiveWicketHauls}")
+                    Text("Economy: ${card.economy}")
+                    Text("Format: ${card.format}")
                 }
             }
         }
@@ -144,11 +148,11 @@ fun CardList(cards: List<MockCard>, selectedIndex: Int?, onSelect: (Int) -> Unit
 fun StatSelectionBar(selectedStat: String?, onStatSelected: (String) -> Unit, enabled: Boolean) {
     val statLabels = listOf(
         "Runs", "Wickets", "Batting Avg", "Strike Rate",
-        "Matches", "Centuries", "5W Hauls"
+        "Matches", "Centuries", "5W Hauls", "Economy"
     )
     val statKeys = listOf(
         "runs", "wickets", "battingAverage", "strikeRate",
-        "matchesPlayed", "centuries", "fiveWicketHauls"
+        "matchesPlayed", "centuries", "fiveWicketHauls","Economy"
     )
     LazyRow(
         modifier = Modifier
@@ -389,6 +393,10 @@ fun StylishTopCard(
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text("5W", style = MaterialTheme.typography.labelSmall)
                         Text("${card.fiveWicketHauls}")
+                    }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Eco", style = MaterialTheme.typography.labelSmall)
+                        Text("${card.economy}")
                     }
                 }
             }
@@ -770,6 +778,10 @@ fun StylishTopCardCustomBg(
                         Text("5W", style = MaterialTheme.typography.labelSmall)
                         Text("${card.fiveWicketHauls}")
                     }
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text("Eco", style = MaterialTheme.typography.labelSmall)
+                        Text("${card.economy}")
+                    }
                 }
             }
         }
@@ -781,8 +793,8 @@ fun StylishTopCardCustomBg(
 @Composable
 fun RefactoredActivePlayerScreenPreview() {
     val cards = listOf(
-        MockCard("Sachin", 10000, 200, 55.5f, 90.0f, 400, 51, 5),
-        MockCard("Dravid", 9000, 50, 52.3f, 75.0f, 350, 36, 0)
+        MockCard("Sachin", 10000, 200, 55.5f, 90.0f, 400, 51, 5, 3.5f, "ODI"),
+        MockCard("Dravid", 9000, 50, 52.3f, 75.0f, 350, 36, 0, 4.0f, "ODI")
     )
     Column {
         Text("Active Player - Not Submitted")
@@ -817,8 +829,8 @@ fun RefactoredActivePlayerScreenPreview() {
 @Composable
 fun RefactoredOpponentScreenPreview() {
     val cards = listOf(
-        MockCard("Sachin", 10000, 200, 55.5f, 90.0f, 400, 51, 5),
-        MockCard("Dravid", 9000, 50, 52.3f, 75.0f, 350, 36, 0)
+        MockCard("Sachin", 10000, 200, 55.5f, 90.0f, 400, 51, 5, 3.5f, "ODI"),
+        MockCard("Dravid", 9000, 50, 52.3f, 75.0f, 350, 36, 0, 4.0f, "ODI")
     )
     RefactoredOpponentScreen(
         round = 3,
@@ -838,10 +850,10 @@ fun RefactoredOpponentScreenPreview() {
 @Composable
 fun ResolutionScreenPreview() {
     val players = listOf(
-        TablePlayer("Player2", false, MockCard("Player2", 8000, 100, 45.0f, 80.0f, 300, 20, 2), 3, true),
-        TablePlayer("Player3", false, MockCard("Player3", 9000, 120, 50.0f, 85.0f, 320, 18, 3), 2, true),
-        TablePlayer("Player4", false, MockCard("Player4", 7000, 90, 40.0f, 70.0f, 250, 10, 1), 1, true),
-        TablePlayer("You", true, MockCard("You", 10000, 200, 55.5f, 90.0f, 400, 51, 5), 5, true)
+        TablePlayer("Player2", false, MockCard("Player2", 8000, 100, 45.0f, 80.0f, 300, 20, 2, 5.0f, "ODI"), 3, true),
+        TablePlayer("Player3", false, MockCard("Player3", 9000, 120, 50.0f, 85.0f, 320, 18, 3, 4.5f, "ODI"), 2, true),
+        TablePlayer("Player4", false, MockCard("Player4", 7000, 90, 40.0f, 70.0f, 250, 10, 1, 6.0f, "ODI"), 1, true),
+        TablePlayer("You", true, MockCard("You", 10000, 200, 55.5f, 90.0f, 400, 51, 5, 3.0f, "ODI"), 5, true)
     )
     ResolutionScreen(
         round = 3,
@@ -855,10 +867,10 @@ fun ResolutionScreenPreview() {
 @Composable
 fun ModernResolutionScreenPreview() {
     val players = listOf(
-        TablePlayer("Player2", false, MockCard("Player2", 8000, 100, 45.0f, 80.0f, 300, 20, 2), 3, true),
-        TablePlayer("Player3", false, MockCard("Player3", 9000, 120, 50.0f, 85.0f, 320, 18, 3), 2, true),
-        TablePlayer("Player4", false, MockCard("Player4", 7000, 90, 40.0f, 70.0f, 250, 10, 1), 1, true),
-        TablePlayer("You", true, MockCard("You", 10000, 200, 55.5f, 90.0f, 400, 51, 5), 5, true)
+        TablePlayer("Player2", false, MockCard("Player2", 8000, 100, 45.0f, 80.0f, 300, 20, 2, 5.0f, "ODI"), 3, true),
+        TablePlayer("Player3", false, MockCard("Player3", 9000, 120, 50.0f, 85.0f, 320, 18, 3, 4.5f, "ODI"), 2, true),
+        TablePlayer("Player4", false, MockCard("Player4", 7000, 90, 40.0f, 70.0f, 250, 10, 1, 6.0f, "ODI"), 1, true),
+        TablePlayer("You", true, MockCard("You", 10000, 200, 55.5f, 90.0f, 400, 51, 5, 3.0f, "ODI"), 5, true)
     )
     val statValues = mapOf(
         "Player2" to 8000,

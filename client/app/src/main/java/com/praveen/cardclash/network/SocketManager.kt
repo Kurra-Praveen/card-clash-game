@@ -65,7 +65,9 @@ object SocketManager {
         val strikeRate: Float,
         val matchesPlayed: Int,
         val centuries: Int,
-        val fiveWicketHauls: Int
+        val fiveWicketHauls: Int,
+        val economy: Float, // Bowling economy rate
+        val format: String  // e.g., "ODI"
     )
     data class Submission(val stat: String, val value: Number)
     data class RoundResult(
@@ -132,7 +134,9 @@ object SocketManager {
                             strikeRate = c.getDouble("strikeRate").toFloat(),
                             matchesPlayed = c.getInt("matchesPlayed"),
                             centuries = c.getInt("centuries"),
-                            fiveWicketHauls = c.getInt("fiveWicketHauls")
+                            fiveWicketHauls = c.getInt("fiveWicketHauls"),
+                            economy = c.optDouble("Economy", 0.0).toFloat(), // FIX: use correct key
+                            format = c.optString("format", "ODI") // New field
                         ))
                     }
                     val scoresObj = data.getJSONObject("scores")
@@ -210,7 +214,9 @@ object SocketManager {
                             strikeRate = c.getDouble("strikeRate").toFloat(),
                             matchesPlayed = c.getInt("matchesPlayed"),
                             centuries = c.getInt("centuries"),
-                            fiveWicketHauls = c.getInt("fiveWicketHauls")
+                            fiveWicketHauls = c.getInt("fiveWicketHauls"),
+                            economy = c.getDouble("Economy").toFloat(), // <-- Added economy
+                            format = c.getString("format") // <-- Added format
                         ))
                     }
                     val submissionsObj = data.getJSONObject("submissions")
@@ -246,7 +252,9 @@ object SocketManager {
                                     strikeRate = c.getDouble("strikeRate").toFloat(),
                                     matchesPlayed = c.getInt("matchesPlayed"),
                                     centuries = c.getInt("centuries"),
-                                    fiveWicketHauls = c.getInt("fiveWicketHauls")
+                                    fiveWicketHauls = c.getInt("fiveWicketHauls"),
+                                    economy = c.optDouble("Economy", 0.0).toFloat(), // FIX: use correct key
+                                    format = c.optString("format", "ODI")
                                 )
                             }
                         }
@@ -311,7 +319,7 @@ object SocketManager {
         }
     }
 
-    fun submitStat(roomCode: String, cardIndex: Int, stat: String, value: Number) {
+    fun submitStat(roomCode: String, cardIndex: Int, stat: String, value: Any) {
         if (socket?.connected() == true) {
             socket?.emit("submitStat", JSONObject().apply {
                 put("roomCode", roomCode.uppercase())
@@ -325,7 +333,7 @@ object SocketManager {
         }
     }
 
-    fun challenge(roomCode: String, cardIndex: Int, stat: String, value: Number) {
+    fun challenge(roomCode: String, cardIndex: Int, stat: String, value: Any) {
         if (socket?.connected() == true) {
             socket?.emit("challenge", JSONObject().apply {
                 put("roomCode", roomCode.uppercase())

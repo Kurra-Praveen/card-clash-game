@@ -3,3 +3,4 @@ server/node_modules/*
 client/gradle/*
 client/app/src/main/res/mipmap-*
 client/.idea/*
+server/server.log

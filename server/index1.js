@@ -28,7 +28,7 @@ let cardsCollection;
 async function connectDB() {
     try {
         await client.connect();
-        cardsCollection = client.db('test').collection('cards');
+        cardsCollection = client.db('cricket').collection('players');
         logger.info('Connected to MongoDB');
         const count = await cardsCollection.countDocuments();
         logger.info(`Initial card count: ${count}`);
@@ -46,7 +46,8 @@ const statWeights = {
     strikeRate: 1.2,
     matchesPlayed: 0.8,
     centuries: 2.0,
-    fiveWicketHauls: 2.5
+    fiveWicketHauls: 2.5,
+    economy: 1.0 // Added economy stat
 };
 
 function generateRoomCode() {
@@ -395,20 +396,32 @@ function processRoundResult(roomCode) {
         logger.info(`[processRoundResult] Cleared challenge timer for room ${roomCode}`);
     }
     logger.info(`[processRoundResult] Processing round for room ${roomCode}`);
+    // --- ECONOMY LOGIC: lower is better ---
+    const isEconomy = room.activeStat.stat === 'economy';
     const activeValue = room.activeStat.value * statWeights[room.activeStat.stat];
     let winnerSocketId = room.activeStat.socketId;
-    let highestValue = activeValue;
-    let highestChallenger = null;
+    let bestValue = activeValue;
+    let bestChallenger = null;
     let activePlayerWins = true;
 
-    // Compare challengers
     challengers.forEach(([socketId, res]) => {
         const weightedValue = res.value * statWeights[res.stat];
-        if (weightedValue > highestValue) {
-            highestValue = weightedValue;
-            highestChallenger = { socketId, cardIndex: res.cardIndex };
-            winnerSocketId = socketId;
-            activePlayerWins = false;
+        // For economy, lower is better, and 0 is not a valid win
+        if (isEconomy) {
+            if (res.value === 0) return; // skip 0 economy
+            if ((bestChallenger === null && res.value > 0) || (weightedValue < bestValue && weightedValue > 0)) {
+                bestValue = weightedValue;
+                bestChallenger = { socketId, cardIndex: res.cardIndex };
+                winnerSocketId = socketId;
+                activePlayerWins = false;
+            }
+        } else {
+            if (weightedValue > bestValue) {
+                bestValue = weightedValue;
+                bestChallenger = { socketId, cardIndex: res.cardIndex };
+                winnerSocketId = socketId;
+                activePlayerWins = false;
+            }
         }
     });
 
@@ -462,7 +475,7 @@ function processRoundResult(roomCode) {
             activePlayer.cardCount++;
         });
     } else {
-        const winnerPlayer = room.gameState.players.find(p => p.socketId == highestChallenger.socketId);
+        const winnerPlayer = room.gameState.players.find(p => p.socketId == bestChallenger.socketId);
         room.scores.set(activePlayer.socketId, (room.scores.get(activePlayer.socketId) || 0) - 4);
         let collectedCards = [];
         if (activePlayer.cardCount > 0) {
@@ -470,9 +483,9 @@ function processRoundResult(roomCode) {
             collectedCards.push(activeCard);
             activePlayer.cardCount--;
         }
-        room.scores.set(highestChallenger.socketId, (room.scores.get(highestChallenger.socketId) || 0) + 1);
+        room.scores.set(bestChallenger.socketId, (room.scores.get(bestChallenger.socketId) || 0) + 1);
         challengers.forEach(([socketId, res]) => {
-            if (socketId !== highestChallenger.socketId) {
+            if (socketId !== bestChallenger.socketId) {
                 const player = room.gameState.players.find(p => p.socketId === socketId);
                 if (player && res.value * statWeights[res.stat] > activeValue) {
                     room.scores.set(socketId, (room.scores.get(socketId) || 0) + 1);
@@ -517,7 +530,7 @@ function processRoundResult(roomCode) {
     if (activePlayerWins) {
         nextActivePlayer = activePlayer.socketId;
     } else {
-        nextActivePlayer = highestChallenger.socketId;
+        nextActivePlayer = bestChallenger.socketId;
     }
     room.gameState.round++;
     room.gameState.currentTurn = nextActivePlayer;

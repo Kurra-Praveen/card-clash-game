@@ -36,7 +36,6 @@ import kotlinx.coroutines.CoroutineScope
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.draw.clip
 
 
@@ -211,7 +210,9 @@ fun GameScreen(
                         strikeRate = card.strikeRate,
                         matchesPlayed = card.matchesPlayed,
                         centuries = card.centuries,
-                        fiveWicketHauls = card.fiveWicketHauls
+                        fiveWicketHauls = card.fiveWicketHauls,
+                        economy = card.economy,
+                        format = card.format
                     ),
                     cardsLeft = cardsLeft,
                     revealed = true
@@ -276,7 +277,9 @@ fun GameScreen(
                     strikeRate = it.strikeRate,
                     matchesPlayed = it.matchesPlayed,
                     centuries = it.centuries,
-                    fiveWicketHauls = it.fiveWicketHauls
+                    fiveWicketHauls = it.fiveWicketHauls,
+                    economy = it.economy,
+                    format = it.format
                 )
             }
             val myScore = gameData!!.scores[SocketManager.socketId] ?: 0
@@ -301,10 +304,11 @@ fun GameScreen(
                                 "matchesPlayed" -> card?.matchesPlayed ?: 0
                                 "centuries" -> card?.centuries ?: 0
                                 "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+                                "Economy" -> card?.economy ?: 0
                                 else -> 0
                             }
                             coroutineScope.launch {
-                                SocketManager.submitStat(roomCode, selectedCardIndex, selectedStat, value)
+                                SocketManager.submitStat(roomCode, selectedCardIndex, selectedStat?.lowercase() ?: "", value)
                                 hasSubmitted = true
                             }
                         },
@@ -331,6 +335,7 @@ fun GameScreen(
                                 "matchesPlayed" -> card?.matchesPlayed ?: 0
                                 "centuries" -> card?.centuries ?: 0
                                 "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+                                "economy" -> card?.economy ?: 0
                                 else -> 0
                             }
                             coroutineScope.launch {
@@ -403,6 +408,8 @@ fun ActivePlayerScreen(
                     Text("Matches: ${card.matchesPlayed} ${if (getStatStrength(card, "matchesPlayed") > 0.8) "🔥" else ""}")
                     Text("Centuries: ${card.centuries} ${if (getStatStrength(card, "centuries") > 0.8) "🔥" else ""}")
                     Text("Five Wicket Hauls: ${card.fiveWicketHauls} ${if (getStatStrength(card, "fiveWicketHauls") > 0.8) "🔥" else ""}")
+                    Text("Economy: ${card.economy}")
+                    Text("Format: ${card.format}")
                 }
             }
         }
@@ -417,7 +424,7 @@ fun ActivePlayerScreen(
     ) {
         items(listOf(
             "runs", "wickets", "battingAverage", "strikeRate",
-            "matchesPlayed", "centuries", "fiveWicketHauls"
+            "matchesPlayed", "centuries", "fiveWicketHauls","economy", "format"
         )) { stat ->
             Button(
                 onClick = { setSelectedStat(stat) },
@@ -443,9 +450,10 @@ fun ActivePlayerScreen(
                     "matchesPlayed" -> card.matchesPlayed
                     "centuries" -> card.centuries
                     "fiveWicketHauls" -> card.fiveWicketHauls
+                    "economy" -> card.economy
                     else -> 0
                 }
-                onSubmitStat(selectedStat, value)
+                onSubmitStat(selectedStat, (value as? Number) ?: 0)
             }
         },
         enabled = !hasSubmitted && gameData.cards.isNotEmpty(),
@@ -537,6 +545,8 @@ fun OpponentScreen(
                     Text("Matches: ${card.matchesPlayed} ${if (getStatStrength(card, "matchesPlayed") > 0.8) "🔥" else ""}")
                     Text("Centuries: ${card.centuries} ${if (getStatStrength(card, "centuries") > 0.8) "🔥" else ""}")
                     Text("Five Wicket Hauls: ${card.fiveWicketHauls} ${if (getStatStrength(card, "fiveWicketHauls") > 0.8) "🔥" else ""}")
+                    Text("Economy: ${card.economy}")
+                    Text("Format: ${card.format}")
                 }
             }
         }
@@ -553,6 +563,8 @@ fun OpponentScreen(
             "matchesPlayed" -> card?.matchesPlayed ?: 0
             "centuries" -> card?.centuries ?: 0
             "fiveWicketHauls" -> card?.fiveWicketHauls ?: 0
+            "economy" -> card?.economy ?: 0
+            "format" -> card?.format ?: ""
             else -> 0
         }
         Row(
@@ -560,7 +572,7 @@ fun OpponentScreen(
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Button(
-                onClick = { onChallenge(challengeState.stat, value) },
+                onClick = { onChallenge(challengeState.stat, (value as? Number) ?: 0) },
                 enabled = !hasSubmitted && gameData.cards.isNotEmpty(),
                 modifier = Modifier.width(120.dp)
             ) {
@@ -641,6 +653,8 @@ fun OpponentButtons(
                         "matchesPlayed" -> card.matchesPlayed
                         "centuries" -> card.centuries
                         "fiveWicketHauls" -> card.fiveWicketHauls
+                        "economy" -> card.economy
+                        "format" -> card.format
                         else -> 0
                     }
                     coroutineScope.launch {
@@ -737,6 +751,8 @@ fun ResolutionScreen(
                         Text("Matches: ${card.matchesPlayed}")
                         Text("Centuries: ${card.centuries}")
                         Text("Five Wicket Hauls: ${card.fiveWicketHauls}")
+                        Text("Economy: ${card.economy}")
+                        Text("Format: ${card.format}")
                         if (winner == sid) {
                             Spacer(modifier = Modifier.height(8.dp))
                             Text("Winner!", color = Color(0xFF155724), fontWeight = FontWeight.Bold)
@@ -764,7 +780,9 @@ fun getStatStrength(card: SocketManager.Card, stat: String): Float {
         "strikeRate" to 200f,
         "matchesPlayed" to 500f,
         "centuries" to 50f,
-        "fiveWicketHauls" to 10f
+        "fiveWicketHauls" to 10f,
+        "Economy" to 100f,
+        "Format" to 100f
     )
     val value = when (stat) {
         "runs" -> card.runs.toFloat()
@@ -774,6 +792,7 @@ fun getStatStrength(card: SocketManager.Card, stat: String): Float {
         "matchesPlayed" -> card.matchesPlayed.toFloat()
         "centuries" -> card.centuries.toFloat()
         "fiveWicketHauls" -> card.fiveWicketHauls.toFloat()
+        "Economy" -> card.economy.toFloat()
         else -> 0f
     }
     return (value / maxValues[stat]!!).coerceIn(0f, 1f)

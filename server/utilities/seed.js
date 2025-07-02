@@ -42,7 +42,9 @@ require('dotenv').config();
           strikeRate: Math.random() * 200,
           matchesPlayed: Math.floor(Math.random() * 300),
           centuries: Math.floor(Math.random() * 50),
-          fiveWicketHauls: Math.floor(Math.random() * 10)
+          fiveWicketHauls: Math.floor(Math.random() * 10),
+          Economy: (Math.random() * 5 + 3).toFixed(2), // Economy between 3.00 and 8.00
+          format: 'ODI' // Default format for all cards
       }));
 
       await Card.deleteMany({}); // Clear existing data

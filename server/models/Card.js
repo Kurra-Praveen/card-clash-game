@@ -8,7 +8,9 @@ const cardSchema = new mongoose.Schema({
     strikeRate: Number,
     matchesPlayed: Number,
     centuries: Number,
-    fiveWicketHauls: Number
+    fiveWicketHauls: Number,
+    Economy: Number, // Bowling economy rate
+    format: String   // e.g., 'ODI', 'T20', etc.
 });
 
-module.exports = mongoose.model('Card', cardSchema);
+module.exports = mongoose.model('Card', cardSchema,'players'); // 'players' is the collection name in MongoDB
